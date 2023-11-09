@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.root {
+    display: grid;
+    width: 100%;
+    place-items: center;
+    padding: 5% 0%;
+
+    h3 {
+        margin: 0;
+        font-size: calc(#{$size}*1.5);
+        text-transform: uppercase;
+        margin-bottom: 3%;
+    }
+}

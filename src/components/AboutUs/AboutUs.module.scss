@@ -1,0 +1,103 @@
+@import '../../styles/variables';
+
+.root {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding-top: 5%;
+    padding-bottom: 0%;
+
+    .wrapper {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5%;
+    
+        .image_block {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            width: 50%;
+            margin-top: 2%;
+
+            article {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0%;
+         
+                .container {
+                    position: relative;
+                    margin: -0.5%;
+                    width: 30%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .polygon_text {
+                    position: absolute;
+                    top: 50%;
+                    text-align: center;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    h3 {
+                        margin: 0;
+                        font-size: calc(#{$size}*1.5);
+                    }
+                    p {
+                        margin: 0;
+                        text-align: center;
+                        font-size: calc(#{$size}/1.35);
+                        text-wrap: balance;
+                    }
+                }
+            }
+            .polygon_2 {
+                margin-top: -17%;
+            }
+            .polygon_3 {
+                margin-top: -35%;
+            }
+        }
+        .text_block {
+            width: 50%;
+            margin-top: -5%;
+            h3 {
+                margin: 0;
+                font-size: calc(#{$size}*1.5);
+                text-transform: uppercase;
+            }
+            p {
+                font-size: calc(#{$size}/1.1);
+            }
+        }
+    }
+}
+@media screen and (max-width: 650px) {
+    .wrapper {
+        flex-direction: column !important;
+
+        .image_block {
+            width: 85% !important;
+            .polygon_2 {
+                margin-top: -20% !important;
+            }
+            .polygon_3 {
+                margin-top: -40% !important;
+            }
+        }
+        .text_block {
+            width: 100% !important;
+           
+            h3 {
+                font-size: 20px !important;
+                text-align: center !important;
+            }
+            p {
+                font-size: 15px !important;
+
+            }
+        }
+    }
+}

@@ -1,0 +1,116 @@
+@import '../../styles/variables';
+
+.root {
+    display: grid;
+    place-items: center;
+    width: 50%;
+    position: fixed;
+    background-color: $color-orange;
+    top: 50%;
+    left: 50%;
+    height: 57%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 0%;
+    z-index: -1;
+    opacity: 0;
+    transition: all .3s;
+    border: 2px solid $color-green;
+
+    .wrapper {
+        display: grid;
+        place-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 0%;
+        position: relative;
+
+        .span {
+            position: absolute;
+            top: 3%;
+            right: 3%;
+            width: 4%;
+            cursor: pointer;
+            transition: all .3s;
+
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+        .polygon {
+            position: absolute;
+            width: 40%;
+            bottom: 0;
+            left: 0%;
+            border-bottom-left-radius: 10px;
+        }
+        h3 {
+            margin: 0;
+            font-size: calc(#{$size}*1.2);
+            text-align: center;
+            margin: 1% 3%;
+            margin-top: 5%;
+        }
+        .form_block {
+            display: grid;
+            place-items: center;
+            width: 40%;
+            margin-top: -3%;
+
+            input {
+                width: 98%;
+                border-radius: 5px;
+                border: 1px solid $color-green;
+                background-color: #FFF7E9;
+                color: $color-green;
+                font-size: calc(#{$size}/1.3);
+                padding: 5% 2%;
+                margin-bottom: 5%;
+                outline: none;
+
+                &::placeholder {
+                    color: $color-green;
+                    font-size: calc(#{$size}/1.3);
+                    font-family: 'Fixel';
+                }
+            }
+        }
+        button {
+            color: #fff;
+            background-color: $color-blue;
+            border-radius: 5px;
+            border: none;
+            padding: 3% 0%;
+            width: 25%;
+            margin-top: -5%;
+            font-size: calc(#{$size}/1.3);
+            cursor: pointer;
+            z-index: 1001;
+            transition: all .3s;
+            font-family: "Fixel";
+
+            &:hover {
+                width: 30%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .root {
+        width: 60% !important;
+        height: 40% !important;
+    }
+}
+@media screen and (max-width: 700px) {
+    .root {
+        width: 75% !important;
+        height: 35% !important;
+    }
+}
+@media screen and (max-width: 500px) {
+    .root {
+        width: 85% !important;
+        height: 27% !important;
+    }
+}

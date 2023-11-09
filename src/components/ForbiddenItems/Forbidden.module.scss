@@ -1,0 +1,78 @@
+@import '../../styles/variables';
+
+.root {
+    width: 100%;
+    padding: 2% 0%;
+    display: grid;
+    place-items: center;
+
+    .wrapper {
+        width: 100%;
+        display: grid;
+        place-items: center;
+        h3 {
+            margin: 0;
+            font-size: calc(#{$size}*1.5);
+            margin-bottom: 2%;
+            text-align: center;
+            b {
+                color: #7B0808;
+            }
+        }
+        .image_block {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            width: 75%;
+            margin-top: 2%;
+
+            article {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 0%;
+         
+                .container {
+                    position: relative;
+                    margin: -0.7%;
+                    width: 30%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .polygon_text {
+                    position: absolute;
+                    top: 50%;
+                    text-align: center;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    img {
+                        width: 80%;
+                    }
+                    p {
+                        margin: 0;
+                        text-align: center;
+                        font-size: calc(#{$size}/1.35);
+                        text-wrap: balance;
+                    }
+                }
+            }
+            .article_two {
+                justify-content: flex-start;
+                margin-top: -18%;
+            }
+            .article_one {
+                margin-top: -36%;
+            }
+        }
+
+    }
+}
+@media screen and (max-width: 450px) {
+    .article_two {
+        margin-top: -21% !important;
+    }
+    .article_one {
+        margin-top: -41% !important;
+    }
+}

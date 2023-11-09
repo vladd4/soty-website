@@ -1,0 +1,89 @@
+@import '../../styles/variables';
+
+.root {
+    width: 100%;
+    padding: 2% 0%;
+    display: grid;
+    place-items: center;
+
+    .wrapper {
+        width: 100%;
+        display: grid;
+        place-items: center;
+        h3 {
+            margin: 0;
+            font-size: calc(#{$size}*1.5);
+            margin-bottom: 2%;
+            text-align: center;
+            b {
+                color: #3A8A09;
+            }
+        }
+        .image_block {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            width: 75%;
+            margin-top: 2%;
+
+            article {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 0%;
+         
+                .container {
+                    position: relative;
+                    margin: -0.7%;
+                    width: 30%;
+                    text-decoration: none;
+                    color: $color-black;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .polygon_text {
+                    position: absolute;
+                    top: 50%;
+                    text-align: center;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    img {
+                        width: 80%;
+                    }
+                    p {
+                        margin: 0;
+                        text-align: center;
+                        font-size: calc(#{$size}/1.35);
+                        text-wrap: balance;
+                    }
+                }
+            }
+            .article_two {
+                justify-content: flex-start;
+                margin-top: -17%;
+            }
+            .article_three {
+                margin-top: -34%;
+            }
+        }
+
+    }
+}
+.container {
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+        transform: scale(1.05);
+        z-index: 1001;
+    }
+}
+@media screen and (max-width: 450px) {
+    .article_two {
+        margin-top: -19% !important;
+    }
+    .article_three {
+        margin-top: -39% !important;
+    }
+}

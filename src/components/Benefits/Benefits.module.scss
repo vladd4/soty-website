@@ -1,0 +1,102 @@
+@import '../../styles/variables';
+
+.root {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 5% 0%;
+
+    .wrapper {
+        width: 90%;
+        display: grid;
+        place-items: center;
+
+        h3 {
+            margin: 0;
+            text-transform: uppercase;
+            font-size: calc(#{$size}*1.5);
+            margin-bottom: 3%;
+        }
+        .mobile_block {
+            display: grid;
+            width: 100%;
+            place-items: center;
+            grid-template-columns: repeat(2, 1fr);
+
+            .mobile_one_polygon {
+                width: 100%;
+                display: grid;
+                place-items: center;
+
+                .mobile_polygon_text {
+                    display: grid;
+                    width: 100%;
+                    place-items: center;
+                    img {
+                        width: 27%;
+                    }
+                    p {
+                        font-size: 14px;
+                        text-align: center;
+                        text-wrap: balance;
+                    }
+                }
+            }
+        }
+        .polygon_block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .two_polygon {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 0% -4%;
+
+                img {
+                    margin: 0.5% 0%;
+                }
+            }
+            .two_polygon_parent {
+                position: relative;
+            }
+            .one_polygon {
+                position: relative;
+            }
+            .polygon_text {
+                display: grid;
+                place-items: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                img {
+                    width: 70%;
+                }
+                p {
+                    margin: 0;
+                    text-align: center;
+                    font-size: calc(#{$size}/1.35);
+                    text-wrap: balance;
+                }
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+.one_polygon, .two_polygon_parent {
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+@media screen and (max-width: 650px) {
+    .root {
+        padding: 10% 0% !important;
+    }
+}

@@ -1,0 +1,89 @@
+import styles from "./Header.module.scss";
+
+import Logo from "../../assets/logo.png";
+import Hamburger from "../../assets/hamburger.svg";
+import Instagram from "../../assets/inst.svg";
+import Facebook from "../../assets/face.svg";
+import Home from "../../assets/home.svg";
+import Map from "../../assets/point.svg";
+import Phone from "../../assets/tel.svg";
+import PhoneHovered from "../../assets/phone-hovered.svg";
+import { useRef, useContext, useState } from "react";
+import Context from "../../hooks/Context";
+import Burger from "../Burger/Burger";
+import { Link } from "react-router-dom";
+
+const Header = () => {
+  const t = useContext(Context);
+  const imageRef = useRef(null);
+  const handleHover = (src) => {
+    if (imageRef.current) {
+      imageRef.current.src = src;
+    }
+  };
+  const [clicked, setClicked] = useState(false);
+  const handleClick = () => {
+    setClicked(!clicked);
+  };
+  return (
+    <header className={styles.root}>
+      <article className={styles.wrapper}>
+        <img alt="Logo" src={Logo} className={styles.logo} />
+        <div className={styles.text_block}>
+          <Link id="home-link" to="/" className={styles.home_link}>
+            <img alt="Home" src={Home} />
+          </Link>
+          <div className={styles.language_block}>
+            <p>EN</p>
+            <span>|</span>
+            <p className={styles.current_lang}>UA</p>
+          </div>
+          <img
+            alt="Hamburger"
+            id="burger-icon"
+            src={Hamburger}
+            className={`${styles.hamburger} ${
+              clicked ? styles.transformed : ""
+            }`}
+            onClick={handleClick}
+          />
+          <a
+            href="https://maps.app.goo.gl/M4MpJLJrim7oRBW9A"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.location_block}
+          >
+            <img alt="Location" src={Map} />
+            <p>{t("location")}</p>
+          </a>
+          <div className={styles.social_block}>
+            <a
+              href="https://www.facebook.com/people/Leader-company/61553362610336/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img alt="Facebook" src={Facebook} />
+            </a>
+            <a
+              href="https://www.facebook.com/people/Leader-company/61553362610336/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img alt="Instagram" src={Instagram} />
+            </a>
+          </div>
+          <img
+            className={styles.tel}
+            onMouseOver={() => handleHover(PhoneHovered)}
+            onMouseOut={() => handleHover(Phone)}
+            ref={imageRef}
+            alt="Phone"
+            src={Phone}
+          />
+        </div>
+      </article>
+      <Burger clicked={clicked} setClicked={setClicked} />
+    </header>
+  );
+};
+export default Header;

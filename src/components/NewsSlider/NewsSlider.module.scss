@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+
+.slider {
+    width: 90% !important;
+}
+.arrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    margin-top: 2%;
+    img {
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover {
+           opacity: 0.8;
+        }
+    }
+    .prev {
+        transform: rotateZ(180deg);
+        width: 40%;
+    }
+    .next {
+        width: 40%;
+    }
+}
+@media screen and (max-width: 650px) {
+    .prev {
+        width: 27% !important;
+    }
+    .next {
+        width: 27% !important;
+    }
+}
