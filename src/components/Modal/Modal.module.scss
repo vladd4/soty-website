@@ -102,15 +102,29 @@
         height: 40% !important;
     }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 650px) {
     .root {
-        width: 75% !important;
-        height: 35% !important;
-    }
-}
-@media screen and (max-width: 500px) {
-    .root {
-        width: 85% !important;
-        height: 27% !important;
+        width: 95% !important;
+        height: 40% !important;
+
+        h3 {
+            font-size: 20px !important;
+        }
+        .form_block {
+            width: 55% !important;
+            z-index: 1000 !important;
+
+            input {
+                font-size: 12px !important;
+
+                &::placeholder {
+                    font-size: 12px !important;
+                }
+            }
+        }
+        button {
+            font-size: 12px !important;
+            width: 40% !important;
+        }
     }
 }

@@ -26,6 +26,14 @@
         font-size: 14px;
         font-family: "Fixel";
         padding: 2%;
+        color: $color-black;
+
+            option {
+                color: $color-black;
+                &::placeholder {
+                    color: $color-black;
+                }
+            }
     }
     .wrapper {
         display: grid;
