@@ -68,11 +68,19 @@
 
     }
 }
+@media screen and (max-width: 650px) {
+    .image_block {
+        width: 90% !important;
+        p {
+            font-size: 13px !important;
+        }
+    }
+}
 @media screen and (max-width: 450px) {
     .article_two {
-        margin-top: -21% !important;
+        margin-top: -20% !important;
     }
     .article_one {
-        margin-top: -41% !important;
+        margin-top: -39% !important;
     }
 }

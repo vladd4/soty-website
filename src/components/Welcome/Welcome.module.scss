@@ -126,17 +126,25 @@
 @media screen and (max-width: 650px) {
     .root {
         padding-top: 15% !important;
+        padding-bottom: 5% !important;
+    }
+    .wrapper {
+        width: 100% !important;
     }
     .image {
         display: none !important;
     }
     .links_block {
         width: 100% !important;
+
+        a {
+            width: 42% !important;
+        }
     }
     .links_block_row_2, .links_block_row {
         a {
             h3 {
-               font-size: 17px !important;
+               font-size: 19px !important;
             }
        }
     }

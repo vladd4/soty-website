@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ecab2f34.css",
-    "main.js": "/static/js/main.aa7ccd2c.js",
+    "main.css": "/static/css/main.991a6163.css",
+    "main.js": "/static/js/main.bffea56d.js",
     "static/js/787.a17832b9.chunk.js": "/static/js/787.a17832b9.chunk.js",
     "static/media/welcome.png": "/static/media/welcome.fcf260434148088992f5.png",
     "static/media/welcome-storage-back.png": "/static/media/welcome-storage-back.feeb50630c30281db0c1.png",
@@ -11,14 +11,27 @@
     "static/media/poly-left.png": "/static/media/poly-left.0789c5297259613073d9.png",
     "static/media/FixelText-Regular.ttf": "/static/media/FixelText-Regular.a2548bccb7aba570f4f7.ttf",
     "static/media/pallete 1.png": "/static/media/pallete 1.462c8060ba6015197f6a.png",
+    "static/media/vehicle-icons 4.svg": "/static/media/vehicle-icons 4.ef7141f8fc38b749a49396e563d045ed.svg",
+    "static/media/vehicle-icons 3.svg": "/static/media/vehicle-icons 3.06a4275e6af4940b054adfcfb623aaf1.svg",
+    "static/media/vehicle-icons 1.svg": "/static/media/vehicle-icons 1.16e220524b1370aedf76adf2da54687c.svg",
     "static/media/vehicle-icons 2.svg": "/static/media/vehicle-icons 2.7f074ef96b02e2709f3dff20a9e47fe3.svg",
     "static/media/inst.svg": "/static/media/inst.df1ab22f85924ccb73e7300def9020dc.svg",
+    "static/media/vehicle-icons 5.svg": "/static/media/vehicle-icons 5.3631564280fd91ad6e8fc082842591b5.svg",
     "static/media/mobile-calc.png": "/static/media/mobile-calc.609bf9127f6d636c9097.png",
+    "static/media/location.svg": "/static/media/location.414da8e591863c0bd33b2d046d9c7b52.svg",
     "static/media/logo.png": "/static/media/logo.b55fb8dc74eed1b0c131.png",
+    "static/media/safe.svg": "/static/media/safe.c83b85791543ac2fe8858c70acb06e27.svg",
+    "static/media/people.svg": "/static/media/people.0342a4f0a65f5a87e718de3bbcd0cf52.svg",
     "static/media/polygon-right.png": "/static/media/polygon-right.1eb9da8a5e5e9e5ac29c.png",
+    "static/media/gryz.svg": "/static/media/gryz.178a3607c38da28428de89151b2423de.svg",
     "static/media/face.svg": "/static/media/face.92bb2bfa6b327cca549a6e9530802c0c.svg",
+    "static/media/cam.svg": "/static/media/cam.79d510b827e11fe120b70f855e2432cd.svg",
+    "static/media/sale.svg": "/static/media/sale.569b84f49231ffbabda0cdb562abde8a.svg",
+    "static/media/ramp.svg": "/static/media/ramp.d5356fcc16261eeab642619d999b3b23.svg",
+    "static/media/kubik.svg": "/static/media/kubik.67cb93fef09107b3ed9a9b2fc58e1827.svg",
     "static/media/park.svg": "/static/media/park.967a6f9597c22432747b836f5b7c7dab.svg",
     "static/media/phone-hovered.svg": "/static/media/phone-hovered.452365a496c65d5ae7595e71be965b9f.svg",
+    "static/media/bud.svg": "/static/media/bud.0cbb338b38b86e069a201d416f10ed89.svg",
     "static/media/home.svg": "/static/media/home.0d40cd6591d36fa4037d5f6b73fa875d.svg",
     "static/media/tel.svg": "/static/media/tel.ca5585d34f92e22630b1a7b3fa50dc84.svg",
     "static/media/phone-icon.svg": "/static/media/phone-icon.655f682c4b861eb7156df0ca38d0e5e0.svg",
@@ -46,12 +59,12 @@
     "static/media/calc-blue.svg": "/static/media/calc-blue.b4ae4f4107b8ecb03d7ade8a470b65e3.svg",
     "static/media/calc-white.svg": "/static/media/calc-white.01c6704fb57bf609e436443273055f33.svg",
     "static/media/small-poly.svg": "/static/media/small-poly.15b247c228fc24185d7812e5c16f5058.svg",
-    "main.ecab2f34.css.map": "/static/css/main.ecab2f34.css.map",
-    "main.aa7ccd2c.js.map": "/static/js/main.aa7ccd2c.js.map",
+    "main.991a6163.css.map": "/static/css/main.991a6163.css.map",
+    "main.bffea56d.js.map": "/static/js/main.bffea56d.js.map",
     "787.a17832b9.chunk.js.map": "/static/js/787.a17832b9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ecab2f34.css",
-    "static/js/main.aa7ccd2c.js"
+    "static/css/main.991a6163.css",
+    "static/js/main.bffea56d.js"
   ]
 }

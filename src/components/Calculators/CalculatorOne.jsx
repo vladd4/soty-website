@@ -4,7 +4,12 @@ import PolygonWhite from "../../assets/calc-white.svg";
 import PolygonBlue from "../../assets/calc-blue.svg";
 import PolygonYellow from "../../assets/Polygon 5.svg";
 import EmptyPoligon from "../../assets/empty-polygon.svg";
-import Icon from "../../assets/vehicle-icons 2.svg";
+import Icon1 from "../../assets/vehicle-icons 1.svg";
+import Icon2 from "../../assets/vehicle-icons 2.svg";
+import Icon3 from "../../assets/vehicle-icons 3.svg";
+import Icon4 from "../../assets/vehicle-icons 4.svg";
+import Icon5 from "../../assets/vehicle-icons 5.svg";
+
 import MobileCalc from "../../assets/mobile-calc.png";
 
 import { useEffect, useState } from "react";
@@ -24,7 +29,13 @@ import {
 } from "../../redux/slices/calcSlice";
 import useResize from "../../hooks/useResize";
 
-const cars = ["1-2 м", "3-4 м", "6-8 м", "9-12 м", "18+ м"];
+const cars = [
+  { text: "1-2 м", icon: Icon1 },
+  { text: "3-4 м", icon: Icon2 },
+  { text: "6-8 м", icon: Icon3 },
+  { text: "9-12 м", icon: Icon4 },
+  { text: "18+ м", icon: Icon5 },
+];
 
 const CalculatorOne = () => {
   const isEmpty = useSelector((state) => state.calculator.isEmptyIndividual);
@@ -133,7 +144,7 @@ const CalculatorOne = () => {
                   return (
                     <div
                       style={isEmpty ? { pointerEvents: "none" } : null}
-                      key={car}
+                      key={car.text}
                       className={
                         isClicked
                           ? styles.icons_row_item_clicked
@@ -141,8 +152,8 @@ const CalculatorOne = () => {
                       }
                       onClick={() => toggleSize(car)}
                     >
-                      <img alt="Car" src={Icon} />
-                      <p>{car}</p>
+                      <img alt="Car" src={car.icon} />
+                      <p>{car.text}</p>
                     </div>
                   );
                 })}

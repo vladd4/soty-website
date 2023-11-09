@@ -7,7 +7,7 @@
     padding: 5% 0%;
 
     .wrapper {
-        width: 90%;
+        width: 95%;
         display: grid;
         place-items: center;
 
@@ -36,7 +36,7 @@
                         width: 27%;
                     }
                     p {
-                        font-size: 14px;
+                        font-size: 15px;
                         text-align: center;
                         text-wrap: balance;
                     }
@@ -98,5 +98,8 @@
 @media screen and (max-width: 650px) {
     .root {
         padding: 10% 0% !important;
+    }
+    .wrapper {
+        width: 100% !important;
     }
 }

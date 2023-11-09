@@ -79,6 +79,14 @@
         z-index: 1001;
     }
 }
+@media screen and (max-width: 650px) {
+    .image_block {
+        width: 90% !important;
+        p {
+            font-size: 13px !important;
+        }
+    }
+}
 @media screen and (max-width: 450px) {
     .article_two {
         margin-top: -19% !important;

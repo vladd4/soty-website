@@ -150,7 +150,7 @@
         min-height: 50vh !important;
         padding-top: 10% !important;
         .wrapper {
-            a {
+            .a {
                right: -2% !important;
                left: auto;
              }
@@ -160,7 +160,7 @@
         height: 50% !important;
         width: 75% !important;
         h3 {
-            font-size: 25px !important;
+            font-size: 30px !important;
         }
     }
     .button, .button_blue, .button_yellow {
@@ -177,8 +177,8 @@
         height: 60% !important;
         width: 100% !important;
         p {
-            font-size: 14px !important;
-            max-width: 85%;
+            font-size: 15px !important;
+            max-width: 90%;
         }
     }
 }

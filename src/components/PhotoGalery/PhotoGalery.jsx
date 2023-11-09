@@ -19,7 +19,7 @@ const PhotoGalery = ({ images }) => {
         perPage: slides,
         gap: "5%",
         autoplay: true,
-        interval: 2000,
+        interval: 1500,
         pagination: false,
         arrows: false,
       }}

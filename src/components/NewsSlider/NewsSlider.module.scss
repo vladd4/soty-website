@@ -26,10 +26,16 @@
     }
 }
 @media screen and (max-width: 650px) {
+    .slider {
+        width: 100% !important;
+    }
     .prev {
         width: 27% !important;
     }
     .next {
         width: 27% !important;
+    }
+    h3 {
+        font-size: 23px !important;
     }
 }

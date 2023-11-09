@@ -15,6 +15,9 @@
         margin-bottom: 3%;
     }
     select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
         width: 65%;
         background-color: $color-main;
         border: 1px solid $color-green;
@@ -283,6 +286,7 @@
                 border-radius: 5px;
                 border: none;
                 width: 50%;
+                color: $color-black;
                 padding: 4% 0%;
                 cursor: pointer;
                 transition: all .3s;

@@ -172,6 +172,11 @@
     .text_block {
         width: 60% !important;
         justify-content: flex-end !important;
+        .language_block {
+            p {
+                font-size: 12px !important;
+            }
+        }
     }
     .hamburger {
         display: block !important;

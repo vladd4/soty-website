@@ -35,7 +35,7 @@ const NewsSlider = ({ images }) => {
           height: 300,
           type: "loop",
           focus: "center",
-          drag: false,
+          drag: true,
           perPage: slides,
           gap: "3%",
           arrows: false,

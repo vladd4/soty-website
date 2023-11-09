@@ -3,3 +3,8 @@
 .slider {
     width: 90% !important;
 }
+@media screen and (max-width: 650px) {
+    .slider {
+        width: 100% !important;
+    }
+}
