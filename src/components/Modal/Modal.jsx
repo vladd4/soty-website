@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import { sendFormToTelegram } from "../../utils/sendTelegram";
 import { useSelector, useDispatch } from "react-redux";
 import { resetData } from "../../redux/slices/modalSlice";
+import { closeModal } from "../../utils/showModal";
 
 const Modal = () => {
   const ref = useRef(null);
@@ -13,11 +14,7 @@ const Modal = () => {
 
   const { size, termin, type, price } = useSelector((state) => state.modal);
   const dispatch = useDispatch();
-  const closeModal = () => {
-    if (ref.current) {
-      ref.current.classList.remove("show_modal");
-    }
-  };
+
   const formatPhoneNumber = (event) => {
     const input = event.target;
     const inputValue = input.value;
@@ -47,7 +44,7 @@ const Modal = () => {
           alt="Close"
           src={Close}
           className={styles.span}
-          onClick={closeModal}
+          onClick={() => closeModal(ref)}
         />
         <img alt="Polygon" src={Polygon} className={styles.polygon} />
         <h3>

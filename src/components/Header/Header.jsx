@@ -8,20 +8,24 @@ import Home from "../../assets/home.svg";
 import Map from "../../assets/point.svg";
 import Phone from "../../assets/tel.svg";
 import PhoneHovered from "../../assets/phone-hovered.svg";
+
 import { useRef, useContext, useState } from "react";
 import Context from "../../hooks/Context";
 import Burger from "../Burger/Burger";
 import { Link } from "react-router-dom";
+import { showModal } from "../../utils/showModal";
 
 const Header = () => {
   const t = useContext(Context);
   const imageRef = useRef(null);
+  const [clicked, setClicked] = useState(false);
+
   const handleHover = (src) => {
     if (imageRef.current) {
       imageRef.current.src = src;
     }
   };
-  const [clicked, setClicked] = useState(false);
+
   const handleClick = () => {
     setClicked(!clicked);
   };
@@ -79,6 +83,7 @@ const Header = () => {
             ref={imageRef}
             alt="Phone"
             src={Phone}
+            onClick={showModal}
           />
         </div>
       </article>

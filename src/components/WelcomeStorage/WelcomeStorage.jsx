@@ -9,7 +9,6 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const WelcomeStorage = ({ title, buttonStyle, calc_id }) => {
   const imageRef = useRef(null);
-
   const handleHover = (src) => {
     if (imageRef.current) {
       imageRef.current.src = src;

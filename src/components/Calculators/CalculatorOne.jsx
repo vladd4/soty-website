@@ -1,4 +1,5 @@
 import styles from "./Calculator_1.module.scss";
+
 import Image from "../../assets/8sqm 1.png";
 import PolygonWhite from "../../assets/calc-white.svg";
 import PolygonBlue from "../../assets/calc-blue.svg";
@@ -9,7 +10,6 @@ import Icon2 from "../../assets/vehicle-icons 2.svg";
 import Icon3 from "../../assets/vehicle-icons 3.svg";
 import Icon4 from "../../assets/vehicle-icons 4.svg";
 import Icon5 from "../../assets/vehicle-icons 5.svg";
-
 import MobileCalc from "../../assets/mobile-calc.png";
 
 import { useEffect, useState } from "react";

@@ -6,7 +6,8 @@ import Facebook from "../../assets/face.svg";
 import Map from "../../assets/point.svg";
 import Phone from "../../assets/phone-icon.svg";
 import Mail from "../../assets/mail-icon.svg";
-import { useContext, useState } from "react";
+
+import { useContext } from "react";
 import Context from "../../hooks/Context";
 import useResize from "../../hooks/useResize";
 import { showModal } from "../../utils/showModal";

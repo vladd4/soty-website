@@ -1,4 +1,5 @@
 import styles from "./Burger.module.scss";
+
 import Insta from "../../assets/inst.svg";
 import Face from "../../assets/face.svg";
 import Map from "../../assets/point.svg";
@@ -20,9 +21,7 @@ const Burger = ({ clicked, setClicked }) => {
         setClicked(false);
       }
     };
-
     document.addEventListener("click", handleClickOutside);
-
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };

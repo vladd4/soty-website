@@ -1,14 +1,26 @@
 import styles from "./Welcome.module.scss";
+
 import Sotu from "../../assets/welcome.png";
 import Orange from "../../assets/Polygon-main-orange.svg";
 import BLue from "../../assets/Polygon-main-blue.svg";
 import Yellow from "../../assets/Polygon-main-yellow.svg";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useRef, useEffect } from "react";
 
 const Welcome = () => {
+  const location = useLocation();
+  const ref = useRef(null);
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      ref.current.style.display = "none";
+    } else {
+      ref.current.style.display = "grid";
+    }
+  }, [location.pathname]);
+
   return (
-    <section className={styles.root}>
+    <section className={styles.root} ref={ref}>
       <article className={styles.wrapper}>
         <img alt="Welcome" src={Sotu} className={styles.image} />
         <div className={styles.links_block}>

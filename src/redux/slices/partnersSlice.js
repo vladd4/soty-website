@@ -1,13 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { storage } from "../../firebase";
-import {
-  ref,
-  uploadBytes,
-  listAll,
-  getDownloadURL,
-  deleteObject,
-} from "firebase/storage";
-import { v4 } from "uuid";
+import { ref, listAll, getDownloadURL } from "firebase/storage";
 
 export const fetchPartners = createAsyncThunk(
   "partners/fetchPartners",

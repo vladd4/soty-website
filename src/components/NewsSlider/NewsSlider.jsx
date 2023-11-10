@@ -1,5 +1,4 @@
 import styles from "./NewsSlider.module.scss";
-import SliderImage from "../../assets/slider-img.png";
 import Arrow from "../../assets/arrow.svg";
 import ArrowHovered from "../../assets/arrow-hovered.svg";
 
@@ -18,7 +17,6 @@ const NewsSlider = ({ images }) => {
       ref.current.src = src;
     }
   };
-
   const handleClick = (side) => {
     if (sliderRef.current) {
       const splide = sliderRef.current.splide;

@@ -1,26 +1,29 @@
 import "../styles/App.scss";
+
+import { useState, useEffect, lazy, Suspense } from "react";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import Context from "../hooks/Context";
+
 import AboutUs from "./AboutUs/AboutUs";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Loader from "./Loader";
 import News from "./News/News";
 import Partners from "./Partners/Partners";
-
-import { useTranslation } from "react-i18next";
-import Context from "../hooks/Context";
-import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
-import Individual from "../pages/Inndividual";
 import Popup from "./Popup/Popup";
 import Modal from "./Modal/Modal";
-import Remote from "../pages/Remote";
-import Storage from "../pages/Storage";
-import Additional from "./AdditionalInfo/Additional";
-import Details from "../pages/Details";
-import Upload from "./Upload";
+import Welcome from "./Welcome/Welcome.jsx";
+const Individual = lazy(() => import("../pages/Inndividual.jsx"));
+// import Individual from "../pages/Inndividual";
 
-import AdminPanel from "./AdminPanel/AdminPanel";
-import Login from "./Login/Login";
+const Remote = lazy(() => import("../pages/Remote.jsx"));
+const Storage = lazy(() => import("../pages/Storage.jsx"));
+const Details = lazy(() => import("../pages/Details.jsx"));
+// import Remote from "../pages/Remote";
+// import Storage from "../pages/Storage";
+// import Details from "../pages/Details";
 
 window.onload = function () {
   document.body.classList.add("loaded_hiding");
@@ -32,46 +35,69 @@ window.onload = function () {
 
 const App = () => {
   const { t, i18n } = useTranslation();
-  const isNotAdminRoute =
-    !window.location.pathname.includes("/admin") &&
-    !window.location.pathname.startsWith("/login");
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    window.onload = function () {
+      document.body.classList.add("loaded_hiding");
+      window.setTimeout(function () {
+        setIsLoading(false);
+        document.body.classList.remove("loaded_hiding");
+      }, 500);
+    };
+  }, []);
 
   return (
     <Context.Provider value={t}>
       <div className="App">
-        <Loader />
-        {isNotAdminRoute && (
-          <>
-            <Header i18n={i18n} />
-            <Modal />
-            <Popup />
-          </>
-        )}
+        {isLoading && <Loader />}
+        <Header i18n={i18n} />
+        <Modal />
+        <Popup />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/individual" element={<Individual />} />
-          <Route path="/remote" element={<Remote />} />
-          <Route path="/storage" element={<Storage />} />
-          <Route path="/details" element={<Details />} />
-          {/* <Route path="/login" element={<Login />} /> */}
-          {/* <Route path="/admin/*" element={<AdminPanel />} /> */}
+          {/* <Route path="/" element={<Home />} /> */}
+          <Route
+            path="/individual"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Individual />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/remote"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Remote />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/storage"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Storage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/details"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Details />
+              </Suspense>
+            }
+          />
         </Routes>
-        {isNotAdminRoute && (
-          <>
-            <AboutUs />
-            <News title="фотогалерея" />
-            <Partners />
-            <News title="новини" />
-            <Footer />
-          </>
-        )}
-
-        {/* <Upload></Upload> */}
+        <Welcome />
+        <AboutUs />
+        <News title="фотогалерея" />
+        <Partners />
+        <News title="новини" />
+        <Footer />
       </div>
     </Context.Provider>
   );
 };
 
 export default App;
-
-// slider на мобілках свайпом, синій лінк на калькуляторах, збільшити мови в хедері, welcomestorage кнопка, про нас поїхав текст
