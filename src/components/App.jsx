@@ -91,7 +91,7 @@ const App = () => {
           <Route
             path="/details"
             element={
-              <Suspense fallback={<Loader />}>
+              <Suspense fallback={<div className="empty-page"></div>}>
                 <Details />
               </Suspense>
             }
