@@ -41,7 +41,7 @@ const App = () => {
   return (
     <Context.Provider value={t}>
       <div className="App">
-        {isLoading && <Loader />}
+        <Loader />
         <Header i18n={i18n} />
         <Modal />
         <Popup />
