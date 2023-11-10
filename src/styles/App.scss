@@ -72,9 +72,7 @@ body {
     transition: 0.3s opacity;
     opacity: 0;
   }
-  .loaded .preloader {
-    display: none;
-  }
+
   .show_modal {
     opacity: 1 !important;
     z-index: 1001 !important;
