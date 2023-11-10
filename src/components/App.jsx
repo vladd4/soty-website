@@ -15,23 +15,11 @@ import Home from "../pages/Home";
 import Popup from "./Popup/Popup";
 import Modal from "./Modal/Modal";
 import Welcome from "./Welcome/Welcome.jsx";
-const Individual = lazy(() => import("../pages/Inndividual.jsx"));
-// import Individual from "../pages/Inndividual";
 
+const Individual = lazy(() => import("../pages/Inndividual.jsx"));
 const Remote = lazy(() => import("../pages/Remote.jsx"));
 const Storage = lazy(() => import("../pages/Storage.jsx"));
 const Details = lazy(() => import("../pages/Details.jsx"));
-// import Remote from "../pages/Remote";
-// import Storage from "../pages/Storage";
-// import Details from "../pages/Details";
-
-window.onload = function () {
-  document.body.classList.add("loaded_hiding");
-  window.setTimeout(function () {
-    document.body.classList.add("loaded");
-    document.body.classList.remove("loaded_hiding");
-  }, 500);
-};
 
 const App = () => {
   const { t, i18n } = useTranslation();
