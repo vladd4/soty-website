@@ -67,7 +67,7 @@ const App = () => {
           <Route
             path="/individual"
             element={
-              <Suspense fallback={<Loader />}>
+              <Suspense fallback={<div className="empty-page"></div>}>
                 <Individual />
               </Suspense>
             }
@@ -75,7 +75,7 @@ const App = () => {
           <Route
             path="/remote"
             element={
-              <Suspense fallback={<Loader />}>
+              <Suspense fallback={<div className="empty-page"></div>}>
                 <Remote />
               </Suspense>
             }
@@ -83,7 +83,7 @@ const App = () => {
           <Route
             path="/storage"
             element={
-              <Suspense fallback={<Loader />}>
+              <Suspense fallback={<div className="empty-page"></div>}>
                 <Storage />
               </Suspense>
             }

@@ -81,6 +81,7 @@
             transition: all .3s;
             text-decoration: none;
             text-align: center;
+            z-index: 999;
 
             &:hover {
                 background-color: $color-yellow;
