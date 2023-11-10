@@ -1,7 +1,7 @@
 import styles from "./Burger.module.scss";
 
-import Insta from "../../assets/inst.svg";
-import Face from "../../assets/face.svg";
+import Insta from "../../assets/instagram 1.png";
+import Face from "../../assets/facebook 1.png";
 import Map from "../../assets/point.svg";
 import Phone from "../../assets/phone-icon.svg";
 import Mail from "../../assets/mail-icon.svg";

@@ -1,5 +1,5 @@
 import styles from "./Forbidden.module.scss";
-import Park from "../../assets/park.svg";
+import Park from "../../assets/cam.png";
 import Polygon from "../../assets/poly-grey.svg";
 
 const Forbidden = () => {

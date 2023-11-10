@@ -2,8 +2,8 @@ import styles from "./Header.module.scss";
 
 import Logo from "../../assets/logo.png";
 import Hamburger from "../../assets/hamburger.svg";
-import Instagram from "../../assets/inst.svg";
-import Facebook from "../../assets/face.svg";
+import Instagram from "../../assets/instagram 1.png";
+import Facebook from "../../assets/facebook 1.png";
 import Home from "../../assets/home.svg";
 import Map from "../../assets/point.svg";
 import Phone from "../../assets/tel.svg";

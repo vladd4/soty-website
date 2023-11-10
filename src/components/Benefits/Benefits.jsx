@@ -1,15 +1,15 @@
 import styles from "./Benefits.module.scss";
 
-import Park from "../../assets/park.svg";
-import People from "../../assets/people.svg";
-import Safe from "../../assets/safe.svg";
-import Sale from "../../assets/sale.svg";
-import Ramp from "../../assets/ramp.svg";
-import Loc from "../../assets/location.svg";
-import Kub from "../../assets/kubik.svg";
-import Cam from "../../assets/cam.svg";
-import Gryz from "../../assets/gryz.svg";
-import Bud from "../../assets/bud.svg";
+import Park from "../../assets/park.png";
+import People from "../../assets/people.png";
+import Safe from "../../assets/safe.png";
+import Sale from "../../assets/sale.png";
+import Ramp from "../../assets/ramp.png";
+import Loc from "../../assets/loc.png";
+import Kub from "../../assets/kub.png";
+import Cam from "../../assets/cam.png";
+import Gryz from "../../assets/gryz.png";
+import Bud from "../../assets/bud.png";
 
 import useResize from "../../hooks/useResize";
 

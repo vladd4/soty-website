@@ -37,6 +37,7 @@ const NewsSlider = ({ images }) => {
           perPage: slides,
           gap: "3%",
           arrows: false,
+          pagination: false,
         }}
         className={styles.slider}
       >

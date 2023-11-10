@@ -95,6 +95,7 @@
             border: none;
             font-size: calc(#{$size}/1.2);
             padding: 1.5% 0%;
+            z-index: 999;
             font-family: "Fixel";
             font-weight: 500;
             margin: 2% 0%;
@@ -111,6 +112,7 @@
             width: 25%;
             color: $color-black;
             background-color: $color-blue;
+            z-index: 999;
             border-radius: 5px;
             border: none;
             font-size: calc(#{$size}/1.2);

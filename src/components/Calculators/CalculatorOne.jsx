@@ -5,11 +5,11 @@ import PolygonWhite from "../../assets/calc-white.svg";
 import PolygonBlue from "../../assets/calc-blue.svg";
 import PolygonYellow from "../../assets/Polygon 5.svg";
 import EmptyPoligon from "../../assets/empty-polygon.svg";
-import Icon1 from "../../assets/vehicle-icons 1.svg";
-import Icon2 from "../../assets/vehicle-icons 2.svg";
-import Icon3 from "../../assets/vehicle-icons 3.svg";
-import Icon4 from "../../assets/vehicle-icons 4.svg";
-import Icon5 from "../../assets/vehicle-icons 5.svg";
+import Icon1 from "../../assets/vehicle-icons 1.png";
+import Icon2 from "../../assets/vehicle-icons 2.png";
+import Icon3 from "../../assets/vehicle-icons 3.png";
+import Icon4 from "../../assets/vehicle-icons 4.png";
+import Icon5 from "../../assets/vehicle-icons 5.png";
 import MobileCalc from "../../assets/mobile-calc.png";
 
 import { useEffect, useState } from "react";

@@ -1,8 +1,8 @@
 import styles from "./Footer.module.scss";
 
 import Logo from "../../assets/logo.png";
-import Instagram from "../../assets/inst.svg";
-import Facebook from "../../assets/face.svg";
+import Instagram from "../../assets/instagram 1.png";
+import Facebook from "../../assets/facebook 1.png";
 import Map from "../../assets/point.svg";
 import Phone from "../../assets/phone-icon.svg";
 import Mail from "../../assets/mail-icon.svg";

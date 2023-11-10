@@ -1,5 +1,4 @@
 import styles from "./PhotoGalery.module.scss";
-import SliderImage from "../../assets/slider-img.png";
 import { useState } from "react";
 import useResize from "../../hooks/useResize";
 

@@ -1,5 +1,5 @@
 import styles from "./Allowed.module.scss";
-import Park from "../../assets/park.svg";
+import Park from "../../assets/park.png";
 import { Link } from "react-router-dom";
 
 const Allowed = ({ polygon }) => {
