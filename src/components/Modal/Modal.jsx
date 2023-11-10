@@ -35,7 +35,7 @@ const Modal = () => {
     setName("");
     setTel("");
     dispatch(resetData());
-    closeModal();
+    closeModal(ref);
   };
   return (
     <section ref={ref} className={styles.root} id="modal">
