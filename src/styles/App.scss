@@ -72,7 +72,9 @@ body {
     transition: 0.3s opacity;
     opacity: 0;
   }
-
+  .loaded .preloader {
+    display: none;
+  }
   .show_modal {
     opacity: 1 !important;
     z-index: 1001 !important;
@@ -86,4 +88,11 @@ body {
 }
 .show_home {
   display: grid !important;
+}
+
+@media screen and (max-width: 500px) {
+  .preloader__row {
+    left: 25% !important;
+    width: 50% !important;
+  }
 }

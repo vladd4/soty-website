@@ -25,27 +25,18 @@ const Details = lazy(() => import("../pages/Details.jsx"));
 // import Storage from "../pages/Storage";
 // import Details from "../pages/Details";
 
-window.onload = function () {
-  document.body.classList.add("loaded_hiding");
-  window.setTimeout(function () {
-    document.body.classList.add("loaded");
-    document.body.classList.remove("loaded_hiding");
-  }, 500);
-};
-
 const App = () => {
   const { t, i18n } = useTranslation();
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    window.onload = function () {
-      document.body.classList.add("loaded_hiding");
-      window.setTimeout(function () {
-        setIsLoading(false);
-        document.body.classList.remove("loaded_hiding");
-      }, 500);
-    };
-  }, []);
+  window.onload = function () {
+    document.body.classList.add("loaded_hiding");
+    window.setTimeout(function () {
+      setIsLoading(true);
+      document.body.classList.add("loaded");
+      document.body.classList.remove("loaded_hiding");
+    }, 500);
+  };
 
   return (
     <Context.Provider value={t}>

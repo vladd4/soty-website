@@ -11,21 +11,10 @@ const Storage = () => {
   const isLoading = useLoading();
   return (
     <>
-      {isLoading ? (
-        <Loader></Loader>
-      ) : (
-        <>
-          {" "}
-          <WelcomeStorage
-            title="Склади"
-            buttonStyle="yellow"
-            calc_id="calc_2"
-          />
-          <Benefits polygon={Polygon} />
-          <Items polygon={PolygonSmall} />
-          <CalculatorTwo />
-        </>
-      )}
+      <WelcomeStorage title="Склади" buttonStyle="yellow" calc_id="calc_2" />
+      <Benefits polygon={Polygon} />
+      <Items polygon={PolygonSmall} />
+      <CalculatorTwo />
     </>
   );
 };

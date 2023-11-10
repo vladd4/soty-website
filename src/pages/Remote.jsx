@@ -12,20 +12,14 @@ const Remote = () => {
   const isLoading = useLoading();
   return (
     <>
-      {isLoading ? (
-        <Loader></Loader>
-      ) : (
-        <>
-          <WelcomeStorage
-            title="Віддалене зберігання"
-            buttonStyle="blue"
-            calc_id="calc_3"
-          />
-          <Benefits polygon={Polygon} />
-          <Items polygon={PolygonSmall} />
-          <CalculatorThree />
-        </>
-      )}
+      <WelcomeStorage
+        title="Віддалене зберігання"
+        buttonStyle="blue"
+        calc_id="calc_3"
+      />
+      <Benefits polygon={Polygon} />
+      <Items polygon={PolygonSmall} />
+      <CalculatorThree />
     </>
   );
 };
