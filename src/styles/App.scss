@@ -89,11 +89,11 @@ body {
 .show_home {
   display: grid !important;
 }
-.empty-page {
-  width: 95vw;
-  height: 100vh;
-  background-color: $color-main;
-}
+// .empty-page {
+//   width: 95vw;
+//   height: 100vh;
+//   background-color: $color-main;
+// }
 @media screen and (max-width: 500px) {
   .preloader__row {
     left: 25% !important;
