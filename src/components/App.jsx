@@ -1,9 +1,12 @@
 import "../styles/App.scss";
 
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect, lazy, Suspense, useRef } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Context from "../hooks/Context";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import AboutUs from "./AboutUs/AboutUs";
 import Footer from "./Footer/Footer";
@@ -38,6 +41,7 @@ const App = () => {
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
+    AOS.init();
     const delay = 3000; // Adjust the delay time as needed
     const hideLoader = () => {
       document.body.classList.add("loaded_hiding");
@@ -49,7 +53,6 @@ const App = () => {
 
     // Simulating a delay before hiding the loader
     const timeoutId = setTimeout(hideLoader, delay);
-
     // Cleanup function to clear the timeout when the component unmounts or when loading is complete
     return () => {
       clearTimeout(timeoutId);

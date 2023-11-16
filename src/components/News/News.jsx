@@ -13,7 +13,11 @@ const News = ({ title }) => {
   }, []);
 
   return (
-    <section className={styles.root}>
+    <section
+      className={styles.root}
+      data-aos="fade-right"
+      data-aos-duration="1500"
+    >
       <h3>{title}</h3>
       <NewsSlider images={images} />
     </section>

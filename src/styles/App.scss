@@ -7,6 +7,7 @@ body {
     font-family: "Fixel";
     background-image: url(../assets/background.png);
     background-color: $color-main;
+    overflow-x: hidden;
 }
 .part {
     display: grid;

@@ -86,7 +86,12 @@ const Benefits = ({ polygon }) => {
           <>
             <h3>переваги</h3>
             <article className={styles.polygon_block}>
-              <div className={styles.one_polygon}>
+              <div
+                className={styles.one_polygon}
+                data-aos="zoom-in"
+                data-aos-offset="0"
+                data-aos-duration="1500"
+              >
                 <img alt="Polygon" src={polygon} />
                 <div className={styles.polygon_text}>
                   <img alt="Icon" src={People} />
@@ -94,14 +99,24 @@ const Benefits = ({ polygon }) => {
                 </div>
               </div>
               <div className={styles.two_polygon}>
-                <div className={styles.two_polygon_parent}>
+                <div
+                  className={styles.two_polygon_parent}
+                  data-aos="zoom-in-down"
+                  data-aos-offset="0"
+                  data-aos-duration="1500"
+                >
                   <img alt="Polygon" src={polygon} />
                   <div className={styles.polygon_text}>
                     <img alt="Icon" src={Safe} />
                     <p>Власна охорона 24/7</p>
                   </div>
                 </div>
-                <div className={styles.two_polygon_parent}>
+                <div
+                  className={styles.two_polygon_parent}
+                  data-aos="zoom-in-up"
+                  data-aos-offset="0"
+                  data-aos-duration="1500"
+                >
                   <img alt="Polygon" src={polygon} />
                   <div className={styles.polygon_text}>
                     <img alt="Icon" src={Ramp} />
@@ -109,7 +124,12 @@ const Benefits = ({ polygon }) => {
                   </div>
                 </div>
               </div>
-              <div className={styles.one_polygon}>
+              <div
+                className={styles.one_polygon}
+                data-aos="zoom-in"
+                data-aos-offset="0"
+                data-aos-duration="1500"
+              >
                 <img alt="Polygon" src={polygon} />
                 <div className={styles.polygon_text}>
                   <img alt="Icon" src={Loc} />
@@ -117,14 +137,24 @@ const Benefits = ({ polygon }) => {
                 </div>
               </div>
               <div className={styles.two_polygon}>
-                <div className={styles.two_polygon_parent}>
+                <div
+                  className={styles.two_polygon_parent}
+                  data-aos="zoom-in-down"
+                  data-aos-offset="0"
+                  data-aos-duration="1500"
+                >
                   <img alt="Polygon" src={polygon} />
                   <div className={styles.polygon_text}>
                     <img alt="Icon" src={Kub} />
                     <p>Великий вибір зручних боксів</p>
                   </div>
                 </div>
-                <div className={styles.two_polygon_parent}>
+                <div
+                  className={styles.two_polygon_parent}
+                  data-aos="zoom-in-up"
+                  data-aos-offset="0"
+                  data-aos-duration="1500"
+                >
                   <img alt="Polygon" src={polygon} />
                   <div className={styles.polygon_text}>
                     <img alt="Icon" src={Cam} />
@@ -136,6 +166,9 @@ const Benefits = ({ polygon }) => {
                 className={styles.one_polygon}
                 onMouseOver={handleHover}
                 onMouseOut={handleHoverRemove}
+                data-aos="zoom-in"
+                data-aos-offset="0"
+                data-aos-duration="1500"
               >
                 <img alt="Polygon" src={polygon} />
                 <div className={styles.polygon_text}>
@@ -144,14 +177,24 @@ const Benefits = ({ polygon }) => {
                 </div>
               </div>
               <div className={styles.two_polygon}>
-                <div className={styles.two_polygon_parent}>
+                <div
+                  className={styles.two_polygon_parent}
+                  data-aos="zoom-in-down"
+                  data-aos-offset="0"
+                  data-aos-duration="1500"
+                >
                   <img alt="Polygon" src={polygon} />
                   <div className={styles.polygon_text}>
                     <img alt="Icon" src={Sale} />
                     <p>Найкращі ціни та система знижок</p>
                   </div>
                 </div>
-                <div className={styles.two_polygon_parent}>
+                <div
+                  className={styles.two_polygon_parent}
+                  data-aos="zoom-in-up"
+                  data-aos-offset="0"
+                  data-aos-duration="1500"
+                >
                   <img alt="Polygon" src={polygon} />
                   <div className={styles.polygon_text}>
                     <img alt="Icon" src={Bud} />
@@ -163,6 +206,9 @@ const Benefits = ({ polygon }) => {
                 className={styles.one_polygon}
                 onMouseOver={handleHover}
                 onMouseOut={handleHoverRemove}
+                data-aos="zoom-in"
+                data-aos-offset="0"
+                data-aos-duration="1500"
               >
                 <img alt="Polygon" src={polygon} />
                 <div className={styles.polygon_text}>

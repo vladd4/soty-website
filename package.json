@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "aos": "^2.3.4",
     "firebase": "^10.5.2",
     "i18n": "^0.15.1",
     "i18next": "^23.6.0",

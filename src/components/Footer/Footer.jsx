@@ -17,7 +17,12 @@ const Footer = () => {
   const isMobile = useResize(null);
   return (
     <footer className={styles.root}>
-      <section className={styles.wrapper}>
+      <section
+        className={styles.wrapper}
+        data-aos="zoom-in-up"
+        data-aos-offset="0"
+        data-aos-duration="1500"
+      >
         <article className={styles.logo_block}>
           <img alt="Logo" src={Logo} />
           <div className={styles.social_block}>

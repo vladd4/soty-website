@@ -11,7 +11,12 @@ const Forbidden = () => {
         </h3>
         <article className={styles.image_block}>
           <article className={styles.article_three}>
-            <div className={styles.container}>
+            <div
+              className={styles.container}
+              data-aos="zoom-in"
+              data-aos-offset="0"
+              data-aos-duration="2000"
+            >
               <img
                 alt="Polygon"
                 src={Polygon}
@@ -22,7 +27,12 @@ const Forbidden = () => {
                 <p>Меблі</p>
               </div>
             </div>
-            <div className={styles.container}>
+            <div
+              className={styles.container}
+              data-aos="zoom-in"
+              data-aos-offset="0"
+              data-aos-duration="2000"
+            >
               <img
                 alt="Polygon"
                 src={Polygon}
@@ -35,7 +45,12 @@ const Forbidden = () => {
             </div>
           </article>
           <article className={styles.article_two}>
-            <div className={styles.container}>
+            <div
+              className={styles.container}
+              data-aos="zoom-in"
+              data-aos-offset="0"
+              data-aos-duration="2000"
+            >
               <img
                 alt="Polygon"
                 src={Polygon}
@@ -46,7 +61,12 @@ const Forbidden = () => {
                 <p>Меблі</p>
               </div>
             </div>
-            <div className={styles.container}>
+            <div
+              className={styles.container}
+              data-aos="zoom-in"
+              data-aos-offset="0"
+              data-aos-duration="2000"
+            >
               <img
                 alt="Polygon"
                 src={Polygon}
@@ -57,7 +77,12 @@ const Forbidden = () => {
                 <p>Меблі</p>
               </div>
             </div>
-            <div className={styles.container}>
+            <div
+              className={styles.container}
+              data-aos="zoom-in"
+              data-aos-offset="0"
+              data-aos-duration="2000"
+            >
               <img
                 alt="Polygon"
                 src={Polygon}
@@ -70,7 +95,12 @@ const Forbidden = () => {
             </div>
           </article>
           <article className={styles.article_one}>
-            <div className={styles.container}>
+            <div
+              className={styles.container}
+              data-aos="zoom-in"
+              data-aos-offset="0"
+              data-aos-duration="2000"
+            >
               <img
                 alt="Polygon"
                 src={Polygon}
@@ -81,7 +111,12 @@ const Forbidden = () => {
                 <p>Меблі</p>
               </div>
             </div>
-            <div className={styles.container}>
+            <div
+              className={styles.container}
+              data-aos="zoom-in"
+              data-aos-offset="0"
+              data-aos-duration="2000"
+            >
               <img
                 alt="Polygon"
                 src={Polygon}
@@ -92,7 +127,12 @@ const Forbidden = () => {
                 <p>Меблі</p>
               </div>
             </div>
-            <div className={styles.container}>
+            <div
+              className={styles.container}
+              data-aos="zoom-in"
+              data-aos-offset="0"
+              data-aos-duration="2000"
+            >
               <img
                 alt="Polygon"
                 src={Polygon}
