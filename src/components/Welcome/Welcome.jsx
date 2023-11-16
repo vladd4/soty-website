@@ -43,7 +43,6 @@ const Welcome = () => {
             <img
               alt="Welcome"
               src={Sotu}
-              loading="lazy"
               width="100%"
               height="100%"
               className={styles.image}
