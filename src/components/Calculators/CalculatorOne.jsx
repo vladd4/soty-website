@@ -170,6 +170,8 @@ const CalculatorOne = () => {
                 alt="Mobile"
                 src={MobileCalc}
                 className={styles.mobile_calc}
+                width="100%"
+                height="100%"
               />
               {sizes && sizes.length > 0 ? (
                 isMobile ? (
@@ -278,7 +280,13 @@ const CalculatorOne = () => {
               )}
             </div>
           </div>
-          <img alt="Claculator" src={Image} className={styles.main_image} />
+          <img
+            alt="Claculator"
+            src={Image}
+            className={styles.main_image}
+            width="100%"
+            height="100%"
+          />
         </div>
         <div className={styles.button_block}>
           <div className={styles.price_row}>

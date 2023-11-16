@@ -21,6 +21,8 @@ const Forbidden = () => {
                 alt="Polygon"
                 src={Polygon}
                 className={styles.polygon_parent}
+                width="100%"
+                height="100%"
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
@@ -37,6 +39,8 @@ const Forbidden = () => {
                 alt="Polygon"
                 src={Polygon}
                 className={styles.polygon_parent}
+                width="100%"
+                height="100%"
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
@@ -55,6 +59,8 @@ const Forbidden = () => {
                 alt="Polygon"
                 src={Polygon}
                 className={styles.polygon_parent}
+                width="100%"
+                height="100%"
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
@@ -71,6 +77,8 @@ const Forbidden = () => {
                 alt="Polygon"
                 src={Polygon}
                 className={styles.polygon_parent}
+                width="100%"
+                height="100%"
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
@@ -87,6 +95,8 @@ const Forbidden = () => {
                 alt="Polygon"
                 src={Polygon}
                 className={styles.polygon_parent}
+                width="100%"
+                height="100%"
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
@@ -102,6 +112,8 @@ const Forbidden = () => {
               data-aos-duration="2000"
             >
               <img
+                width="100%"
+                height="100%"
                 alt="Polygon"
                 src={Polygon}
                 className={styles.polygon_parent}
@@ -121,6 +133,8 @@ const Forbidden = () => {
                 alt="Polygon"
                 src={Polygon}
                 className={styles.polygon_parent}
+                width="100%"
+                height="100%"
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
@@ -137,6 +151,8 @@ const Forbidden = () => {
                 alt="Polygon"
                 src={Polygon}
                 className={styles.polygon_parent}
+                width="100%"
+                height="100%"
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />

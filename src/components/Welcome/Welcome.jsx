@@ -52,6 +52,8 @@ const Welcome = () => {
             <img
               alt="Welcome"
               src={Sotu}
+              width="100%"
+              height="100%"
               className={styles.image}
               data-aos="fade-right"
               data-aos-duration="1500"
@@ -63,17 +65,17 @@ const Welcome = () => {
             >
               <article className={styles.links_block_row}>
                 <Link to="/individual">
-                  <img alt="Polygon" src={Orange} />
+                  <img alt="Polygon" src={Orange} width="100%" height="100%" />
                   <h3 className={styles.poly_text}>Iндивідуальне зберігання</h3>
                 </Link>
               </article>
               <article className={styles.links_block_row_2}>
                 <Link to="/remote">
-                  <img alt="Polygon" src={BLue} />
+                  <img alt="Polygon" src={BLue} width="100%" height="100%" />
                   <h3 className={styles.poly_text}>Віддалене зберігання</h3>
                 </Link>
                 <Link to="/storage">
-                  <img alt="Polygon" src={Yellow} />
+                  <img alt="Polygon" src={Yellow} width="100%" height="100%" />
                   <h3 className={styles.poly_text}>Склади</h3>
                 </Link>
               </article>

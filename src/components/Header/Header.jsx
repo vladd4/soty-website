@@ -32,10 +32,16 @@ const Header = () => {
   return (
     <header className={styles.root}>
       <article className={styles.wrapper}>
-        <img alt="Logo" src={Logo} className={styles.logo} />
+        <img
+          alt="Logo"
+          src={Logo}
+          className={styles.logo}
+          width="100%"
+          height="100%"
+        />
         <div className={styles.text_block}>
           <Link id="home-link" to="/" className={styles.home_link}>
-            <img alt="Home" src={Home} />
+            <img alt="Home" src={Home} width="100%" height="100%" />
           </Link>
           <div className={styles.language_block}>
             <p>EN</p>
@@ -46,6 +52,8 @@ const Header = () => {
             alt="Hamburger"
             id="burger-icon"
             src={Hamburger}
+            width="100%"
+            height="100%"
             className={`${styles.hamburger} ${
               clicked ? styles.transformed : ""
             }`}
@@ -57,7 +65,7 @@ const Header = () => {
             rel="noreferrer"
             className={styles.location_block}
           >
-            <img alt="Location" src={Map} />
+            <img alt="Location" src={Map} width="100%" height="100%" />
             <p>{t("location")}</p>
           </a>
           <div className={styles.social_block}>
@@ -66,18 +74,20 @@ const Header = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img alt="Facebook" src={Facebook} />
+              <img alt="Facebook" src={Facebook} width="100%" height="100%" />
             </a>
             <a
               href="https://www.facebook.com/people/Leader-company/61553362610336/"
               target="_blank"
               rel="noreferrer"
             >
-              <img alt="Instagram" src={Instagram} />
+              <img alt="Instagram" src={Instagram} width="100%" height="100%" />
             </a>
           </div>
           <img
             className={styles.tel}
+            width="100%"
+            height="100%"
             onMouseOver={() => handleHover(PhoneHovered)}
             onMouseOut={() => handleHover(Phone)}
             ref={imageRef}

@@ -25,6 +25,8 @@ const Allowed = ({ polygon }) => {
                 alt="Polygon"
                 src={polygon}
                 className={styles.polygon_parent}
+                width="100%"
+                height="100%"
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
@@ -41,6 +43,8 @@ const Allowed = ({ polygon }) => {
                 alt="Polygon"
                 src={polygon}
                 className={styles.polygon_parent}
+                width="100%"
+                height="100%"
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
@@ -56,6 +60,8 @@ const Allowed = ({ polygon }) => {
               <img
                 alt="Polygon"
                 src={polygon}
+                width="100%"
+                height="100%"
                 className={styles.polygon_parent}
               />
               <div className={styles.polygon_text}>
@@ -72,6 +78,8 @@ const Allowed = ({ polygon }) => {
               data-aos-duration="1500"
             >
               <img
+                width="100%"
+                height="100%"
                 alt="Polygon"
                 src={polygon}
                 className={styles.polygon_parent}
@@ -91,6 +99,8 @@ const Allowed = ({ polygon }) => {
                 alt="Polygon"
                 src={polygon}
                 className={styles.polygon_parent}
+                width="100%"
+                height="100%"
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
@@ -107,6 +117,8 @@ const Allowed = ({ polygon }) => {
                 alt="Polygon"
                 src={polygon}
                 className={styles.polygon_parent}
+                width="100%"
+                height="100%"
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
@@ -124,6 +136,8 @@ const Allowed = ({ polygon }) => {
               <img
                 alt="Polygon"
                 src={polygon}
+                width="100%"
+                height="100%"
                 className={styles.polygon_parent}
               />
               <div className={styles.polygon_text}>
@@ -141,6 +155,8 @@ const Allowed = ({ polygon }) => {
             >
               <img
                 alt="Polygon"
+                width="100%"
+                height="100%"
                 src={polygon}
                 className={styles.polygon_parent}
               />

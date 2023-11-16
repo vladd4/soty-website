@@ -80,7 +80,12 @@ const Benefits = ({ polygon }) => {
                   data-aos-duration="1500"
                 >
                   <div className={styles.mobile_polygon_text}>
-                    <img alt="Icon" src={icon.icon} />
+                    <img
+                      alt="Icon"
+                      src={icon.icon}
+                      width="100%"
+                      height="100%"
+                    />
                     <p>{icon.text}</p>
                   </div>
                 </div>
@@ -97,9 +102,9 @@ const Benefits = ({ polygon }) => {
                 data-aos-offset="0"
                 data-aos-duration="1500"
               >
-                <img alt="Polygon" src={polygon} />
+                <img alt="Polygon" src={polygon} width="100%" height="100%" />
                 <div className={styles.polygon_text}>
-                  <img alt="Icon" src={People} />
+                  <img alt="Icon" src={People} width="100%" height="100%" />
                   <p>Професійний та доброзичливий персонал</p>
                 </div>
               </div>
@@ -110,9 +115,9 @@ const Benefits = ({ polygon }) => {
                   data-aos-offset="0"
                   data-aos-duration="1500"
                 >
-                  <img alt="Polygon" src={polygon} />
+                  <img alt="Polygon" src={polygon} width="100%" height="100%" />
                   <div className={styles.polygon_text}>
-                    <img alt="Icon" src={Safe} />
+                    <img alt="Icon" src={Safe} width="100%" height="100%" />
                     <p>Власна охорона 24/7</p>
                   </div>
                 </div>
@@ -122,9 +127,9 @@ const Benefits = ({ polygon }) => {
                   data-aos-offset="0"
                   data-aos-duration="1500"
                 >
-                  <img alt="Polygon" src={polygon} />
+                  <img alt="Polygon" src={polygon} width="100%" height="100%" />
                   <div className={styles.polygon_text}>
-                    <img alt="Icon" src={Ramp} />
+                    <img alt="Icon" src={Ramp} width="100%" height="100%" />
                     <p>Власна рампа та вантажний ліфт</p>
                   </div>
                 </div>
@@ -135,9 +140,9 @@ const Benefits = ({ polygon }) => {
                 data-aos-offset="0"
                 data-aos-duration="1500"
               >
-                <img alt="Polygon" src={polygon} />
+                <img alt="Polygon" src={polygon} width="100%" height="100%" />
                 <div className={styles.polygon_text}>
-                  <img alt="Icon" src={Loc} />
+                  <img alt="Icon" src={Loc} width="100%" height="100%" />
                   <p>Зручне розташування складів</p>
                 </div>
               </div>
@@ -148,9 +153,9 @@ const Benefits = ({ polygon }) => {
                   data-aos-offset="0"
                   data-aos-duration="1500"
                 >
-                  <img alt="Polygon" src={polygon} />
+                  <img alt="Polygon" src={polygon} width="100%" height="100%" />
                   <div className={styles.polygon_text}>
-                    <img alt="Icon" src={Kub} />
+                    <img alt="Icon" src={Kub} width="100%" height="100%" />
                     <p>Великий вибір зручних боксів</p>
                   </div>
                 </div>
@@ -160,9 +165,9 @@ const Benefits = ({ polygon }) => {
                   data-aos-offset="0"
                   data-aos-duration="1500"
                 >
-                  <img alt="Polygon" src={polygon} />
+                  <img alt="Polygon" src={polygon} width="100%" height="100%" />
                   <div className={styles.polygon_text}>
-                    <img alt="Icon" src={Cam} />
+                    <img alt="Icon" src={Cam} width="100%" height="100%" />
                     <p>Зовнішній та внутрішній відеонагляд 24/7</p>
                   </div>
                 </div>
@@ -175,9 +180,9 @@ const Benefits = ({ polygon }) => {
                 data-aos-offset="0"
                 data-aos-duration="1500"
               >
-                <img alt="Polygon" src={polygon} />
+                <img alt="Polygon" src={polygon} width="100%" height="100%" />
                 <div className={styles.polygon_text}>
-                  <img alt="Icon" src={Gryz} />
+                  <img alt="Icon" src={Gryz} width="100%" height="100%" />
                   <p>Необхідна спецтехніка та пакувальні матеріали</p>
                 </div>
               </div>
@@ -188,9 +193,9 @@ const Benefits = ({ polygon }) => {
                   data-aos-offset="0"
                   data-aos-duration="1500"
                 >
-                  <img alt="Polygon" src={polygon} />
+                  <img alt="Polygon" src={polygon} width="100%" height="100%" />
                   <div className={styles.polygon_text}>
-                    <img alt="Icon" src={Sale} />
+                    <img alt="Icon" src={Sale} width="100%" height="100%" />
                     <p>Найкращі ціни та система знижок</p>
                   </div>
                 </div>
@@ -200,9 +205,9 @@ const Benefits = ({ polygon }) => {
                   data-aos-offset="0"
                   data-aos-duration="1500"
                 >
-                  <img alt="Polygon" src={polygon} />
+                  <img alt="Polygon" src={polygon} width="100%" height="100%" />
                   <div className={styles.polygon_text}>
-                    <img alt="Icon" src={Bud} />
+                    <img alt="Icon" src={Bud} width="100%" height="100%" />
                     <p>Склади в окремій будівлі на власній територіїї</p>
                   </div>
                 </div>
@@ -215,9 +220,9 @@ const Benefits = ({ polygon }) => {
                 data-aos-offset="0"
                 data-aos-duration="1500"
               >
-                <img alt="Polygon" src={polygon} />
+                <img alt="Polygon" src={polygon} width="100%" height="100%" />
                 <div className={styles.polygon_text}>
-                  <img alt="Icon" src={Park} />
+                  <img alt="Icon" src={Park} width="100%" height="100%" />
                   <p>Власна парковка</p>
                 </div>
               </div>

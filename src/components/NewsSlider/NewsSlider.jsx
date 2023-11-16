@@ -60,6 +60,7 @@ const NewsSlider = ({ images }) => {
         <img
           ref={prevRef}
           alt="Prev"
+          loading="lazy"
           src={Arrow}
           className={styles.prev}
           onClick={() => handleClick("<")}
@@ -69,6 +70,7 @@ const NewsSlider = ({ images }) => {
         <img
           ref={nextRef}
           alt="Next"
+          loading="lazy"
           src={Arrow}
           className={styles.next}
           onClick={() => handleClick(">")}

@@ -21,6 +21,8 @@ const About = () => {
                 alt="Polygon"
                 src={Polygon}
                 className={styles.polygon_parent}
+                width="100%"
+                height="100%"
               />
               <div className={styles.polygon_text}>
                 <h3>{t("about_client_h")}</h3>
@@ -33,7 +35,12 @@ const About = () => {
               data-aos-duration="1500"
               data-aos-offset="0"
             >
-              <img alt="Polygon" src={PolygonYellow} />
+              <img
+                alt="Polygon"
+                src={PolygonYellow}
+                width="100%"
+                height="100%"
+              />
             </div>
           </article>
           <article className={styles.polygon_2}>
@@ -43,7 +50,12 @@ const About = () => {
               data-aos-duration="1500"
               data-aos-offset="0"
             >
-              <img alt="Polygon" src={PolygonYellow} />
+              <img
+                alt="Polygon"
+                src={PolygonYellow}
+                width="100%"
+                height="100%"
+              />
             </div>
             <div
               className={styles.container}
@@ -55,6 +67,8 @@ const About = () => {
                 alt="Polygon"
                 src={Polygon}
                 className={styles.polygon_parent}
+                width="100%"
+                height="100%"
               />
               <div className={styles.polygon_text}>
                 <h3>{t("about_storage_h")}</h3>
@@ -71,6 +85,8 @@ const About = () => {
                 alt="Polygon"
                 src={Polygon}
                 className={styles.polygon_parent}
+                width="100%"
+                height="100%"
               />
               <div className={styles.polygon_text}>
                 <h3>{t("about_ukr_h")}</h3>
@@ -85,7 +101,7 @@ const About = () => {
               data-aos-duration="1500"
               data-aos-offset="0"
             >
-              <img alt="Polygon" src={Polygon} />
+              <img alt="Polygon" src={Polygon} width="100%" height="100%" />
             </div>
             <div
               className={styles.container}
@@ -93,7 +109,12 @@ const About = () => {
               data-aos-duration="1500"
               data-aos-offset="0"
             >
-              <img alt="Polygon" src={PolygonYellow} />
+              <img
+                alt="Polygon"
+                src={PolygonYellow}
+                width="100%"
+                height="100%"
+              />
             </div>
           </article>
         </article>

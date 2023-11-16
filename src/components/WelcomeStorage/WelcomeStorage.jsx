@@ -23,7 +23,13 @@ const WelcomeStorage = ({ title, buttonStyle, calc_id }) => {
           onMouseOver={() => handleHover(HomeWhite)}
           onMouseOut={() => handleHover(Home)}
         >
-          <img ref={imageRef} alt="Home" src={Home} />
+          <img
+            ref={imageRef}
+            alt="Home"
+            src={Home}
+            width="100%"
+            height="100%"
+          />
         </Link>
         <div
           className={styles.top_clip}
