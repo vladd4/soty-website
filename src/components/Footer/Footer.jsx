@@ -24,21 +24,21 @@ const Footer = () => {
         data-aos-duration="1500"
       >
         <article className={styles.logo_block}>
-          <img alt="Logo" src={Logo} />
+          <img alt="Logo" src={Logo} width="100%" height="auto" />
           <div className={styles.social_block}>
             <a
               href="https://www.facebook.com/people/Leader-company/61553362610336/"
               target="_blank"
               rel="noreferrer"
             >
-              <img alt="Facebook" src={Facebook} />
+              <img alt="Facebook" src={Facebook} width="100%" height="100%" />
             </a>
             <a
               href="https://www.facebook.com/people/Leader-company/61553362610336/"
               target="_blank"
               rel="noreferrer"
             >
-              <img alt="Instagram" src={Instagram} />
+              <img alt="Instagram" src={Instagram} width="100%" height="100%" />
             </a>
           </div>
         </article>
@@ -51,7 +51,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img alt="Map" src={Map} />
+                <img alt="Map" src={Map} width="auto" height="100%" />
                 <p>{t("location")}</p>
               </a>
               <a
@@ -59,7 +59,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img alt="Phone" src={Phone} />
+                <img alt="Phone" src={Phone} width="auto" height="100%" />
                 <p>+38(097)-746-37-48</p>
               </a>
               <a
@@ -67,7 +67,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img alt="Mail" src={Mail} />
+                <img alt="Mail" src={Mail} width="auto" height="100%" />
                 <p>sotusotu@gmail.com</p>
               </a>
             </div>
@@ -97,7 +97,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img alt="Map" src={Map} />
+                  <img alt="Map" src={Map} width="auto" height="100%" />
                   <p>{t("location")}</p>
                 </a>
                 <a
@@ -105,7 +105,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img alt="Phone" src={Phone} />
+                  <img alt="Phone" src={Phone} width="auto" height="100%" />
                   <p>+38(097)-746-37-48</p>
                 </a>
                 <a
@@ -113,7 +113,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img alt="Mail" src={Mail} />
+                  <img alt="Mail" src={Mail} width="auto" height="100%" />
                   <p>sotusotu@gmail.com</p>
                 </a>
               </div>
@@ -123,14 +123,24 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img alt="Facebook" src={Facebook} />
+                  <img
+                    alt="Facebook"
+                    src={Facebook}
+                    width="100%"
+                    height="100%"
+                  />
                 </a>
                 <a
                   href="https://www.facebook.com/people/Leader-company/61553362610336/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img alt="Instagram" src={Instagram} />
+                  <img
+                    alt="Instagram"
+                    src={Instagram}
+                    width="100%"
+                    height="100%"
+                  />
                 </a>
               </div>
             </div>

@@ -7,8 +7,20 @@ const Additional = () => {
   return (
     <section className={styles.root}>
       <article className={styles.wrapper}>
-        <img alt="Polygon" src={PolygonRight} className={styles.poly_right} />
-        <img alt="Polygon" src={PolygonLeft} className={styles.poly_left} />
+        <img
+          alt="Polygon"
+          src={PolygonRight}
+          className={styles.poly_right}
+          width="100%"
+          height="auto"
+        />
+        <img
+          alt="Polygon"
+          src={PolygonLeft}
+          className={styles.poly_left}
+          width="100%"
+          height="auto"
+        />
         <div className={styles.header_block}>
           <h3>Зимовий і літній одяг</h3>
           <p>
@@ -22,7 +34,7 @@ const Additional = () => {
           <h3>Користування нашим сервісом допоможе вам:</h3>
           <div className={styles.info_item}>
             <div className={styles.parent}>
-              <img alt="Point" src={PointOne} />
+              <img alt="Point" src={PointOne} width="100%" height="100%" />
               <h3>1</h3>
             </div>
             <p>

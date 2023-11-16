@@ -48,7 +48,7 @@ const Burger = ({ clicked, setClicked }) => {
             target="_blank"
             rel="noreferrer"
           >
-            <img alt="Map" src={Map} />
+            <img alt="Map" src={Map} width="auto" height="auto" />
             <p>м. Львів вул Зелена 301</p>
           </a>
           <a
@@ -56,7 +56,7 @@ const Burger = ({ clicked, setClicked }) => {
             target="_blank"
             rel="noreferrer"
           >
-            <img alt="Phone" src={Phone} />
+            <img alt="Phone" src={Phone} width="auto" height="auto" />
             <p>+38(097)-746-37-48</p>
           </a>
           <a
@@ -64,7 +64,7 @@ const Burger = ({ clicked, setClicked }) => {
             target="_blank"
             rel="noreferrer"
           >
-            <img alt="Mail" src={Mail} />
+            <img alt="Mail" src={Mail} width="auto" height="auto" />
             <p>sotusotu@gmail.com</p>
           </a>
         </div>
@@ -74,14 +74,14 @@ const Burger = ({ clicked, setClicked }) => {
             target="_blank"
             rel="noreferrer"
           >
-            <img alt="Facebook" src={Face} />
+            <img alt="Facebook" src={Face} width="100%" height="100%" />
           </a>
           <a
             href="https://www.facebook.com/people/Leader-company/61553362610336/"
             target="_blank"
             rel="noreferrer"
           >
-            <img alt="Instagram" src={Insta} />
+            <img alt="Instagram" src={Insta} width="100%" height="100%" />
           </a>
         </div>
       </article>

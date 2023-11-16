@@ -61,6 +61,8 @@ const NewsSlider = ({ images }) => {
           ref={prevRef}
           alt="Prev"
           loading="lazy"
+          width="100%"
+          height="100%"
           src={Arrow}
           className={styles.prev}
           onClick={() => handleClick("<")}
@@ -71,6 +73,8 @@ const NewsSlider = ({ images }) => {
           ref={nextRef}
           alt="Next"
           loading="lazy"
+          width="100%"
+          height="100%"
           src={Arrow}
           className={styles.next}
           onClick={() => handleClick(">")}
