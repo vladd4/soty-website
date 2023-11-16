@@ -19,7 +19,7 @@ const Footer = () => {
     <footer className={styles.root}>
       <section
         className={styles.wrapper}
-        data-aos="zoom-in-up"
+        data-aos="zoom-in"
         data-aos-offset="0"
         data-aos-duration="1500"
       >
@@ -147,7 +147,14 @@ const Footer = () => {
           loading="lazy"
         ></iframe>
       </section>
-      <p className={styles.copy}>{t("footer_copy")}</p>
+      <p
+        data-aos="zoom-in"
+        data-aos-offset="0"
+        data-aos-duration="1500"
+        className={styles.copy}
+      >
+        {t("footer_copy")}
+      </p>
     </footer>
   );
 };

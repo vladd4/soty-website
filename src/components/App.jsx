@@ -29,34 +29,34 @@ const Details = lazy(() => import("../pages/Details.jsx"));
 // import Storage from "../pages/Storage";
 // import Details from "../pages/Details";
 
-// window.onload = function () {
-//   document.body.classList.remove("loaded");
-//   document.body.classList.add("loaded_hiding");
-//   window.setTimeout(function () {
-//     document.body.classList.add("loaded");
-//     document.body.classList.remove("loaded_hiding");
-//   }, 500);
-// };
+window.onload = function () {
+  document.body.classList.remove("loaded");
+  document.body.classList.add("loaded_hiding");
+  window.setTimeout(function () {
+    document.body.classList.add("loaded");
+    document.body.classList.remove("loaded_hiding");
+  }, 500);
+};
 const App = () => {
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
     AOS.init();
-    const delay = 3000; // Adjust the delay time as needed
-    const hideLoader = () => {
-      document.body.classList.add("loaded_hiding");
-      window.setTimeout(function () {
-        document.querySelector("#loader").style.display = "none";
-        document.body.classList.remove("loaded_hiding");
-      }, 500);
-    };
+    // const delay = 3000; // Adjust the delay time as needed
+    // const hideLoader = () => {
+    //   document.body.classList.add("loaded_hiding");
+    //   window.setTimeout(function () {
+    //     document.querySelector("#loader").style.display = "none";
+    //     document.body.classList.remove("loaded_hiding");
+    //   }, 500);
+    // };
 
-    // Simulating a delay before hiding the loader
-    const timeoutId = setTimeout(hideLoader, delay);
-    // Cleanup function to clear the timeout when the component unmounts or when loading is complete
-    return () => {
-      clearTimeout(timeoutId);
-    };
+    // // Simulating a delay before hiding the loader
+    // const timeoutId = setTimeout(hideLoader, delay);
+    // // Cleanup function to clear the timeout when the component unmounts or when loading is complete
+    // return () => {
+    //   clearTimeout(timeoutId);
+    // };
   }, []);
   return (
     <Context.Provider value={t}>

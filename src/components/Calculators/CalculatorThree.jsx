@@ -31,7 +31,12 @@ const CalculatorThree = () => {
   return (
     <section className={styles.root} id="calc_3">
       <h3>калькулятор</h3>
-      <article className={styles.wrapper}>
+      <article
+        className={styles.wrapper}
+        data-aos="zoom-in-down"
+        data-aos-offset="0"
+        data-aos-duration="1000"
+      >
         <div className={styles.bottom_polygon}>
           <article className={styles.bottom_first_row}>
             <img alt="Polygon" src={PolygonYellow} />

@@ -392,7 +392,14 @@
             margin-top: 70% !important;
             margin-left: -23% !important;
         }
-        
+        .empty {
+            width: 55% !important;
+            margin-top: 30% !important;
+    
+            img {
+                width: 100% !important;
+            }
+        }
     }
     .main_image {
         display: none;

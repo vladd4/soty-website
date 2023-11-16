@@ -60,7 +60,12 @@ const CalculatorTwo = () => {
   return (
     <section className={styles.root} id="calc_2">
       <h3>калькулятор</h3>
-      <article className={styles.wrapper}>
+      <article
+        className={styles.wrapper}
+        data-aos="zoom-in-down"
+        data-aos-offset="0"
+        data-aos-duration="1000"
+      >
         <div className={styles.bottom_polygon}>
           <article className={styles.bottom_first_row}>
             <img alt="Polygon" src={PolygonYellow} />
@@ -70,27 +75,48 @@ const CalculatorTwo = () => {
             <img alt="Polygon" src={PolygonYellow} />
           </article>
         </div>
-        <div className={styles.top_polygon}>
-          <article className={styles.top_polygon_wrapper}>
-            <div>
-              <img alt="Polygon" src={PolygonYellow} className={styles.img_1} />
-              {isEmpty ? (
+        {isMobile && isEmpty ? (
+          <div className={styles.top_polygon}>
+            <article className={styles.top_polygon_wrapper}>
+              <div>
                 <div className={styles.empty}>
                   <img alt="Polygon" src={EmptyPoligon} />
                   <p>Всі склади зайняті</p>
                 </div>
-              ) : (
+              </div>
+            </article>
+          </div>
+        ) : (
+          <div className={styles.top_polygon}>
+            <article className={styles.top_polygon_wrapper}>
+              <div>
                 <img
                   alt="Polygon"
                   src={PolygonYellow}
-                  className={styles.img_2}
+                  className={styles.img_1}
                 />
-              )}
+                {isEmpty ? (
+                  <div className={styles.empty}>
+                    <img alt="Polygon" src={EmptyPoligon} />
+                    <p>Всі склади зайняті</p>
+                  </div>
+                ) : (
+                  <img
+                    alt="Polygon"
+                    src={PolygonYellow}
+                    className={styles.img_2}
+                  />
+                )}
 
-              <img alt="Polygon" src={PolygonYellow} className={styles.img_3} />
-            </div>
-          </article>
-        </div>
+                <img
+                  alt="Polygon"
+                  src={PolygonYellow}
+                  className={styles.img_3}
+                />
+              </div>
+            </article>
+          </div>
+        )}
         <div className={styles.top_block}>
           <div className={styles.size_block}>
             <div className={styles.sizes}>
