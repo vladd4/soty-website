@@ -1,13 +1,17 @@
 import Welcome from "../components/Welcome/Welcome";
-import { useEffect } from "react";
+import News from "../components/News/News";
+import Partners from "../components/Partners/Partners";
+import AboutUs from "../components/AboutUs/About";
 
 const Home = () => {
-  useEffect(() => {
-    console.log("Home component mounted");
-    return () => {
-      console.log("Home component unmounted");
-    };
-  }, []);
-  return <Welcome />;
+  return (
+    <>
+      <Welcome />
+      <AboutUs />
+      <News title="фотогалерея" />
+      <Partners />
+      <News title="новини" />
+    </>
+  );
 };
 export default Home;

@@ -8,16 +8,13 @@ import Context from "../hooks/Context";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import AboutUs from "./AboutUs/About";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Loader from "./Loader";
-import News from "./News/News";
-import Partners from "./Partners/Partners";
 import Popup from "./Popup/Popup";
 import Modal from "./Modal/Modal";
-import Welcome from "./Welcome/Welcome.jsx";
 
+const Home = lazy(() => import("../pages/Home.jsx"));
 const Individual = lazy(() => import("../pages/Inndividual.jsx"));
 const Remote = lazy(() => import("../pages/Remote.jsx"));
 const Storage = lazy(() => import("../pages/Storage.jsx"));
@@ -33,10 +30,10 @@ window.onload = function () {
 };
 const App = () => {
   const { t, i18n } = useTranslation();
-
   useEffect(() => {
     AOS.init();
   }, []);
+
   return (
     <Context.Provider value={t}>
       <div className="App">
@@ -45,6 +42,14 @@ const App = () => {
         <Modal />
         <Popup />
         <Routes>
+          <Route
+            path="/"
+            element={
+              <Suspense fallback={<div className="empty-page"></div>}>
+                <Home />
+              </Suspense>
+            }
+          />
           <Route
             path="/individual"
             element={
@@ -78,11 +83,6 @@ const App = () => {
             }
           />
         </Routes>
-        <Welcome />
-        <AboutUs />
-        <News title="фотогалерея" />
-        <Partners />
-        <News title="новини" />
         <Footer />
       </div>
     </Context.Provider>

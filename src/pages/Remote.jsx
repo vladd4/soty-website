@@ -4,6 +4,9 @@ import Items from "../components/Items/Items";
 import CalculatorThree from "../components/Calculators/CalculatorThree";
 import Polygon from "../assets/polygon-ben-blue.svg";
 import PolygonSmall from "../assets/polygon-allowed-blue.svg";
+import News from "../components/News/News";
+import Partners from "../components/Partners/Partners";
+import AboutUs from "../components/AboutUs/About";
 
 const Remote = () => {
   return (
@@ -16,6 +19,10 @@ const Remote = () => {
       <Benefits polygon={Polygon} />
       <Items polygon={PolygonSmall} />
       <CalculatorThree />
+      <AboutUs />
+      <News title="фотогалерея" />
+      <Partners />
+      <News title="новини" />
     </>
   );
 };
