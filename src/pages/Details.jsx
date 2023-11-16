@@ -1,5 +1,4 @@
 import Additional from "../components/AdditionalInfo/Additional";
-import Loader from "../components/Loader";
 import { useEffect } from "react";
 
 const Details = () => {

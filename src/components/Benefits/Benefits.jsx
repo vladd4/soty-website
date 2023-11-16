@@ -73,7 +73,12 @@ const Benefits = ({ polygon }) => {
           <article className={styles.mobile_block}>
             {icons.map((icon) => {
               return (
-                <div className={styles.mobile_one_polygon}>
+                <div
+                  className={styles.mobile_one_polygon}
+                  data-aos="zoom-in"
+                  data-aos-offset="0"
+                  data-aos-duration="1500"
+                >
                   <div className={styles.mobile_polygon_text}>
                     <img alt="Icon" src={icon.icon} />
                     <p>{icon.text}</p>

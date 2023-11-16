@@ -4,8 +4,6 @@ import Items from "../components/Items/Items";
 import CalculatorOne from "../components/Calculators/CalculatorOne";
 import Polygon from "../assets/polygon-ben-orange.svg";
 import PolygonSmall from "../assets/Polygon 3.svg";
-import Loader from "../components/Loader";
-import useLoading from "../hooks/useLoading";
 
 const Individual = () => {
   return (

@@ -4,7 +4,7 @@ import PolygonYellow from "../../assets/Polygon 5.svg";
 import { useContext } from "react";
 import Context from "../../hooks/Context";
 
-const AboutUs = () => {
+const About = () => {
   const t = useContext(Context);
   return (
     <section className={styles.root}>
@@ -110,4 +110,4 @@ const AboutUs = () => {
     </section>
   );
 };
-export default AboutUs;
+export default About;

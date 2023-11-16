@@ -25,11 +25,19 @@ const WelcomeStorage = ({ title, buttonStyle, calc_id }) => {
         >
           <img ref={imageRef} alt="Home" src={Home} />
         </Link>
-        <div className={styles.top_clip}>
+        <div
+          className={styles.top_clip}
+          data-aos="fade-in-down"
+          data-aos-offset="0"
+          data-aos-duration="1500"
+        >
           <h3>{title}</h3>
         </div>
         <AnchorLink
           href={`#${calc_id}`}
+          data-aos="zoom-out"
+          data-aos-offset="0"
+          data-aos-duration="2500"
           className={
             buttonStyle === "yellow"
               ? styles.button_yellow
@@ -40,7 +48,12 @@ const WelcomeStorage = ({ title, buttonStyle, calc_id }) => {
         >
           Замовити зберігання
         </AnchorLink>
-        <div className={styles.bottom_clip}>
+        <div
+          className={styles.bottom_clip}
+          data-aos="fade-in-up"
+          data-aos-offset="0"
+          data-aos-duration="1500"
+        >
           <p>
             Шукаєш міні склад для свого бізнесу або комору для домашніх речей?
             Індивідуальне зберігання на складі саме для тебе. Зберігай своє

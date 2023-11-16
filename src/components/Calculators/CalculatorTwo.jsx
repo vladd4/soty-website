@@ -64,7 +64,7 @@ const CalculatorTwo = () => {
         className={styles.wrapper}
         data-aos="zoom-in-down"
         data-aos-offset="0"
-        data-aos-duration="1000"
+        data-aos-duration="1500"
       >
         <div className={styles.bottom_polygon}>
           <article className={styles.bottom_first_row}>
