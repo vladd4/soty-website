@@ -5,22 +5,13 @@ import Orange from "../../assets/Polygon-main-orange.svg";
 import BLue from "../../assets/Polygon-main-blue.svg";
 import Yellow from "../../assets/Polygon-main-yellow.svg";
 
-import { Link, useLocation } from "react-router-dom";
-import { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useRef } from "react";
 import useResize from "../../hooks/useResize";
 
 const Welcome = () => {
-  const location = useLocation();
   const ref = useRef(null);
   const isMobile = useResize(null);
-  useEffect(() => {
-    if (location.pathname !== "/") {
-      ref.current.style.display = "none";
-    } else {
-      ref.current.style.display = "grid";
-    }
-  }, [location.pathname]);
-
   return (
     <section className={styles.root} ref={ref}>
       <article className={styles.wrapper}>
@@ -52,6 +43,7 @@ const Welcome = () => {
             <img
               alt="Welcome"
               src={Sotu}
+              loading="lazy"
               width="100%"
               height="100%"
               className={styles.image}

@@ -51,7 +51,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img alt="Map" src={Map} width="auto" height="100%" />
+                <img alt="Map" src={Map} width="10%" height="100%" />
                 <p>{t("location")}</p>
               </a>
               <a
@@ -59,7 +59,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img alt="Phone" src={Phone} width="auto" height="100%" />
+                <img alt="Phone" src={Phone} width="10%" height="100%" />
                 <p>+38(097)-746-37-48</p>
               </a>
               <a
@@ -67,7 +67,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img alt="Mail" src={Mail} width="auto" height="100%" />
+                <img alt="Mail" src={Mail} width="10%" height="100%" />
                 <p>sotusotu@gmail.com</p>
               </a>
             </div>

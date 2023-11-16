@@ -48,7 +48,7 @@ const Burger = ({ clicked, setClicked }) => {
             target="_blank"
             rel="noreferrer"
           >
-            <img alt="Map" src={Map} width="auto" height="auto" />
+            <img alt="Map" src={Map} width="6%" height="100%" />
             <p>м. Львів вул Зелена 301</p>
           </a>
           <a
@@ -56,7 +56,7 @@ const Burger = ({ clicked, setClicked }) => {
             target="_blank"
             rel="noreferrer"
           >
-            <img alt="Phone" src={Phone} width="auto" height="auto" />
+            <img alt="Phone" src={Phone} width="6%" height="100%" />
             <p>+38(097)-746-37-48</p>
           </a>
           <a
@@ -64,7 +64,7 @@ const Burger = ({ clicked, setClicked }) => {
             target="_blank"
             rel="noreferrer"
           >
-            <img alt="Mail" src={Mail} width="auto" height="auto" />
+            <img alt="Mail" src={Mail} width="6%" height="100%" />
             <p>sotusotu@gmail.com</p>
           </a>
         </div>

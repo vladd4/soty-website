@@ -110,11 +110,11 @@ const CalculatorOne = () => {
       >
         <div className={styles.bottom_polygon}>
           <article className={styles.bottom_first_row}>
-            <img alt="Polygon" src={PolygonYellow} />
+            <img alt="Polygon" src={PolygonYellow} width="100%" height="100%" />
           </article>
           <article className={styles.bottom_second_row}>
-            <img alt="Polygon" src={PolygonYellow} />
-            <img alt="Polygon" src={PolygonYellow} />
+            <img alt="Polygon" src={PolygonYellow} width="100%" height="100%" />
+            <img alt="Polygon" src={PolygonYellow} width="100%" height="100%" />
           </article>
         </div>
         <div className={styles.top_polygon}>
@@ -157,7 +157,12 @@ const CalculatorOne = () => {
                       }
                       onClick={() => toggleSize(car)}
                     >
-                      <img alt="Car" src={car.icon} />
+                      <img
+                        alt="Car"
+                        src={car.icon}
+                        width="100%"
+                        height="100%"
+                      />
                       <p>{car.text}</p>
                     </div>
                   );
@@ -212,6 +217,8 @@ const CalculatorOne = () => {
                           <img
                             alt="Size"
                             src={isClicked ? PolygonBlue : PolygonWhite}
+                            width="100%"
+                            height="100%"
                           />
                           <p>{size.size}</p>
                         </div>
@@ -266,6 +273,8 @@ const CalculatorOne = () => {
                           <img
                             alt="Termin"
                             src={isClicked ? PolygonBlue : PolygonWhite}
+                            width="100%"
+                            height="100%"
                           />
                           <p>{termin.termin}</p>
                         </div>
@@ -278,7 +287,13 @@ const CalculatorOne = () => {
               )}
             </div>
           </div>
-          <img alt="Claculator" src={Image} className={styles.main_image} />
+          <img
+            alt="Claculator"
+            src={Image}
+            className={styles.main_image}
+            width="100%"
+            height="100%"
+          />
         </div>
         <div className={styles.button_block}>
           <div className={styles.price_row}>

@@ -33,7 +33,7 @@ const Popup = () => {
             return (
               <div key={item.heading} className={styles.list_item}>
                 <div className={styles.list_heading}>
-                  <img alt="Point" src={Polygon} />
+                  <img alt="Point" src={Polygon} width="100%" height="100%" />
                   <h3>{item.heading}</h3>
                 </div>
                 <p>{item.text}</p>
