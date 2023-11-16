@@ -72,11 +72,12 @@
 }
 .container {
     cursor: pointer;
-    transition: all .3s;
-
     &:hover {
-        transform: scale(1.05);
-        z-index: 1001;
+        .polygon_text img {
+            transition: all .3s;
+            opacity: 0.5;
+            transform: scale(1.1);
+        }
     }
 }
 @media screen and (max-width: 650px) {

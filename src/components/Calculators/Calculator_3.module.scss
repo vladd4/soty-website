@@ -46,8 +46,8 @@
             display: grid;
             place-items: center;
             position: absolute;
-            bottom: 3%;
-            left: 1.5%;
+            bottom: -5%;
+            left: -13.5%;
             width: 27%;
 
             .bottom_first_row {
@@ -77,8 +77,8 @@
             display: grid;
             place-items: center;
             position: absolute;
-            top: 0%;
-            right: 8%;
+            top: -17%;
+            right: -7%;
             width: 27%;
 
             .top_polygon_wrapper {
@@ -344,7 +344,7 @@
 @media screen and (max-width: 650px) {
     .bottom_polygon {
         left: -10% !important;
-        bottom: 0% !important;
+        bottom: -4% !important;
         img {
             width: 45% !important;
         }
@@ -353,8 +353,8 @@
         }
     }
     .top_polygon {
-        right: -4% !important;
-        top: 0% !important;
+        right: -5% !important;
+        top: -15% !important;
         img {
             width: 45% !important;
         }
