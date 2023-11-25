@@ -499,3 +499,11 @@
         display: block !important;
     }
 }
+@media screen  and (max-width: 370px){
+    .icons_row {
+        flex-wrap: wrap !important;
+        img {
+            width: 70% !important;
+        }
+    }
+}

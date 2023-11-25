@@ -359,6 +359,14 @@
     .termin_item {
         width: 100% !important;
     }
+    .top_polygon {
+        top: -10% !important;
+        .empty {
+            p {
+                font-size: calc(#{$size}/1.5) !important;
+            }
+        }
+    }
 }
 @media screen and (max-width: 650px) {
     .wrapper {
@@ -396,7 +404,9 @@
         .empty {
             width: 55% !important;
             margin-top: 30% !important;
-    
+            p {
+                font-size: calc(#{$size}/1.35) !important;
+            }
             img {
                 width: 100% !important;
             }

@@ -8,13 +8,16 @@
         width: 90%;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: baseline;
     }
 }
-
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 850px) {
     .wrapper {
         width: 100% !important;
+    }
+}
+@media screen and (max-width: 650px) {
+    .wrapper {
         flex-direction: column !important;
     }
 }

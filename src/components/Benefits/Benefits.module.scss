@@ -95,6 +95,32 @@
         transform: scale(1.05);
     }
 }
+@media screen and (max-width: 1000px) {
+    .polygon_block {
+        flex-wrap: wrap !important;
+        .one_polygon, .two_polygon {
+            width: 30% !important;
+        }
+    }
+    .polygon_text {
+        width: 60% !important;
+        img {
+            width: 55% !important;
+        }
+        p {
+          width: 100% !important;
+          font-size: calc(#{$size}/1.1) !important;
+        }
+    }
+}
+@media screen and (max-width: 860px) {
+    .polygon_text {
+        width: 62% !important;
+        img {
+            width: 40% !important;
+        }
+    }
+}
 @media screen and (max-width: 650px) {
     .root {
         padding: 10% 0% !important;

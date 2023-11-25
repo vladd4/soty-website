@@ -105,6 +105,20 @@
         }
     }
 }
+@media screen and (max-width: 1200px) {
+    .links_block_row_2, .links_block_row {
+        a {
+            width: 38% !important;
+        }
+    }
+}
+@media screen and (max-width: 1100px) {
+    .links_block_row_2, .links_block_row {
+        a {
+            width: 40% !important;
+        }
+    }
+}
 @media screen and (max-width: 1000px) {
     .links_block_row_2, .links_block_row {
         a {
@@ -149,5 +163,12 @@
 @media screen and (max-width: 500px) {
     .root {
         padding-top: 18% !important;
+    }
+}
+@media screen and (max-width: 350px) {
+    .links_block_row_2, .links_block_row {
+        a {
+            width: 50% !important;
+        }
     }
 }

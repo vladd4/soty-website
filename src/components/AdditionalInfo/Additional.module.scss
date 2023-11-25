@@ -95,6 +95,12 @@
     .poly_left {
         top: 7% !important;
     }
+    .parent {
+        width: 35% !important;
+        h3 {
+            font-size: 15px !important;
+        }
+    }
 }
 @media screen and (max-width: 500px) {
     .root {
@@ -118,12 +124,6 @@
         }
         p {
             font-size: 13px !important;
-        }
-    }
-    .parent {
-        width: 35% !important;
-        h3 {
-            font-size: 15px !important;
         }
     }
 }

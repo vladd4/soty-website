@@ -80,6 +80,22 @@
         }
     }
 }
+@media screen and (max-width: 1100px) {
+    .article_two {
+        margin-top: -18% !important;
+    }
+    .article_three {
+        margin-top: -37% !important;
+    }
+}
+@media screen and (max-width: 850px) {
+    .article_two {
+        margin-top: -19% !important;
+    }
+    .article_three {
+        margin-top: -38% !important;
+    }
+}
 @media screen and (max-width: 650px) {
     .image_block {
         width: 90% !important;

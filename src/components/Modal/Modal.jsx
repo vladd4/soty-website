@@ -15,12 +15,6 @@ const Modal = () => {
   const { size, termin, type, price } = useSelector((state) => state.modal);
   const dispatch = useDispatch();
 
-  const formatPhoneNumber = (event) => {
-    const input = event.target;
-    const inputValue = input.value;
-    const digitsOnly = inputValue.replace(/\D/g, "");
-    input.value = digitsOnly;
-  };
   const handleClick = (e) => {
     e.preventDefault();
     if (name.trim() === "" || tel.trim() === "") {
@@ -29,8 +23,8 @@ const Modal = () => {
     }
     let string;
     size
-      ? (string = `Проект: Соти \nІм'я: ${name} \nНомер телефону: ${tel} \nТип складу: ${type} \nРозмір: ${size}  \nТермін: ${termin} \nЦіна: ${price} грн\n`)
-      : (string = `Проект: Соти \nІм'я: ${name} \nНомер телефону: ${tel} \n`);
+      ? (string = `Проект: Соти \nІм'я: ${name} \nE-mail: ${tel} \nТип складу: ${type} \nРозмір: ${size}  \nТермін: ${termin} \nЦіна: ${price} грн\n`)
+      : (string = `Проект: Соти \nІм'я: ${name} \nE-mail: ${tel} \n`);
     sendFormToTelegram(string);
     setName("");
     setTel("");
@@ -61,10 +55,9 @@ const Modal = () => {
           <input
             type="text"
             required
-            placeholder="Введіть номер телефону*"
+            placeholder="Введіть електронну пошту*"
             value={tel}
             onChange={(e) => setTel(e.target.value)}
-            onInput={(e) => formatPhoneNumber(e)}
           />
         </div>
         <button onClick={(e) => handleClick(e)}>Забронювати</button>

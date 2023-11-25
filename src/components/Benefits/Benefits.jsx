@@ -174,8 +174,6 @@ const Benefits = ({ polygon }) => {
               </div>
               <div
                 className={styles.one_polygon}
-                onMouseOver={handleHover}
-                onMouseOut={handleHoverRemove}
                 data-aos="zoom-in"
                 data-aos-offset="0"
                 data-aos-duration="1500"
@@ -192,6 +190,8 @@ const Benefits = ({ polygon }) => {
                   data-aos="zoom-in-down"
                   data-aos-offset="0"
                   data-aos-duration="1500"
+                  onMouseOver={handleHover}
+                  onMouseOut={handleHoverRemove}
                 >
                   <img alt="Polygon" src={polygon} width="100%" height="100%" />
                   <div className={styles.polygon_text}>
@@ -214,8 +214,6 @@ const Benefits = ({ polygon }) => {
               </div>
               <div
                 className={styles.one_polygon}
-                onMouseOver={handleHover}
-                onMouseOut={handleHoverRemove}
                 data-aos="zoom-in"
                 data-aos-offset="0"
                 data-aos-duration="1500"

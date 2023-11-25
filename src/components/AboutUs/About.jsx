@@ -71,6 +71,7 @@ const About = () => {
                 height="100%"
               />
               <div className={styles.polygon_text}>
+                <p>{t("about_storage_p1")}</p>
                 <h3>{t("about_storage_h")}</h3>
                 <p>{t("about_storage_p")}</p>
               </div>
@@ -89,6 +90,7 @@ const About = () => {
                 height="100%"
               />
               <div className={styles.polygon_text}>
+                <p>{t("about_ukr_p1")}</p>
                 <h3>{t("about_ukr_h")}</h3>
                 <p>{t("about_ukr_p")}</p>
               </div>
@@ -102,6 +104,9 @@ const About = () => {
               data-aos-offset="0"
             >
               <img alt="Polygon" src={Polygon} width="100%" height="100%" />
+              <div className={styles.polygon_text}>
+                <p>{t("about_own_p")}</p>
+              </div>
             </div>
             <div
               className={styles.container}
