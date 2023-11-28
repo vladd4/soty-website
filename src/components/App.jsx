@@ -13,6 +13,7 @@ import Header from "./Header/Header";
 import Loader from "./Loader";
 import Popup from "./Popup/Popup";
 import Modal from "./Modal/Modal";
+import AboutUs from "./AboutUs/About.jsx";
 
 const Home = lazy(() => import("../pages/Home.jsx"));
 const Individual = lazy(() => import("../pages/Inndividual.jsx"));

@@ -19,7 +19,7 @@ const Individual = () => {
       <Benefits polygon={Polygon} />
       <Items polygon={PolygonSmall} />
       <CalculatorOne />
-      <AboutUs />
+
       <News title="фотогалерея" />
       <Partners />
       <News title="новини" />
