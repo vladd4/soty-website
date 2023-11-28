@@ -11,12 +11,7 @@ const About = () => {
       <div className={styles.wrapper}>
         <article className={styles.image_block}>
           <article>
-            <div
-              className={styles.container}
-              data-aos="zoom-in-down"
-              data-aos-duration="1500"
-              data-aos-offset="0"
-            >
+            <div className={styles.container}>
               <img
                 alt="Polygon"
                 src={Polygon}
@@ -29,12 +24,7 @@ const About = () => {
                 <p>{t("about_client_p")}</p>
               </div>
             </div>
-            <div
-              className={styles.container}
-              data-aos="zoom-in-down"
-              data-aos-duration="1500"
-              data-aos-offset="0"
-            >
+            <div className={styles.container}>
               <img
                 alt="Polygon"
                 src={PolygonYellow}
@@ -44,12 +34,7 @@ const About = () => {
             </div>
           </article>
           <article className={styles.polygon_2}>
-            <div
-              className={styles.container}
-              data-aos="zoom-in-right"
-              data-aos-duration="1500"
-              data-aos-offset="0"
-            >
+            <div className={styles.container}>
               <img
                 alt="Polygon"
                 src={PolygonYellow}
@@ -57,12 +42,7 @@ const About = () => {
                 height="100%"
               />
             </div>
-            <div
-              className={styles.container}
-              data-aos="zoom-in"
-              data-aos-duration="1500"
-              data-aos-offset="0"
-            >
+            <div className={styles.container}>
               <img
                 alt="Polygon"
                 src={Polygon}
@@ -76,12 +56,7 @@ const About = () => {
                 <p>{t("about_storage_p")}</p>
               </div>
             </div>
-            <div
-              className={styles.container}
-              data-aos="zoom-in-left"
-              data-aos-duration="1500"
-              data-aos-offset="0"
-            >
+            <div className={styles.container}>
               <img
                 alt="Polygon"
                 src={Polygon}
@@ -97,23 +72,13 @@ const About = () => {
             </div>
           </article>
           <article className={styles.polygon_3}>
-            <div
-              className={styles.container}
-              data-aos="zoom-in-up"
-              data-aos-duration="1500"
-              data-aos-offset="0"
-            >
+            <div className={styles.container}>
               <img alt="Polygon" src={Polygon} width="100%" height="100%" />
               <div className={styles.polygon_text}>
                 <p>{t("about_own_p")}</p>
               </div>
             </div>
-            <div
-              className={styles.container}
-              data-aos="zoom-in-up"
-              data-aos-duration="1500"
-              data-aos-offset="0"
-            >
+            <div className={styles.container}>
               <img
                 alt="Polygon"
                 src={PolygonYellow}
@@ -123,12 +88,7 @@ const About = () => {
             </div>
           </article>
         </article>
-        <article
-          className={styles.text_block}
-          data-aos="zoom-in"
-          data-aos-duration="1500"
-          data-aos-offset="0"
-        >
+        <article className={styles.text_block}>
           <h3>{t("about_h")}</h3>
           <p>{t("about_p")}</p>
         </article>
