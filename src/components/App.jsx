@@ -1,6 +1,6 @@
 import "../styles/App.scss";
 
-import { useEffect, lazy, Suspense, useState } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Context from "../hooks/Context";
@@ -13,9 +13,8 @@ import Header from "./Header/Header";
 import Loader from "./Loader";
 import Popup from "./Popup/Popup";
 import Modal from "./Modal/Modal";
-import AboutUs from "./AboutUs/About.jsx";
+import Home from "../pages/Home.jsx";
 
-const Home = lazy(() => import("../pages/Home.jsx"));
 const Individual = lazy(() => import("../pages/Inndividual.jsx"));
 const Remote = lazy(() => import("../pages/Remote.jsx"));
 const Storage = lazy(() => import("../pages/Storage.jsx"));
