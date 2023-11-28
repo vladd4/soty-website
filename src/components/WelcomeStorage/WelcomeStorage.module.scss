@@ -150,12 +150,12 @@
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 900px) {
     .root {
         background-image: none;
         height: auto !important;
         min-height: 60vh !important;
-        padding-top: 10% !important;
+        padding-top: 0% !important;
         .wrapper {
             .a {
                right: -2% !important;
@@ -188,6 +188,11 @@
             font-size: 14px !important;
             max-width: 90%;
         }
+    }
+}
+@media screen and (max-width: 650px) {
+    .root {
+        padding-top: 10% !important;
     }
 }
 @media screen and (max-width: 550px) {
