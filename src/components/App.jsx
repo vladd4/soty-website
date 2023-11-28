@@ -20,14 +20,17 @@ const Remote = lazy(() => import("../pages/Remote.jsx"));
 const Storage = lazy(() => import("../pages/Storage.jsx"));
 const Details = lazy(() => import("../pages/Details.jsx"));
 
-window.onload = function () {
-  document.body.classList.remove("loaded");
-  document.body.classList.add("loaded_hiding");
-  window.setTimeout(function () {
-    document.body.classList.add("loaded");
-    document.body.classList.remove("loaded_hiding");
-  }, 500);
-};
+window.onload = setTimeout(
+  function () {
+    document.body.classList.remove("loaded");
+    document.body.classList.add("loaded_hiding");
+    window.setTimeout(function () {
+      document.body.classList.add("loaded");
+      document.body.classList.remove("loaded_hiding");
+    }, 500);
+  },
+  [1500]
+);
 const App = () => {
   const { t, i18n } = useTranslation();
   useEffect(() => {
