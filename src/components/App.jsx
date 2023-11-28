@@ -42,14 +42,7 @@ const App = () => {
         <Modal />
         <Popup />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Suspense fallback={<div className="empty-page"></div>}>
-                <Home />
-              </Suspense>
-            }
-          />
+          <Route path="/" element={<Home />} />
           <Route
             path="/individual"
             element={
