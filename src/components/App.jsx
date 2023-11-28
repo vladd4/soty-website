@@ -13,8 +13,8 @@ import Header from "./Header/Header";
 import Loader from "./Loader";
 import Popup from "./Popup/Popup";
 import Modal from "./Modal/Modal";
-import Home from "../pages/Home.jsx";
 
+const Home = lazy(() => import("../pages/Home.jsx"));
 const Individual = lazy(() => import("../pages/Inndividual.jsx"));
 const Remote = lazy(() => import("../pages/Remote.jsx"));
 const Storage = lazy(() => import("../pages/Storage.jsx"));
@@ -42,7 +42,14 @@ const App = () => {
         <Modal />
         <Popup />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <Suspense fallback={<div className="empty-page"></div>}>
+                <Home />
+              </Suspense>
+            }
+          />
           <Route
             path="/individual"
             element={
