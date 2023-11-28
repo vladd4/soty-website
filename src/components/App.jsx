@@ -1,6 +1,6 @@
 import "../styles/App.scss";
 
-import { useEffect, lazy, Suspense } from "react";
+import { useEffect, lazy, Suspense, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Context from "../hooks/Context";

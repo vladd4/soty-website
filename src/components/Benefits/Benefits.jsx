@@ -12,10 +12,14 @@ import Gryz from "../../assets/gryz.png";
 import Bud from "../../assets/bud.png";
 
 import useResize from "../../hooks/useResize";
+import { useContext } from "react";
+import Context from "../../hooks/Context";
+import { useDispatch } from "react-redux";
+import { setTitle, setInfo } from "../../redux/slices/popupSlice";
 
 const icons = [
   {
-    text: "Власна парковка",
+    text: "ind_ben_park",
     icon: Park,
   },
   {
@@ -23,49 +27,53 @@ const icons = [
     icon: People,
   },
   {
-    text: "Власна охорона 24/7",
+    text: "ind_ben_security",
     icon: Safe,
   },
   {
-    text: "Власна рампа та вантажний ліфт",
+    text: "ind_ben_ramp",
     icon: Ramp,
   },
   {
-    text: "Зручне розташування складів",
+    text: "ind_ben_location",
     icon: Loc,
   },
   {
-    text: "Великий вибір зручних боксів",
+    text: "ind_ben_dostyp",
     icon: Kub,
   },
   {
-    text: "Зовнішній та внутрішній відеонагляд 24/7",
+    text: "ind_ben_cam",
     icon: Cam,
   },
   {
-    text: "Необхідна спецтехніка та пакувальні матеріали",
+    text: "ind_ben_technika",
     icon: Gryz,
   },
   {
-    text: "Найкращі ціни та система знижок",
+    text: "ind_ben_price",
     icon: Sale,
   },
   {
-    text: "Склади в окремій будівлі на власній територіїї",
+    text: "ind_ben_prostir",
     icon: Bud,
   },
 ];
 
 const Benefits = ({ polygon }) => {
-  const handleHover = () => {
+  const dispatch = useDispatch();
+  const handleHover = (title, info) => {
     if (document.querySelector("#popup"))
       document.querySelector("#popup").classList.add("show_popup");
+    dispatch(setTitle(title));
+    dispatch(setInfo(info));
   };
   const handleHoverRemove = () => {
     if (document.querySelector("#popup"))
       document.querySelector("#popup").classList.remove("show_popup");
   };
   const isMobile = useResize(null);
+  const t = useContext(Context);
   return (
     <section className={styles.root}>
       <article className={styles.wrapper}>
@@ -86,7 +94,7 @@ const Benefits = ({ polygon }) => {
                       width="100%"
                       height="100%"
                     />
-                    <p>{icon.text}</p>
+                    <p>{t(icon.text)}</p>
                   </div>
                 </div>
               );
@@ -94,13 +102,17 @@ const Benefits = ({ polygon }) => {
           </article>
         ) : (
           <>
-            <h3>переваги</h3>
+            <h3>{t("benefits_h")}</h3>
             <article className={styles.polygon_block}>
               <div
                 className={styles.one_polygon}
                 data-aos="zoom-in"
                 data-aos-offset="0"
                 data-aos-duration="1500"
+                onMouseOver={() =>
+                  handleHover("ind_ben_dostyp", "ind_ben_dostyp_p")
+                }
+                onMouseOut={handleHoverRemove}
               >
                 <img alt="Polygon" src={polygon} width="100%" height="100%" />
                 <div className={styles.polygon_text}>
@@ -114,11 +126,15 @@ const Benefits = ({ polygon }) => {
                   data-aos="zoom-in-down"
                   data-aos-offset="0"
                   data-aos-duration="1500"
+                  onMouseOver={() =>
+                    handleHover("ind_ben_security", "ind_ben_security_p")
+                  }
+                  onMouseOut={handleHoverRemove}
                 >
                   <img alt="Polygon" src={polygon} width="100%" height="100%" />
                   <div className={styles.polygon_text}>
                     <img alt="Icon" src={Safe} width="100%" height="100%" />
-                    <p>Власна охорона 24/7</p>
+                    <p>{t("ind_ben_security")}</p>
                   </div>
                 </div>
                 <div
@@ -126,11 +142,15 @@ const Benefits = ({ polygon }) => {
                   data-aos="zoom-in-up"
                   data-aos-offset="0"
                   data-aos-duration="1500"
+                  onMouseOver={() =>
+                    handleHover("ind_ben_ramp", "ind_ben_ramp_p")
+                  }
+                  onMouseOut={handleHoverRemove}
                 >
                   <img alt="Polygon" src={polygon} width="100%" height="100%" />
                   <div className={styles.polygon_text}>
                     <img alt="Icon" src={Ramp} width="100%" height="100%" />
-                    <p>Власна рампа та вантажний ліфт</p>
+                    <p>{t("ind_ben_ramp")}</p>
                   </div>
                 </div>
               </div>
@@ -139,11 +159,15 @@ const Benefits = ({ polygon }) => {
                 data-aos="zoom-in"
                 data-aos-offset="0"
                 data-aos-duration="1500"
+                onMouseOver={() =>
+                  handleHover("ind_ben_location", "ind_ben_location_p")
+                }
+                onMouseOut={handleHoverRemove}
               >
                 <img alt="Polygon" src={polygon} width="100%" height="100%" />
                 <div className={styles.polygon_text}>
                   <img alt="Icon" src={Loc} width="100%" height="100%" />
-                  <p>Зручне розташування складів</p>
+                  <p>{t("ind_ben_location")}</p>
                 </div>
               </div>
               <div className={styles.two_polygon}>
@@ -152,11 +176,15 @@ const Benefits = ({ polygon }) => {
                   data-aos="zoom-in-down"
                   data-aos-offset="0"
                   data-aos-duration="1500"
+                  onMouseOver={() =>
+                    handleHover("ind_ben_prostir", "ind_ben_prostir_p")
+                  }
+                  onMouseOut={handleHoverRemove}
                 >
                   <img alt="Polygon" src={polygon} width="100%" height="100%" />
                   <div className={styles.polygon_text}>
                     <img alt="Icon" src={Kub} width="100%" height="100%" />
-                    <p>Великий вибір зручних боксів</p>
+                    <p>{t("ind_ben_prostir")}</p>
                   </div>
                 </div>
                 <div
@@ -164,11 +192,17 @@ const Benefits = ({ polygon }) => {
                   data-aos="zoom-in-up"
                   data-aos-offset="0"
                   data-aos-duration="1500"
+                  onMouseOver={() =>
+                    handleHover("ind_ben_cam", "ind_ben_cam_p")
+                  }
+                  onMouseOut={handleHoverRemove}
                 >
                   <img alt="Polygon" src={polygon} width="100%" height="100%" />
                   <div className={styles.polygon_text}>
                     <img alt="Icon" src={Cam} width="100%" height="100%" />
-                    <p>Зовнішній та внутрішній відеонагляд 24/7</p>
+                    <p>
+                      <p>{t("ind_ben_cam")}</p>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -177,11 +211,17 @@ const Benefits = ({ polygon }) => {
                 data-aos="zoom-in"
                 data-aos-offset="0"
                 data-aos-duration="1500"
+                onMouseOver={() =>
+                  handleHover("ind_ben_technika", "ind_ben_technika_p")
+                }
+                onMouseOut={handleHoverRemove}
               >
                 <img alt="Polygon" src={polygon} width="100%" height="100%" />
                 <div className={styles.polygon_text}>
                   <img alt="Icon" src={Gryz} width="100%" height="100%" />
-                  <p>Необхідна спецтехніка та пакувальні матеріали</p>
+                  <p>
+                    <p>{t("ind_ben_technika")}</p>
+                  </p>
                 </div>
               </div>
               <div className={styles.two_polygon}>
@@ -190,13 +230,17 @@ const Benefits = ({ polygon }) => {
                   data-aos="zoom-in-down"
                   data-aos-offset="0"
                   data-aos-duration="1500"
-                  onMouseOver={handleHover}
+                  onMouseOver={() =>
+                    handleHover("ind_ben_price", "ind_ben_price_p")
+                  }
                   onMouseOut={handleHoverRemove}
                 >
                   <img alt="Polygon" src={polygon} width="100%" height="100%" />
                   <div className={styles.polygon_text}>
                     <img alt="Icon" src={Sale} width="100%" height="100%" />
-                    <p>Найкращі ціни та система знижок</p>
+                    <p>
+                      <p>{t("ind_ben_price")}</p>
+                    </p>
                   </div>
                 </div>
                 <div
@@ -204,11 +248,15 @@ const Benefits = ({ polygon }) => {
                   data-aos="zoom-in-up"
                   data-aos-offset="0"
                   data-aos-duration="1500"
+                  onMouseOver={() =>
+                    handleHover("ind_ben_dostyp", "ind_ben_dostyp_p")
+                  }
+                  onMouseOut={handleHoverRemove}
                 >
                   <img alt="Polygon" src={polygon} width="100%" height="100%" />
                   <div className={styles.polygon_text}>
                     <img alt="Icon" src={Bud} width="100%" height="100%" />
-                    <p>Склади в окремій будівлі на власній територіїї</p>
+                    <p>{t("ind_ben_dostyp")}</p>
                   </div>
                 </div>
               </div>
@@ -217,11 +265,17 @@ const Benefits = ({ polygon }) => {
                 data-aos="zoom-in"
                 data-aos-offset="0"
                 data-aos-duration="1500"
+                onMouseOver={() =>
+                  handleHover("ind_ben_park", "ind_ben_park_p")
+                }
+                onMouseOut={handleHoverRemove}
               >
                 <img alt="Polygon" src={polygon} width="100%" height="100%" />
                 <div className={styles.polygon_text}>
                   <img alt="Icon" src={Park} width="100%" height="100%" />
-                  <p>Власна парковка</p>
+                  <p>
+                    <p>{t("ind_ben_park")}</p>
+                  </p>
                 </div>
               </div>
             </article>

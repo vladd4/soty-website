@@ -12,9 +12,10 @@ const Remote = () => {
   return (
     <>
       <WelcomeStorage
-        title="Віддалене зберігання"
+        title="remote_h"
         buttonStyle="blue"
         calc_id="calc_3"
+        info="remote_info"
       />
       <Benefits polygon={Polygon} />
       <Items polygon={PolygonSmall} />

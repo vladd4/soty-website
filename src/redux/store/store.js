@@ -3,6 +3,8 @@ import { modalReducer } from "../slices/modalSlice";
 import { imageReducer } from "../slices/imagesSlice";
 import { partnersReducer } from "../slices/partnersSlice";
 import { calcReducer } from "../slices/calcSlice";
+import { additionalReducer } from "../slices/additionalSlice";
+import { popupReducer } from "../slices/popupSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,5 +12,7 @@ export const store = configureStore({
     images: imageReducer,
     partners: partnersReducer,
     calculator: calcReducer,
+    additional: additionalReducer,
+    popup: popupReducer,
   },
 });

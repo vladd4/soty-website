@@ -4,10 +4,13 @@ import styles from "./WelcomeStorage.module.scss";
 import Home from "../../assets/home.svg";
 import HomeWhite from "../../assets/home-white.svg";
 
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-const WelcomeStorage = ({ title, buttonStyle, calc_id }) => {
+import Context from "../../hooks/Context";
+
+const WelcomeStorage = ({ title, buttonStyle, calc_id, info }) => {
+  const t = useContext(Context);
   const imageRef = useRef(null);
   const handleHover = (src) => {
     if (imageRef.current) {
@@ -37,7 +40,7 @@ const WelcomeStorage = ({ title, buttonStyle, calc_id }) => {
           data-aos-offset="0"
           data-aos-duration="1500"
         >
-          <h3>{title}</h3>
+          <h3>{t(title)}</h3>
         </div>
         <AnchorLink
           href={`#${calc_id}`}
@@ -52,7 +55,7 @@ const WelcomeStorage = ({ title, buttonStyle, calc_id }) => {
               : styles.button
           }
         >
-          Замовити зберігання
+          {t("order_btn")}
         </AnchorLink>
         <div
           className={styles.bottom_clip}
@@ -60,11 +63,7 @@ const WelcomeStorage = ({ title, buttonStyle, calc_id }) => {
           data-aos-offset="0"
           data-aos-duration="1500"
         >
-          <p>
-            Шукаєш міні склад для свого бізнесу? Індивідуальне зберігання на
-            складі саме для тебе. Зберігай своє майно в сухих та надійних боксах
-            розміром від 28 до 2675 кв. м.
-          </p>
+          <p>{t(info)}</p>
         </div>
       </article>
     </section>

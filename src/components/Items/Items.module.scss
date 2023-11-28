@@ -11,13 +11,9 @@
         align-items: baseline;
     }
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1000px) {
     .wrapper {
         width: 100% !important;
-    }
-}
-@media screen and (max-width: 650px) {
-    .wrapper {
         flex-direction: column !important;
     }
 }

@@ -11,7 +11,12 @@ import AboutUs from "../components/AboutUs/About";
 const Storage = () => {
   return (
     <>
-      <WelcomeStorage title="Склади" buttonStyle="yellow" calc_id="calc_2" />
+      <WelcomeStorage
+        title="storage_h"
+        buttonStyle="yellow"
+        calc_id="calc_2"
+        info="storage_info"
+      />
       <Benefits polygon={Polygon} />
       <Items polygon={PolygonSmall} />
       <CalculatorTwo />

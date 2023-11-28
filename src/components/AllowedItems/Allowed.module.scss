@@ -22,7 +22,7 @@
         .image_block {
             display: grid;
             grid-template-rows: repeat(3, 1fr);
-            width: 75%;
+            width: 85%;
             margin-top: 2%;
 
             article {
@@ -47,24 +47,26 @@
                     text-align: center;
                     left: 50%;
                     transform: translate(-50%, -50%);
+                    width: 70%;
 
                     img {
-                        width: 80%;
+                        width: 50%;
                     }
                     p {
                         margin: 0;
                         text-align: center;
                         font-size: calc(#{$size}/1.35);
                         text-wrap: balance;
+                        width: 100%;
                     }
                 }
             }
             .article_two {
                 justify-content: flex-start;
-                margin-top: -17%;
+                margin-top: -16.5%;
             }
             .article_three {
-                margin-top: -34%;
+                margin-top: -33%;
             }
         }
 
@@ -80,35 +82,54 @@
         }
     }
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
+    .image_block {
+        width: 100% !important;
+    }
     .article_two {
-        margin-top: -18% !important;
+        margin-top: -16% !important;
     }
     .article_three {
-        margin-top: -37% !important;
+        margin-top: -32% !important;
+    }
+    .image_block {
+        p {
+            font-size: 15px !important;
+        }
     }
 }
-@media screen and (max-width: 850px) {
-    .article_two {
-        margin-top: -19% !important;
-    }
-    .article_three {
-        margin-top: -38% !important;
+@media screen and (max-width: 1000px) {
+    .image_block {
+        width: 80% !important;
     }
 }
 @media screen and (max-width: 650px) {
     .image_block {
         width: 90% !important;
         p {
-            font-size: 13px !important;
+            font-size: 12px !important;
         }
+    }
+    .article_two {
+        margin-top: -17% !important;
+    }
+    .article_three {
+        margin-top: -35% !important;
     }
 }
 @media screen and (max-width: 450px) {
     .article_two {
-        margin-top: -19% !important;
+        margin-top: -17% !important;
     }
     .article_three {
-        margin-top: -39% !important;
+        margin-top: -35% !important;
+    }
+    .image_block {
+        width: 96% !important;
+        .polygon_text {
+            img {
+            width: 40% !important;
+            }
+        }
     }
 }

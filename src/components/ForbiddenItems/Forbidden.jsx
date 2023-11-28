@@ -1,8 +1,11 @@
 import styles from "./Forbidden.module.scss";
 import Park from "../../assets/cam.png";
 import Polygon from "../../assets/poly-grey.svg";
+import { useContext } from "react";
+import Context from "../../hooks/Context";
 
 const Forbidden = () => {
+  const t = useContext(Context);
   return (
     <section className={styles.root}>
       <article className={styles.wrapper}>
@@ -26,7 +29,7 @@ const Forbidden = () => {
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
-                <p>Меблі</p>
+                <p>{t("ind_fob_prod")}</p>
               </div>
             </div>
             <div
@@ -44,7 +47,7 @@ const Forbidden = () => {
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
-                <p>Меблі</p>
+                <p>{t("ind_fob_ros")}</p>
               </div>
             </div>
           </article>
@@ -64,7 +67,7 @@ const Forbidden = () => {
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
-                <p>Меблі</p>
+                <p>{t("ind_fob_weapon")}</p>
               </div>
             </div>
             <div
@@ -82,7 +85,7 @@ const Forbidden = () => {
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
-                <p>Меблі</p>
+                <p>{t("ind_fob_ball")}</p>
               </div>
             </div>
             <div
@@ -100,7 +103,7 @@ const Forbidden = () => {
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
-                <p>Меблі</p>
+                <p>{t("ind_fob_fuel")}</p>
               </div>
             </div>
           </article>
@@ -120,7 +123,7 @@ const Forbidden = () => {
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
-                <p>Меблі</p>
+                <p>{t("ind_fob_tocs")}</p>
               </div>
             </div>
             <div
@@ -138,7 +141,7 @@ const Forbidden = () => {
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
-                <p>Меблі</p>
+                <p>{t("ind_fob_smell")}</p>
               </div>
             </div>
             <div
@@ -156,7 +159,7 @@ const Forbidden = () => {
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
-                <p>Меблі</p>
+                <p>{t("ind_fob_other")}</p>
               </div>
             </div>
           </article>

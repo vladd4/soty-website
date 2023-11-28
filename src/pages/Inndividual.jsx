@@ -11,7 +11,11 @@ import AboutUs from "../components/AboutUs/About";
 const Individual = () => {
   return (
     <>
-      <WelcomeStorage title="Індивідуальне зберігання" calc_id="calc_1" />
+      <WelcomeStorage
+        title="individual_h"
+        info="individual_info"
+        calc_id="calc_1"
+      />
       <Benefits polygon={Polygon} />
       <Items polygon={PolygonSmall} />
       <CalculatorOne />
