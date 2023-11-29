@@ -230,7 +230,7 @@
                         margin-bottom: 5%;
                     }
                     .mobile_calc {
-                        width: 65%;
+                        width: 55%;
                         margin-bottom: 5%;
                         display: none;
                     }
@@ -428,9 +428,9 @@
         width: 100% !important;
     }
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 950px) {
     .wrapper {
-        width: 85% !important;
+        width: 60% !important;
     }
     .bottom_polygon {
         left: -10% !important;
@@ -459,10 +459,10 @@
         }
         .icon_block {
             h3 {
-                font-size: 17px !important;
+                font-size: 18px !important;
             }
             p {
-                font-size: 15px !important;
+                font-size: 16px !important;
                 width: 75%;
                 text-align: center;
             }
@@ -497,6 +497,19 @@
     }
     .mobile_calc {
         display: block !important;
+    }
+}
+@media screen and (max-width: 650px) {
+    .wrapper {
+        width: 85% !important;
+    }
+    .mobile_calc {
+       width: 65% !important;
+    }
+    .icons_row {
+        img {
+            width: 85% !important;
+        }
     }
 }
 @media screen  and (max-width: 370px){

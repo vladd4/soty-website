@@ -25,6 +25,7 @@ const About = () => {
                 height="100%"
               />
               <div className={styles.polygon_text}>
+                <p>{t("about_storage_p1")}</p>
                 <h3>{t("about_client_h")}</h3>
                 <p>{t("about_client_p")}</p>
               </div>

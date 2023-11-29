@@ -11,7 +11,7 @@ import useResize from "../../hooks/useResize";
 
 const Welcome = () => {
   const ref = useRef(null);
-  const isMobile = useResize(null);
+  const isMobile = useResize(null, null, null);
 
   return (
     <section className={styles.root} ref={ref}>

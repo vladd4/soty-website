@@ -129,22 +129,24 @@ const Allowed = ({ polygon }) => {
             </Link>
             <Link
               to="/details"
-              onClick={() => handleCLick("ind_all_other", "ind_all_other_p")}
               className={styles.container}
+              onClick={() =>
+                handleCLick("ind_all_offTech", "ind_all_offTech_p")
+              }
               data-aos="zoom-in"
               data-aos-offset="0"
               data-aos-duration="1500"
             >
               <img
                 alt="Polygon"
-                src={polygon}
-                className={styles.polygon_parent}
                 width="100%"
                 height="100%"
+                src={polygon}
+                className={styles.polygon_parent}
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
-                <p>{t("ind_all_other")}</p>
+                <p>{t("ind_all_offTech")}</p>
               </div>
             </Link>
           </article>
@@ -169,26 +171,25 @@ const Allowed = ({ polygon }) => {
                 <p>{t("ind_all_docs")}</p>
               </div>
             </Link>
+
             <Link
               to="/details"
+              onClick={() => handleCLick("ind_all_other", "ind_all_other_p")}
               className={styles.container}
-              onClick={() =>
-                handleCLick("ind_all_offTech", "ind_all_offTech_p")
-              }
               data-aos="zoom-in"
               data-aos-offset="0"
               data-aos-duration="1500"
             >
               <img
                 alt="Polygon"
-                width="100%"
-                height="100%"
                 src={polygon}
                 className={styles.polygon_parent}
+                width="100%"
+                height="100%"
               />
               <div className={styles.polygon_text}>
                 <img alt="Polygon" src={Park} />
-                <p>{t("ind_all_offTech")}</p>
+                <p>{t("ind_all_other")}</p>
               </div>
             </Link>
           </article>

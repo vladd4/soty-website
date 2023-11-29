@@ -7,7 +7,7 @@ import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 
 const PhotoGalery = ({ images }) => {
   const [slides, setSlides] = useState(5);
-  useResize(setSlides, "photo");
+  useResize(setSlides, "photo", null);
   return (
     <Splide
       options={{

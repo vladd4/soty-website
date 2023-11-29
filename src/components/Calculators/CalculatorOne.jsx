@@ -30,11 +30,10 @@ import {
 import useResize from "../../hooks/useResize";
 
 const cars = [
-  { text: "1-2 м", icon: Icon1 },
-  { text: "3-4 м", icon: Icon2 },
-  { text: "6-8 м", icon: Icon3 },
-  { text: "9-12 м", icon: Icon4 },
-  { text: "18+ м", icon: Icon5 },
+  { text: "1-2 м", icon: Icon1, size: "2 м" },
+  { text: "3-4 м", icon: Icon2, size: "3 м" },
+  { text: "6-8 м", icon: Icon3, size: "8 м" },
+  { text: "9-12 м", icon: Icon4, size: "10 м" },
 ];
 
 const CalculatorOne = () => {
@@ -51,18 +50,25 @@ const CalculatorOne = () => {
   const [clickedTermin, setClickedTermin] = useState(
     termins && termins.length > 0 ? termins[2] : null
   );
-  const isMobile = useResize(null);
+  const isMobile = useResize(null, null, "calc");
   const dispatch = useDispatch();
 
-  const toggleSize = (size) => {
-    if (size !== null) {
-      setClickedSize(size === clickedSize ? null : size);
-      dispatch(setSize(size.size));
+  const toggleSize = (car) => {
+    if (car !== null) {
+      if (car.price) {
+        setClickedSize(car === clickedSize ? null : car);
+      } else {
+        setClickedSize(
+          car.size === clickedSize?.size
+            ? null
+            : sizes.find((size) => size.size === car.size)
+        );
+      }
+      dispatch(setSize(car.size));
     } else {
       setClickedSize(null);
     }
   };
-
   const toggleTermin = (termin) => {
     if (termin !== null) {
       setClickedTermin(termin === clickedTermin ? null : termin);
@@ -145,7 +151,7 @@ const CalculatorOne = () => {
               <p>Виберіть авто для приблизно розрахунку обсягу:</p>
               <div className={styles.icons_row}>
                 {cars.map((car) => {
-                  const isClicked = car === clickedSize;
+                  const isClicked = car.size === clickedSize?.size;
                   return (
                     <div
                       style={isEmpty ? { pointerEvents: "none" } : null}
@@ -191,11 +197,19 @@ const CalculatorOne = () => {
                     <option selected value="placeholder">
                       Виберіть розмір боксу
                     </option>
-                    {sizes.map((size) => (
-                      <option key={size.price} value={size.price}>
-                        {size.size}
-                      </option>
-                    ))}
+                    {sizes.map((size) => {
+                      return (
+                        <option
+                          key={size.price}
+                          selected={
+                            size?.size === clickedSize?.size ? true : false
+                          }
+                          value={size.price}
+                        >
+                          {size.size}
+                        </option>
+                      );
+                    })}
                   </select>
                 ) : (
                   <div className={styles.size_row}>
@@ -248,7 +262,15 @@ const CalculatorOne = () => {
                       Виберіть термін
                     </option>
                     {termins.map((termin) => (
-                      <option key={termin.price} value={termin.price}>
+                      <option
+                        key={termin.price}
+                        selected={
+                          termin?.termin === clickedTermin?.termin
+                            ? true
+                            : false
+                        }
+                        value={termin.price}
+                      >
                         {termin.termin}
                       </option>
                     ))}

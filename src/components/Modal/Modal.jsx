@@ -11,6 +11,7 @@ const Modal = () => {
   const ref = useRef(null);
   const [name, setName] = useState("");
   const [tel, setTel] = useState("");
+  const [post, setPost] = useState("");
 
   const { size, termin, type, price } = useSelector((state) => state.modal);
   const dispatch = useDispatch();
@@ -23,8 +24,8 @@ const Modal = () => {
     }
     let string;
     size
-      ? (string = `Проект: Соти \nІм'я: ${name} \nE-mail: ${tel} \nТип складу: ${type} \nРозмір: ${size}  \nТермін: ${termin} \nЦіна: ${price} грн\n`)
-      : (string = `Проект: Соти \nІм'я: ${name} \nE-mail: ${tel} \n`);
+      ? (string = `Проект: Соти \nІм'я: ${name} \nНомер телефону: ${tel} \nE-mail: ${post} \nТип складу: ${type} \nРозмір: ${size}  \nТермін: ${termin} \nЦіна: ${price} грн\n`)
+      : (string = `Проект: Соти \nІм'я: ${name} \nНомер телефону: ${tel} \nE-mail: ${post} \n`);
     sendFormToTelegram(string);
     setName("");
     setTel("");
@@ -55,9 +56,15 @@ const Modal = () => {
           <input
             type="text"
             required
-            placeholder="Введіть електронну пошту*"
+            placeholder="Введіть номер телефону*"
             value={tel}
-            onChange={(e) => setTel(e.target.value)}
+            onChange={(e) => setTel(e.target.value.replace(/\D/g, ""))}
+          />
+          <input
+            type="mail"
+            placeholder="Введіть електронну пошту"
+            value={post}
+            onChange={(e) => setPost(e.target.value)}
           />
         </div>
         <button onClick={(e) => handleClick(e)}>Забронювати</button>

@@ -44,9 +44,9 @@ const Header = () => {
             <img alt="Home" src={Home} width="100%" height="100%" />
           </Link>
           <div className={styles.language_block}>
-            <p>EN</p>
-            <span>|</span>
             <p className={styles.current_lang}>UA</p>
+            <span>|</span>
+            <p>EN</p>
           </div>
           <img
             alt="Hamburger"

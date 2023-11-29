@@ -3,6 +3,7 @@
 .root {
     width: 100%;
     display: grid;
+    min-height: 60vh;
     place-items: center;
     position: relative;
     overflow: hidden;

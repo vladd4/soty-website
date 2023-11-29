@@ -106,37 +106,38 @@ const Benefits = ({ polygon }) => {
             <article className={styles.polygon_block}>
               <div
                 className={styles.one_polygon}
-                data-aos="zoom-in"
+                data-aos="zoom-in-down"
                 data-aos-offset="0"
                 data-aos-duration="1500"
                 onMouseOver={() =>
-                  handleHover("ind_ben_dostyp", "ind_ben_dostyp_p")
+                  handleHover("ind_ben_security", "ind_ben_security_p")
                 }
                 onMouseOut={handleHoverRemove}
               >
                 <img alt="Polygon" src={polygon} width="100%" height="100%" />
                 <div className={styles.polygon_text}>
-                  <img alt="Icon" src={People} width="100%" height="100%" />
-                  <p>Професійний та доброзичливий персонал</p>
+                  <img alt="Icon" src={Safe} width="100%" height="100%" />
+                  <p>{t("ind_ben_security")}</p>
                 </div>
               </div>
               <div className={styles.two_polygon}>
                 <div
                   className={styles.two_polygon_parent}
-                  data-aos="zoom-in-down"
+                  data-aos="zoom-in"
                   data-aos-offset="0"
                   data-aos-duration="1500"
                   onMouseOver={() =>
-                    handleHover("ind_ben_security", "ind_ben_security_p")
+                    handleHover("ind_ben_pers", "ind_ben_pers_p")
                   }
                   onMouseOut={handleHoverRemove}
                 >
                   <img alt="Polygon" src={polygon} width="100%" height="100%" />
                   <div className={styles.polygon_text}>
-                    <img alt="Icon" src={Safe} width="100%" height="100%" />
-                    <p>{t("ind_ben_security")}</p>
+                    <img alt="Icon" src={People} width="100%" height="100%" />
+                    <p>{t("ind_ben_pers")}</p>
                   </div>
                 </div>
+
                 <div
                   className={styles.two_polygon_parent}
                   data-aos="zoom-in-up"

@@ -24,7 +24,7 @@ const NewsSlider = ({ images }) => {
     }
   };
   const [slides, setSlides] = useState(4);
-  useResize(setSlides, "news");
+  useResize(setSlides, "news", null);
   return (
     <>
       <Splide
