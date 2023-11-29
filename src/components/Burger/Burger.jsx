@@ -37,9 +37,9 @@ const Burger = ({ clicked, setClicked }) => {
         <div className={styles.lang_block}>
           <p>Переключити мову сайту:</p>
           <div className={styles.language_block}>
-            <p>EN</p>
-            <span>|</span>
             <p className={styles.current_lang}>UA</p>
+            <span>|</span>
+            <p>EN</p>
           </div>
         </div>
         <div className={styles.links_block}>
