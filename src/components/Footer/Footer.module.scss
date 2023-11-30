@@ -110,13 +110,19 @@
                             display: grid;
                             place-items: center;
 
-                            img {
-                                width: 100%;
+                            .inst_mobile {
+                                width: 85% !important;
                                 transition: all .3s;
-    
-                                 &:hover {
-                                transform: scale(1.1);
-                                    }
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+                            .teleg_mobile, .viber_mobile {
+                                width: 75% !important;
+                                transition: all .3s;
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
                             }
                         }
                     }
@@ -198,14 +204,6 @@
     }
     .logo_block {
         display: none !important;
-    }
-    .mobile_social_block {
-        .inst {
-            width: 85% !important;
-        }
-        .teleg, .viber {
-            width: 75% !important;
-        }
     }
     .info_block {
         width: 100% !important;

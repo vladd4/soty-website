@@ -153,7 +153,7 @@ const Footer = () => {
                   <img
                     alt="Instagram"
                     src={Instagram}
-                    className={styles.inst}
+                    className={styles.inst_mobile}
                     width="100%"
                     height="100%"
                   />
@@ -166,7 +166,7 @@ const Footer = () => {
                   <img
                     alt="Telegram"
                     src={Telegram}
-                    className={styles.teleg}
+                    className={styles.teleg_mobile}
                     width="100%"
                     height="100%"
                   />
@@ -178,7 +178,7 @@ const Footer = () => {
                   rel="noreferrer"
                 >
                   <img
-                    className={styles.viber}
+                    className={styles.viber_mobile}
                     alt="Viber"
                     src={Viber}
                     width="100%"
