@@ -15,7 +15,7 @@ import { showModal } from "../../utils/showModal";
 
 const Footer = () => {
   const t = useContext(Context);
-  const isMobile = useResize(null);
+  const isMobile = useResize(null, null, null);
   return (
     <footer className={styles.root}>
       <section
