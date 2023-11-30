@@ -53,20 +53,6 @@ const Footer = () => {
                 height="100%"
               />
             </a>
-
-            <a
-              href="https://www.facebook.com/people/Leader-company/61553362610336/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                className={styles.viber}
-                alt="Viber"
-                src={Viber}
-                width="100%"
-                height="100%"
-              />
-            </a>
           </div>
         </article>
         <article className={styles.info_block}>
@@ -167,20 +153,6 @@ const Footer = () => {
                     alt="Telegram"
                     src={Telegram}
                     className={styles.teleg_mobile}
-                    width="100%"
-                    height="100%"
-                  />
-                </a>
-
-                <a
-                  href="https://www.facebook.com/people/Leader-company/61553362610336/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    className={styles.viber_mobile}
-                    alt="Viber"
-                    src={Viber}
                     width="100%"
                     height="100%"
                   />
