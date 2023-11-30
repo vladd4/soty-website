@@ -1,5 +1,14 @@
 import styles from "./Forbidden.module.scss";
-import Park from "../../assets/cam.png";
+
+import Prod from "../../assets/prohibited/food-icon.svg";
+import Ros from "../../assets/prohibited/plant-icon.svg";
+import Weapon from "../../assets/prohibited/gun-icon.svg";
+import Ball from "../../assets/prohibited/gas-icon.svg";
+import Fuel from "../../assets/petrol-icon.svg";
+import Tocs from "../../assets/prohibited/toxic-icon.svg";
+import Smell from "../../assets/prohibited/scent-icon.svg";
+import Other from "../../assets/prohibited/animal-icon.svg";
+
 import Polygon from "../../assets/poly-grey.svg";
 import { useContext } from "react";
 import Context from "../../hooks/Context";
@@ -28,7 +37,7 @@ const Forbidden = () => {
                 height="100%"
               />
               <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Park} />
+                <img alt="Polygon" src={Prod} />
                 <p>{t("ind_fob_prod")}</p>
               </div>
             </div>
@@ -46,7 +55,7 @@ const Forbidden = () => {
                 height="100%"
               />
               <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Park} />
+                <img alt="Polygon" src={Ros} />
                 <p>{t("ind_fob_ros")}</p>
               </div>
             </div>
@@ -66,7 +75,7 @@ const Forbidden = () => {
                 height="100%"
               />
               <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Park} />
+                <img alt="Polygon" src={Weapon} />
                 <p>{t("ind_fob_weapon")}</p>
               </div>
             </div>
@@ -84,7 +93,7 @@ const Forbidden = () => {
                 height="100%"
               />
               <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Park} />
+                <img alt="Polygon" src={Ball} />
                 <p>{t("ind_fob_ball")}</p>
               </div>
             </div>
@@ -102,7 +111,7 @@ const Forbidden = () => {
                 height="100%"
               />
               <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Park} />
+                <img alt="Polygon" src={Fuel} />
                 <p>{t("ind_fob_fuel")}</p>
               </div>
             </div>
@@ -122,7 +131,7 @@ const Forbidden = () => {
                 className={styles.polygon_parent}
               />
               <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Park} />
+                <img alt="Polygon" src={Tocs} />
                 <p>{t("ind_fob_tocs")}</p>
               </div>
             </div>
@@ -140,8 +149,8 @@ const Forbidden = () => {
                 height="100%"
               />
               <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Park} />
-                <p>{t("ind_fob_smell")}</p>
+                <img alt="Polygon" src={Other} />
+                <p>{t("ind_fob_pets")}</p>
               </div>
             </div>
             <div
@@ -158,8 +167,8 @@ const Forbidden = () => {
                 height="100%"
               />
               <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Park} />
-                <p>{t("ind_fob_other")}</p>
+                <img alt="Polygon" src={Smell} />
+                <p>{t("ind_fob_smell")}</p>
               </div>
             </div>
           </article>

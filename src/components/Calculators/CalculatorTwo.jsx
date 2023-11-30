@@ -130,7 +130,11 @@ const CalculatorTwo = () => {
                 <select>
                   {sizes
                     ? sizes.map((size) => {
-                        return <option value={size}>{size}</option>;
+                        return (
+                          <option key={size} value={size}>
+                            {size}
+                          </option>
+                        );
                       })
                     : null}
                 </select>

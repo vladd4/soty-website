@@ -108,7 +108,11 @@ const CalculatorThree = () => {
                 <select>
                   {termins
                     ? termins.map((termin) => {
-                        return <option value={termin}>{termin}</option>;
+                        return (
+                          <option key={termin} value={termin}>
+                            {termin}
+                          </option>
+                        );
                       })
                     : null}
                 </select>

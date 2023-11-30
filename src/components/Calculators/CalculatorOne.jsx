@@ -5,11 +5,10 @@ import PolygonWhite from "../../assets/calc-white.svg";
 import PolygonBlue from "../../assets/calc-blue.svg";
 import PolygonYellow from "../../assets/Polygon 5.svg";
 import EmptyPoligon from "../../assets/empty-polygon.svg";
-import Icon1 from "../../assets/vehicle-icons 1.png";
-import Icon2 from "../../assets/vehicle-icons 2.png";
-import Icon3 from "../../assets/vehicle-icons 3.png";
-import Icon4 from "../../assets/vehicle-icons 4.png";
-import Icon5 from "../../assets/vehicle-icons 5.png";
+import Icon1 from "../../assets/calculator/car-icon.svg";
+import Icon2 from "../../assets/calculator/pickuptruck-icon.svg";
+import Icon3 from "../../assets/calculator/minibus-icon.svg";
+import Icon4 from "../../assets/calculator/bus-icon.svg";
 import MobileCalc from "../../assets/mobile-calc.png";
 
 import { useEffect, useState } from "react";
@@ -38,12 +37,9 @@ const cars = [
 
 const CalculatorOne = () => {
   const isEmpty = useSelector((state) => state.calculator.isEmptyIndividual);
-
   const termins = useSelector((state) => state.calculator.terminIndividual);
   const sizes = useSelector((state) => state.calculator.sizesIndividual);
-
   const [totalPrice, setTotalPrice] = useState(0);
-
   const [clickedSize, setClickedSize] = useState(
     sizes && sizes.length > 0 ? sizes[3] : null
   );

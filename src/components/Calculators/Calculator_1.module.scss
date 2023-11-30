@@ -190,7 +190,7 @@
                                 margin-top: 5%;
                             }
                             img {
-                                width: 100%;
+                                width: 85%;
                             }
                         }
                         .icons_row_item_clicked {
@@ -211,7 +211,7 @@
                                 margin-top: 5%;
                             }
                             img {
-                                width: 100%;
+                                width: 85%;
                             }
                         }
                     }
@@ -508,15 +508,7 @@
     }
     .icons_row {
         img {
-            width: 85% !important;
-        }
-    }
-}
-@media screen  and (max-width: 370px){
-    .icons_row {
-        flex-wrap: wrap !important;
-        img {
-            width: 70% !important;
+            width: 75% !important;
         }
     }
 }

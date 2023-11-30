@@ -1,6 +1,8 @@
 import styles from "./AboutUs.module.scss";
+
 import Polygon from "../../assets/Polygon 3.svg";
 import PolygonYellow from "../../assets/Polygon 5.svg";
+
 import { useContext } from "react";
 import Context from "../../hooks/Context";
 

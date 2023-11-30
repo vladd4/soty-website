@@ -1,10 +1,13 @@
 import styles from "./Additional.module.scss";
+
 import PolygonRight from "../../assets/polygon-right.png";
 import PolygonLeft from "../../assets/poly-left.png";
+
 import { useContext, useEffect } from "react";
-import Context from "../../hooks/Context";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+
+import Context from "../../hooks/Context";
 
 const Additional = () => {
   const t = useContext(Context);

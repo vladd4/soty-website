@@ -97,14 +97,17 @@
                 align-items: center;
                 justify-content: center;
                 a {
-                    width: 40%;
+                    width: 27%;
                     transition: all .3s;
                     &:hover {
-                        transform: scale(1.1);
+                        transform: scale(1.0);
                     }
                 }
-                img {
+                .inst {
                     width: 100%;
+                }
+                .telega {
+                    width: 90%;
                 }
             }
         }
@@ -133,13 +136,16 @@
             a {
                 width: 30% !important;
             }
-            img {
-                width: 100% !important;
+            .telega {
+                width: 70% !important;
+            }
+            .inst {
+                width: 80% !important;
             }
         }
     }
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
     .tel {
         display: none !important;
     }

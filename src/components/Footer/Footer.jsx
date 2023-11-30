@@ -1,8 +1,9 @@
 import styles from "./Footer.module.scss";
 
-import Logo from "../../assets/logo.png";
-import Instagram from "../../assets/instagram 1.png";
-import Facebook from "../../assets/facebook 1.png";
+import Logo from "../../assets/соти_final.svg";
+import Instagram from "../../assets/social/instagram-icon.svg";
+import Telegram from "../../assets/social/telegram-icon.svg";
+import Viber from "../../assets/social/viber-icon.svg";
 import Map from "../../assets/point.svg";
 import Phone from "../../assets/phone-icon.svg";
 import Mail from "../../assets/mail-icon.svg";
@@ -31,14 +32,40 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img alt="Facebook" src={Facebook} width="100%" height="100%" />
+              <img
+                alt="Instagram"
+                className={styles.inst}
+                src={Instagram}
+                width="100%"
+                height="100%"
+              />
             </a>
             <a
               href="https://www.facebook.com/people/Leader-company/61553362610336/"
               target="_blank"
               rel="noreferrer"
             >
-              <img alt="Instagram" src={Instagram} width="100%" height="100%" />
+              <img
+                alt="Telegram"
+                className={styles.teleg}
+                src={Telegram}
+                width="100%"
+                height="100%"
+              />
+            </a>
+
+            <a
+              href="https://www.facebook.com/people/Leader-company/61553362610336/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className={styles.viber}
+                alt="Viber"
+                src={Viber}
+                width="100%"
+                height="100%"
+              />
             </a>
           </div>
         </article>
@@ -124,8 +151,9 @@ const Footer = () => {
                   rel="noreferrer"
                 >
                   <img
-                    alt="Facebook"
-                    src={Facebook}
+                    alt="Instagram"
+                    src={Instagram}
+                    className={styles.inst}
                     width="100%"
                     height="100%"
                   />
@@ -136,8 +164,23 @@ const Footer = () => {
                   rel="noreferrer"
                 >
                   <img
-                    alt="Instagram"
-                    src={Instagram}
+                    alt="Telegram"
+                    src={Telegram}
+                    className={styles.teleg}
+                    width="100%"
+                    height="100%"
+                  />
+                </a>
+
+                <a
+                  href="https://www.facebook.com/people/Leader-company/61553362610336/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    className={styles.viber}
+                    alt="Viber"
+                    src={Viber}
                     width="100%"
                     height="100%"
                   />

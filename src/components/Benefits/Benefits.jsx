@@ -1,15 +1,15 @@
 import styles from "./Benefits.module.scss";
 
-import Park from "../../assets/park.png";
-import People from "../../assets/people.png";
-import Safe from "../../assets/safe.png";
-import Sale from "../../assets/sale.png";
-import Ramp from "../../assets/ramp.png";
-import Loc from "../../assets/loc.png";
-import Kub from "../../assets/kub.png";
-import Cam from "../../assets/cam.png";
-import Gryz from "../../assets/gryz.png";
-import Bud from "../../assets/bud.png";
+import Park from "../../assets/advantages/parking-icon.svg";
+import People from "../../assets/advantages/personnel-icon.svg";
+import Safe from "../../assets/advantages/guard-icon.svg";
+import Sale from "../../assets/advantages/price-icon.svg";
+import Ramp from "../../assets/advantages/lift-icon.svg";
+import Loc from "../../assets/advantages/location.svg";
+import Kub from "../../assets/advantages/assortment-icon.svg";
+import Cam from "../../assets/advantages/camera-icon.svg";
+import Gryz from "../../assets/special-vehicle-icon 1.svg";
+import Bud from "../../assets/advantages/building-icon.svg";
 
 import useResize from "../../hooks/useResize";
 import { useContext } from "react";
@@ -82,6 +82,7 @@ const Benefits = ({ polygon }) => {
             {icons.map((icon) => {
               return (
                 <div
+                  key={icon}
                   className={styles.mobile_one_polygon}
                   data-aos="zoom-in"
                   data-aos-offset="0"
@@ -201,9 +202,7 @@ const Benefits = ({ polygon }) => {
                   <img alt="Polygon" src={polygon} width="100%" height="100%" />
                   <div className={styles.polygon_text}>
                     <img alt="Icon" src={Cam} width="100%" height="100%" />
-                    <p>
-                      <p>{t("ind_ben_cam")}</p>
-                    </p>
+                    <p>{t("ind_ben_cam")}</p>
                   </div>
                 </div>
               </div>
@@ -220,9 +219,7 @@ const Benefits = ({ polygon }) => {
                 <img alt="Polygon" src={polygon} width="100%" height="100%" />
                 <div className={styles.polygon_text}>
                   <img alt="Icon" src={Gryz} width="100%" height="100%" />
-                  <p>
-                    <p>{t("ind_ben_technika")}</p>
-                  </p>
+                  <p>{t("ind_ben_technika")}</p>
                 </div>
               </div>
               <div className={styles.two_polygon}>
@@ -239,9 +236,7 @@ const Benefits = ({ polygon }) => {
                   <img alt="Polygon" src={polygon} width="100%" height="100%" />
                   <div className={styles.polygon_text}>
                     <img alt="Icon" src={Sale} width="100%" height="100%" />
-                    <p>
-                      <p>{t("ind_ben_price")}</p>
-                    </p>
+                    <p>{t("ind_ben_price")}</p>
                   </div>
                 </div>
                 <div
@@ -274,9 +269,7 @@ const Benefits = ({ polygon }) => {
                 <img alt="Polygon" src={polygon} width="100%" height="100%" />
                 <div className={styles.polygon_text}>
                   <img alt="Icon" src={Park} width="100%" height="100%" />
-                  <p>
-                    <p>{t("ind_ben_park")}</p>
-                  </p>
+                  <p>{t("ind_ben_park")}</p>
                 </div>
               </div>
             </article>

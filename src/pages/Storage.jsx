@@ -20,7 +20,6 @@ const Storage = () => {
       <Benefits polygon={Polygon} />
       <Items polygon={PolygonSmall} />
       <CalculatorTwo />
-
       <News title="фотогалерея" />
       <Partners />
       <News title="новини" />

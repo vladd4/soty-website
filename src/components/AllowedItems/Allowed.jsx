@@ -1,5 +1,14 @@
 import styles from "./Allowed.module.scss";
-import Park from "../../assets/park.png";
+
+import Toys from "../../assets/h.svg";
+import Clothes from "../../assets/allowed/clothes-icon.svg";
+import Tyres from "../../assets/allowed/tire-icon.svg";
+import Mebli from "../../assets/allowed/furniture-icon.svg";
+import Sport from "../../assets/allowed/sport-equipment-icon.svg";
+import Tech from "../../assets/allowed/office-equipment.svg";
+import Docs from "../../assets/allowed/documents-icon.svg";
+import Other from "../../assets/allowed/tools-icon.svg";
+
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import Context from "../../hooks/Context";
@@ -39,7 +48,7 @@ const Allowed = ({ polygon }) => {
                 height="100%"
               />
               <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Park} />
+                <img alt="Polygon" src={Toys} />
                 <p>{t("ind_all_tech")}</p>
               </div>
             </Link>
@@ -61,7 +70,7 @@ const Allowed = ({ polygon }) => {
                 height="100%"
               />
               <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Park} />
+                <img alt="Polygon" src={Clothes} />
                 <p>{t("ind_all_clothes")}</p>
               </div>
             </Link>
@@ -81,7 +90,7 @@ const Allowed = ({ polygon }) => {
                 className={styles.polygon_parent}
               />
               <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Park} />
+                <img alt="Polygon" src={Tyres} />
                 <p>{t("ind_all_tyres")}</p>
               </div>
             </Link>
@@ -103,7 +112,7 @@ const Allowed = ({ polygon }) => {
                 className={styles.polygon_parent}
               />
               <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Park} />
+                <img alt="Polygon" src={Mebli} />
                 <p>{t("ind_all_mebli")}</p>
               </div>
             </Link>
@@ -123,7 +132,7 @@ const Allowed = ({ polygon }) => {
                 height="100%"
               />
               <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Park} />
+                <img alt="Polygon" src={Sport} />
                 <p>{t("ind_all_sport")}</p>
               </div>
             </Link>
@@ -145,7 +154,7 @@ const Allowed = ({ polygon }) => {
                 className={styles.polygon_parent}
               />
               <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Park} />
+                <img alt="Polygon" src={Tech} />
                 <p>{t("ind_all_offTech")}</p>
               </div>
             </Link>
@@ -167,7 +176,7 @@ const Allowed = ({ polygon }) => {
                 className={styles.polygon_parent}
               />
               <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Park} />
+                <img alt="Polygon" src={Docs} />
                 <p>{t("ind_all_docs")}</p>
               </div>
             </Link>
@@ -188,7 +197,7 @@ const Allowed = ({ polygon }) => {
                 height="100%"
               />
               <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Park} />
+                <img alt="Polygon" src={Other} />
                 <p>{t("ind_all_other")}</p>
               </div>
             </Link>

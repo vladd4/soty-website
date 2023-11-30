@@ -1,9 +1,9 @@
 import styles from "./Header.module.scss";
 
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/соти_final.svg";
 import Hamburger from "../../assets/hamburger.svg";
-import Instagram from "../../assets/instagram 1.png";
-import Facebook from "../../assets/facebook 1.png";
+import Instagram from "../../assets/social/instagram-icon.svg";
+import Telegram from "../../assets/social/telegram-icon.svg";
 import Home from "../../assets/home.svg";
 import Map from "../../assets/point.svg";
 import Phone from "../../assets/tel.svg";
@@ -74,14 +74,26 @@ const Header = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img alt="Facebook" src={Facebook} width="100%" height="100%" />
+              <img
+                alt="Telegram"
+                className={styles.telega}
+                src={Telegram}
+                width="100%"
+                height="100%"
+              />
             </a>
             <a
               href="https://www.facebook.com/people/Leader-company/61553362610336/"
               target="_blank"
               rel="noreferrer"
             >
-              <img alt="Instagram" src={Instagram} width="100%" height="100%" />
+              <img
+                alt="Instagram"
+                className={styles.inst}
+                src={Instagram}
+                width="100%"
+                height="100%"
+              />
             </a>
           </div>
           <img
