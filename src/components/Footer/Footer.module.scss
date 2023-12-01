@@ -29,8 +29,13 @@
                 gap: 0%;
                 a {
                     width: 23%;
+                    margin: 0% 0.5%;
+                    transition: all .3s;
                     &:hover {
                         transform: scale(1.1);
+                    }
+                    .teleg {
+                        width: 90%;
                     }
                 }
             }
@@ -90,26 +95,22 @@
                         justify-content: center;
 
                         a {
-                            width: 50%;
-                            
-
+                            width: 35%;
+                            margin: 0% 0.5%;
                             img {
                                 width: 100%;
+                                transition: all .3s;
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
                             }
-                            // .inst_mobile {
-                            //     width: 85% !important;
-                            //     transition: all .3s;
-                            //     &:hover {
-                            //         transform: scale(1.1);
-                            //     }
-                            // }
-                            // .teleg_mobile, .viber_mobile {
-                            //     width: 75% !important;
-                            //     transition: all .3s;
-                            //     &:hover {
-                            //         transform: scale(1.1);
-                            //     }
-                            // }
+                            .mobile_teleg {
+                                width: 90% !important;
+                                transition: all .3s;
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
                         }
                     }
                 }
@@ -182,7 +183,7 @@
         width: 50% !important;
     }
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
     .wrapper {
         flex-wrap: nowrap !important;
         flex-direction: column !important;
