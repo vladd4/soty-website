@@ -29,26 +29,10 @@
                 gap: 0%;
                 a {
                     width: 23%;
-                    display: grid;
-                    place-items: center;
-                    .inst {
-                        width: 100%;
-                        transition: all .3s;
-        
-                        &:hover {
-                            transform: scale(1.1);
-                        }
-                    }
-                    .teleg, .viber {
-                        width: 88%;
-                        transition: all .3s;
-        
-                        &:hover {
-                            transform: scale(1.1);
-                        }
+                    &:hover {
+                        transform: scale(1.1);
                     }
                 }
-                
             }
         }
         .info_block {
@@ -107,26 +91,25 @@
 
                         a {
                             width: 50%;
-                            display: grid;
-                            place-items: center;
+                            
 
                             img {
                                 width: 100%;
                             }
-                            .inst_mobile {
-                                width: 85% !important;
-                                transition: all .3s;
-                                &:hover {
-                                    transform: scale(1.1);
-                                }
-                            }
-                            .teleg_mobile, .viber_mobile {
-                                width: 75% !important;
-                                transition: all .3s;
-                                &:hover {
-                                    transform: scale(1.1);
-                                }
-                            }
+                            // .inst_mobile {
+                            //     width: 85% !important;
+                            //     transition: all .3s;
+                            //     &:hover {
+                            //         transform: scale(1.1);
+                            //     }
+                            // }
+                            // .teleg_mobile, .viber_mobile {
+                            //     width: 75% !important;
+                            //     transition: all .3s;
+                            //     &:hover {
+                            //         transform: scale(1.1);
+                            //     }
+                            // }
                         }
                     }
                 }
