@@ -409,96 +409,96 @@
     }
 }
 
-@media screen and (max-width: 1400px) {
-    .button_block {
-        width: 75% !important;
-    }
-    .size_row {
-        width: 75% !important;
-        gap: 5% !important;
-    }
-    .size_item {
-        width: 100% !important;
-    }
-    .termin_row {
-        width: 75% !important;
-        gap: 5% !important;
-    }
-    .termin_item {
-        width: 100% !important;
-    }
-}
-@media screen and (max-width: 1000px) {
-    .wrapper {
-        width: 60% !important;
-    }
-    .bottom_polygon {
-        left: -10% !important;
-        bottom: -2% !important;
-        img {
-            width: 45% !important;
-        }
-        .bottom_first_row {
-            margin-bottom: -12% !important;
-        }
-    }
-    .top_polygon {
-        right: -5% !important;
-        top: -8% !important;
-        img {
-            width: 45% !important;
-        }
-        .img_3 {
-            margin-top: 70% !important;
-            margin-left: -22% !important;
-        }
-    }
-    .top_block {
-        .main_image {
-            display: none !important;
-        }
-        .icon_block {
-            h3 {
-                font-size: 18px !important;
-            }
-            p {
-                font-size: 16px !important;
-                width: 75%;
-                text-align: center;
-            }
-        }
-        .sizes {
-            h3 {
-                font-size: 15px !important;
-                text-align: center;
-            }
-        }
-    }
-    .termin_block {
-        h3 {
-            font-size: 17px !important;
-            font-weight: 600 !important;
-        }
-        margin-top: -2% !important;
-    }
-    .button_block {
-        margin-top: 2%;
-        h3 {
-            font-size: 15px !important;
-        }
-        h1 {
-            font-size: 16px !important;
-        }
-        button {
-            font-size: 15px !important;
-            width: 65% !important;
-            margin-top: 2%;
-        }
-    }
-    .mobile_calc {
-        display: block !important;
-    }
-}
+// @media screen and (max-width: 1400px) {
+//     .button_block {
+//         width: 75% !important;
+//     }
+//     .size_row {
+//         width: 75% !important;
+//         gap: 5% !important;
+//     }
+//     .size_item {
+//         width: 100% !important;
+//     }
+//     .termin_row {
+//         width: 75% !important;
+//         gap: 5% !important;
+//     }
+//     .termin_item {
+//         width: 100% !important;
+//     }
+// }
+// @media screen and (max-width: 1000px) {
+//     .wrapper {
+//         width: 60% !important;
+//     }
+//     .bottom_polygon {
+//         left: -10% !important;
+//         bottom: -2% !important;
+//         img {
+//             width: 45% !important;
+//         }
+//         .bottom_first_row {
+//             margin-bottom: -12% !important;
+//         }
+//     }
+//     .top_polygon {
+//         right: -5% !important;
+//         top: -8% !important;
+//         img {
+//             width: 45% !important;
+//         }
+//         .img_3 {
+//             margin-top: 70% !important;
+//             margin-left: -22% !important;
+//         }
+//     }
+//     .top_block {
+//         .main_image {
+//             display: none !important;
+//         }
+//         .icon_block {
+//             h3 {
+//                 font-size: 18px !important;
+//             }
+//             p {
+//                 font-size: 16px !important;
+//                 width: 75%;
+//                 text-align: center;
+//             }
+//         }
+//         .sizes {
+//             h3 {
+//                 font-size: 15px !important;
+//                 text-align: center;
+//             }
+//         }
+//     }
+//     .termin_block {
+//         h3 {
+//             font-size: 17px !important;
+//             font-weight: 600 !important;
+//         }
+//         margin-top: -2% !important;
+//     }
+//     .button_block {
+//         margin-top: 2%;
+//         h3 {
+//             font-size: 15px !important;
+//         }
+//         h1 {
+//             font-size: 16px !important;
+//         }
+//         button {
+//             font-size: 15px !important;
+//             width: 65% !important;
+//             margin-top: 2%;
+//         }
+//     }
+//     .mobile_calc {
+//         display: block !important;
+//     }
+// }
 @media screen and (max-width: 650px) {
     .wrapper {
         width: 85% !important;
