@@ -28,14 +28,13 @@
                 justify-content: center;
                 gap: 0%;
                 a {
-                    width: 23%;
-                    margin: 0% 0.5%;
+                    width: 50%;
                     transition: all .3s;
+                    img {
+                        width: 100%;
+                    }
                     &:hover {
                         transform: scale(1.1);
-                    }
-                    .teleg {
-                        width: 90%;
                     }
                 }
             }
@@ -95,17 +94,10 @@
                         justify-content: center;
 
                         a {
-                            width: 35%;
+                            width: 50%;
                             margin: 0% 0.5%;
                             img {
                                 width: 100%;
-                                transition: all .3s;
-                                &:hover {
-                                    transform: scale(1.1);
-                                }
-                            }
-                            .mobile_teleg {
-                                width: 90% !important;
                                 transition: all .3s;
                                 &:hover {
                                     transform: scale(1.1);

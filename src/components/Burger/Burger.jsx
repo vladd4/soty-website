@@ -1,8 +1,7 @@
 import styles from "./Burger.module.scss";
 
-import Insta from "../../assets/social/instagram-icon.svg";
-import Telega from "../../assets/social/telegram-icon.svg";
-import Viber from "../../assets/social/viber-icon.svg";
+import Insta from "../../assets/instagram 1.png";
+import Telega from "../../assets/facebook 1.png";
 import Map from "../../assets/point.svg";
 import Phone from "../../assets/phone-icon.svg";
 import Mail from "../../assets/mail-icon.svg";
@@ -75,40 +74,14 @@ const Burger = ({ clicked, setClicked }) => {
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              className={styles.inst}
-              alt="Instagram"
-              src={Insta}
-              width="100%"
-              height="100%"
-            />
+            <img alt="Instagram" src={Insta} width="100%" height="100%" />
           </a>
           <a
             href="https://www.facebook.com/people/Leader-company/61553362610336/"
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              className={styles.telega}
-              alt="Telegram"
-              src={Telega}
-              width="100%"
-              height="100%"
-            />
-          </a>
-
-          <a
-            href="https://www.facebook.com/people/Leader-company/61553362610336/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              className={styles.viber}
-              alt="Viber"
-              src={Viber}
-              width="100%"
-              height="100%"
-            />
+            <img alt="Telegram" src={Telega} width="100%" height="100%" />
           </a>
         </div>
       </article>

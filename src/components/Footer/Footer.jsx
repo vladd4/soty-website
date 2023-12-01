@@ -1,8 +1,8 @@
 import styles from "./Footer.module.scss";
 
 import Logo from "../../assets/соти_final.svg";
-import Instagram from "../../assets/social/instagram-icon.svg";
-import Telegram from "../../assets/social/telegram-icon.svg";
+import Instagram from "../../assets/instagram 1.png";
+import Telegram from "../../assets/facebook 1.png";
 import Map from "../../assets/point.svg";
 import Phone from "../../assets/phone-icon.svg";
 import Mail from "../../assets/mail-icon.svg";
@@ -38,13 +38,7 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img
-                alt="Telegram"
-                src={Telegram}
-                className={styles.teleg}
-                width="100%"
-                height="100%"
-              />
+              <img alt="Telegram" src={Telegram} width="100%" height="100%" />
             </a>
           </div>
         </article>
@@ -144,7 +138,6 @@ const Footer = () => {
                   <img
                     alt="Telegram"
                     src={Telegram}
-                    className={styles.mobile_teleg}
                     width="100%"
                     height="100%"
                   />

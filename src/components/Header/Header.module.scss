@@ -97,17 +97,14 @@
                 align-items: center;
                 justify-content: center;
                 a {
-                    width: 27%;
+                    width: 43%;
                     transition: all .3s;
+                    img {
+                        width: 100%;
+                    }
                     &:hover {
                         transform: scale(1.0);
                     }
-                }
-                .inst {
-                    width: 100%;
-                }
-                .telega {
-                    width: 90%;
                 }
             }
         }
@@ -134,13 +131,10 @@
         }
         .social_block {
             a {
-                width: 30% !important;
-            }
-            .telega {
-                width: 70% !important;
-            }
-            .inst {
-                width: 80% !important;
+                width: 35% !important;
+                img {
+                    width: 100% !important;
+                }
             }
         }
     }
