@@ -9,7 +9,6 @@ import Icon1 from "../../assets/calculator/car-icon.svg";
 import Icon2 from "../../assets/calculator/pickuptruck-icon.svg";
 import Icon3 from "../../assets/calculator/minibus-icon.svg";
 import Icon4 from "../../assets/calculator/bus-icon.svg";
-import MobileCalc from "../../assets/mobile-calc.png";
 
 import I10 from "../../assets/10sqm.png";
 import I8 from "../../assets/8sqm.png";
