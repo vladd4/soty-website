@@ -11,6 +11,15 @@ import Icon3 from "../../assets/calculator/minibus-icon.svg";
 import Icon4 from "../../assets/calculator/bus-icon.svg";
 import MobileCalc from "../../assets/mobile-calc.png";
 
+import I10 from "../../assets/10sqm.png";
+import I8 from "../../assets/8sqm.png";
+import I6 from "../../assets/6sqm.png";
+import I4 from "../../assets/4sqm.png";
+import I3 from "../../assets/3sqm.png";
+import I25 from "../../assets/2.5sqm.png";
+import I2 from "../../assets/2sqm.png";
+import I1 from "../../assets/1m.png";
+
 import { useEffect, useState } from "react";
 import { showModal } from "../../utils/showModal";
 
@@ -175,7 +184,25 @@ const CalculatorOne = () => {
               <h3>Або одразу виберіть необхідний розмір боксу:</h3>
               <img
                 alt="Mobile"
-                src={MobileCalc}
+                src={
+                  clickedSize?.size === "8 м"
+                    ? I8
+                    : clickedSize?.size === "10 м"
+                    ? I10
+                    : clickedSize?.size === "6 м"
+                    ? I6
+                    : clickedSize?.size === "4 м"
+                    ? I4
+                    : clickedSize?.size === "3 м"
+                    ? I3
+                    : clickedSize?.size === "2.5 м"
+                    ? I25
+                    : clickedSize?.size === "2 м"
+                    ? I2
+                    : clickedSize?.size === "1 м"
+                    ? I1
+                    : I10
+                }
                 className={styles.mobile_calc}
               />
               {sizes && sizes.length > 0 ? (
@@ -307,7 +334,25 @@ const CalculatorOne = () => {
           </div>
           <img
             alt="Claculator"
-            src={Image}
+            src={
+              clickedSize?.size === "8 м"
+                ? I8
+                : clickedSize?.size === "10 м"
+                ? I10
+                : clickedSize?.size === "6 м"
+                ? I6
+                : clickedSize?.size === "4 м"
+                ? I4
+                : clickedSize?.size === "3 м"
+                ? I3
+                : clickedSize?.size === "2.5 м"
+                ? I25
+                : clickedSize?.size === "2 м"
+                ? I2
+                : clickedSize?.size === "1 м"
+                ? I1
+                : I10
+            }
             className={styles.main_image}
             width="100%"
             height="100%"
