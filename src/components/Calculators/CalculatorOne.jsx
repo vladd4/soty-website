@@ -240,7 +240,7 @@ const CalculatorOne = () => {
                 <p>No sizes available</p>
               )}
             </div>
-            {/* <div className={styles.termin_block}>
+            <div className={styles.termin_block}>
               <h3>Виберіть термін зберігання</h3>
               {termins && termins.length > 0 ? (
                 isMobile ? (
@@ -303,7 +303,7 @@ const CalculatorOne = () => {
               ) : (
                 <p>No termins available</p>
               )}
-            </div> */}
+            </div>
           </div>
           <img
             alt="Claculator"
