@@ -296,13 +296,15 @@
                     }
                 }
                 .termin_block {
-                    display: grid;
-                    place-items: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
                     width: 100%;
 
                     h3 {
                         margin: 0;
-                        font-size: calc(#{$size});
+                        font-size: calc(#{$size}/1.2);
                         text-transform: none;
                         font-weight: 300;
                         margin-bottom: 5%;
