@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   title: "",
   info: "",
+  icon: null,
 };
 
 export const additionalSlice = createSlice({
@@ -15,10 +16,13 @@ export const additionalSlice = createSlice({
     setInfo: (state, action) => {
       state.info = action.payload;
     },
+    setIcon: (state, action) => {
+      state.icon = action.payload;
+    },
   },
   extraReducers: {},
 });
 
-export const { setInfo, setTitle } = additionalSlice.actions;
+export const { setInfo, setTitle, setIcon } = additionalSlice.actions;
 
 export const additionalReducer = additionalSlice.reducer;

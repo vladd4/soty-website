@@ -13,16 +13,17 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import Context from "../../hooks/Context";
 import { useDispatch } from "react-redux";
-import { setTitle, setInfo } from "../../redux/slices/additionalSlice";
+import { setTitle, setInfo, setIcon } from "../../redux/slices/additionalSlice";
 
 const Allowed = ({ polygon }) => {
   const t = useContext(Context);
   const dispatch = useDispatch();
-  const handleCLick = (title, info) => {
+  const handleCLick = (title, info, icon) => {
     window.scrollTo(0, 0);
     document.querySelector("#home-link").classList.add("show_home");
     dispatch(setTitle(title));
     dispatch(setInfo(info));
+    dispatch(setIcon(icon));
   };
   return (
     <section className={styles.root}>
@@ -35,7 +36,9 @@ const Allowed = ({ polygon }) => {
             <Link
               className={styles.container}
               to="/details"
-              onClick={() => handleCLick("ind_all_tech", "ind_all_tech_p")}
+              onClick={() =>
+                handleCLick("ind_all_tech", "ind_all_tech_p", Toys)
+              }
               data-aos="zoom-in"
               data-aos-offset="0"
               data-aos-duration="1500"
@@ -55,7 +58,7 @@ const Allowed = ({ polygon }) => {
             <Link
               to="/details"
               onClick={() =>
-                handleCLick("ind_all_clothes", "ind_all_clothes_p")
+                handleCLick("ind_all_clothes", "ind_all_clothes_p", Clothes)
               }
               className={styles.container}
               data-aos="zoom-in"
@@ -77,7 +80,9 @@ const Allowed = ({ polygon }) => {
             <Link
               className={styles.container}
               to="/details"
-              onClick={() => handleCLick("ind_all_tyres", "ind_all_tyres_p")}
+              onClick={() =>
+                handleCLick("ind_all_tyres", "ind_all_tyres_p", Tyres)
+              }
               data-aos="zoom-in"
               data-aos-offset="0"
               data-aos-duration="1500"
@@ -98,7 +103,9 @@ const Allowed = ({ polygon }) => {
           <article className={styles.article_two}>
             <Link
               to="/details"
-              onClick={() => handleCLick("ind_all_mebli", "ind_all_mebli_p")}
+              onClick={() =>
+                handleCLick("ind_all_mebli", "ind_all_mebli_p", Mebli)
+              }
               className={styles.container}
               data-aos="zoom-in"
               data-aos-offset="0"
@@ -118,7 +125,9 @@ const Allowed = ({ polygon }) => {
             </Link>
             <Link
               to="/details"
-              onClick={() => handleCLick("ind_all_sport", "ind_all_sport_p")}
+              onClick={() =>
+                handleCLick("ind_all_sport", "ind_all_sport_p", Sport)
+              }
               className={styles.container}
               data-aos="zoom-in"
               data-aos-offset="0"
@@ -140,7 +149,7 @@ const Allowed = ({ polygon }) => {
               to="/details"
               className={styles.container}
               onClick={() =>
-                handleCLick("ind_all_offTech", "ind_all_offTech_p")
+                handleCLick("ind_all_offTech", "ind_all_offTech_p", Tech)
               }
               data-aos="zoom-in"
               data-aos-offset="0"
@@ -162,7 +171,9 @@ const Allowed = ({ polygon }) => {
           <article className={styles.article_three}>
             <Link
               to="/details"
-              onClick={() => handleCLick("ind_all_docs", "ind_all_docs_p")}
+              onClick={() =>
+                handleCLick("ind_all_docs", "ind_all_docs_p", Docs)
+              }
               className={styles.container}
               data-aos="zoom-in"
               data-aos-offset="0"
@@ -183,7 +194,9 @@ const Allowed = ({ polygon }) => {
 
             <Link
               to="/details"
-              onClick={() => handleCLick("ind_all_other", "ind_all_other_p")}
+              onClick={() =>
+                handleCLick("ind_all_other", "ind_all_other_p", Other)
+              }
               className={styles.container}
               data-aos="zoom-in"
               data-aos-offset="0"

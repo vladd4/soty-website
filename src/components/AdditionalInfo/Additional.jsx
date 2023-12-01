@@ -12,7 +12,7 @@ import Context from "../../hooks/Context";
 const Additional = () => {
   const t = useContext(Context);
   const navigate = useNavigate();
-  const { title, info } = useSelector((state) => state.additional);
+  const { title, info, icon } = useSelector((state) => state.additional);
 
   useEffect(() => {
     if (!title.trim() && !info.trim()) {
@@ -30,13 +30,16 @@ const Additional = () => {
           width="100%"
           height="auto"
         />
-        <img
-          alt="Polygon"
-          src={PolygonLeft}
-          className={styles.poly_left}
-          width="100%"
-          height="auto"
-        />
+        <div className={styles.left_div}>
+          <img
+            alt="Polygon"
+            src={PolygonLeft}
+            className={styles.poly_left}
+            width="100%"
+            height="auto"
+          />
+          <img className={styles.icon} alt="Additional icon" src={icon} />
+        </div>
         <div className={styles.header_block}>
           <h3>{t(title)}</h3>
           <p>{t(info)}</p>

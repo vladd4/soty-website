@@ -12,18 +12,30 @@
         width: 90%;
         display: grid;
         place-items: center;
-
         .poly_right {
             position: absolute;
             top: -10%;
             right: 0;
             width: 25%;
         }
-        .poly_left {
+        .left_div {
             position: absolute;
             top: -10%;
             left: 0;
             width: 25%;
+            .poly_left {
+                width: 100%;
+                position: relative;
+            }
+            .icon {
+                position: absolute;
+                top: 46.5%;
+                left: 16.5%;
+                z-index: 1000;
+                background-color: $color-yellow;
+                width: 24%;
+                border-radius: 50%;
+            }
         }
         .backTo {
             cursor: pointer;
@@ -58,15 +70,17 @@
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
     .root {
         padding-top: 10% !important;
     }
     .poly_right {
         top: 7% !important;
+        width: 30% !important;
     }
-    .poly_left {
+    .left_div {
         top: 7% !important;
+        width: 30% !important;
     }
     .parent {
         width: 35% !important;
