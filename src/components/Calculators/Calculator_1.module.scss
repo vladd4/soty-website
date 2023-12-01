@@ -234,20 +234,22 @@
                     .mobile_calc {
                         width: 55%;
                         margin-bottom: 5%;
-                        display: none !important;
+                        display: none;
                     }
                     .size_row {
-                        display: grid;
-                        place-items: center;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-wrap: wrap;
                         grid-template-columns: repeat(4, 1fr);
-                        gap: 0%;
-                        width: 60%;
+                        gap: 0.5%;
+                        width: 70%;
 
                         .size_item {
                             position: relative;
                             display: grid;
                             place-items: center;
-                            width: 85%;
+                            width: 22%;
                             margin-bottom: 5%;
                             cursor: pointer;
                             transition: all .3s;
@@ -427,7 +429,7 @@
         gap: 5% !important;
     }
     .size_item {
-        width: 100% !important;
+        width: 20% !important;
     }
     .termin_row {
         width: 75% !important;
