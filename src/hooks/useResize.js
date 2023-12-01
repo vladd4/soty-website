@@ -34,7 +34,7 @@ const useResize = (setSlides, slider, calc) => {
           setMobile(false);
         }
       } else {
-        if (windowWidth <= 750) {
+        if (windowWidth <= 650) {
           setMobile(true);
         } else {
           setMobile(false);
