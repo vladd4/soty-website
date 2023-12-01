@@ -110,6 +110,9 @@
                             display: grid;
                             place-items: center;
 
+                            img {
+                                width: 100%;
+                            }
                             .inst_mobile {
                                 width: 85% !important;
                                 transition: all .3s;
