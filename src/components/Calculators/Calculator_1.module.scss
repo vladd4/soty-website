@@ -217,8 +217,10 @@
                     }
                 }
                 .sizes {
-                    display: grid;
-                    place-items: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
                     width: 100%;
                     margin-bottom: 10%;
 
@@ -232,7 +234,7 @@
                     .mobile_calc {
                         width: 55%;
                         margin-bottom: 5%;
-                        display: none;
+                        display: none !important;
                     }
                     .size_row {
                         display: grid;
