@@ -166,17 +166,18 @@
                         margin-bottom: 5%;
                     }
                     .size_row {
-                        display: grid;
-                        place-items: center;
-                        grid-template-columns: repeat(5, 1fr);
-                        gap: 0%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: 3%;
                         width: 70%;
 
                         .size_item {
                             position: relative;
                             display: grid;
                             place-items: center;
-                            width: 85%;
+                            width: 17%;
                             margin-bottom: 5%;
                             cursor: pointer;
                             transition: all .3s;
@@ -203,7 +204,7 @@
                             position: relative;
                             display: grid;
                             place-items: center;
-                            width: 85%;
+                            width: 17%;
                             margin-bottom: 5%;
                             cursor: pointer;
 
@@ -236,17 +237,18 @@
                         margin-bottom: 5%;
                     }
                     .termin_row {
-                        display: grid;
-                        place-items: center;
-                        grid-template-columns: repeat(4, 1fr);
-                        gap: 0%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: 3%;
                         width: 57%;
 
                         .termin_item {
                             position: relative;
                             display: grid;
                             place-items: center;
-                            width: 85%;
+                            width: 21%;
                             margin-bottom: 5%;
                             cursor: pointer;
                             transition: all .3s;
@@ -273,7 +275,7 @@
                             position: relative;
                             display: grid;
                             place-items: center;
-                            width: 85%;
+                            width: 21%;
                             margin-bottom: 5%;
                             cursor: pointer;
 
@@ -339,25 +341,22 @@
         }
     }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
     .button_block {
         width: 75% !important;
     }
     .size_row {
-        width: 75% !important;
-        gap: 5% !important;
-        grid-template-columns: repeat(4, 1fr) !important;
-        margin-bottom: 25% !important;
+        width: 80% !important;
     }
     .size_item {
-        width: 100% !important;
+        width: 16% !important;
     }
     .termin_row {
         width: 75% !important;
         gap: 5% !important;
     }
     .termin_item {
-        width: 100% !important;
+        width: 20% !important;
     }
     .top_polygon {
         top: -10% !important;

@@ -224,17 +224,18 @@
                         margin-bottom: 5%;
                     }
                     .termin_row {
-                        display: grid;
-                        place-items: center;
-                        grid-template-columns: repeat(4, 1fr);
-                        gap: 0%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: 3%;
                         width: 57%;
 
                         .termin_item {
                             position: relative;
                             display: grid;
                             place-items: center;
-                            width: 85%;
+                            width: 22%;
                             margin-bottom: 5%;
                             cursor: pointer;
                             transition: all .3s;
@@ -261,7 +262,7 @@
                             position: relative;
                             display: grid;
                             place-items: center;
-                            width: 85%;
+                            width: 22%;
                             margin-bottom: 5%;
                             cursor: pointer;
 
