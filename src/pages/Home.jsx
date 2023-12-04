@@ -8,9 +8,9 @@ const Home = () => {
     <>
       <Welcome />
       <AboutUs />
-      <News title="фотогалерея" />
+      <News title="photo_h" />
       <Partners />
-      <News title="новини" />
+      <News title="news_h" />
     </>
   );
 };

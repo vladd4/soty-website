@@ -6,9 +6,11 @@ import Map from "../../assets/point.svg";
 import Phone from "../../assets/phone-icon.svg";
 import Mail from "../../assets/mail-icon.svg";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useContext } from "react";
+import Context from "../../hooks/Context";
 
 const Burger = ({ clicked, setClicked }) => {
+  const t = useContext(Context);
   const componentRef = useRef(null);
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -33,15 +35,7 @@ const Burger = ({ clicked, setClicked }) => {
       ref={componentRef}
     >
       <article className={styles.wrapper}>
-        <h3>меню</h3>
-        <div className={styles.lang_block}>
-          <p>Переключити мову сайту:</p>
-          <div className={styles.language_block}>
-            <p className={styles.current_lang}>UA</p>
-            <span>|</span>
-            <p>EN</p>
-          </div>
-        </div>
+        <h3>{t("menu")}</h3>
         <div className={styles.links_block}>
           <a
             href="https://maps.app.goo.gl/M4MpJLJrim7oRBW9A"
@@ -49,7 +43,7 @@ const Burger = ({ clicked, setClicked }) => {
             rel="noreferrer"
           >
             <img alt="Map" src={Map} width="6%" height="100%" />
-            <p>м. Львів вул Зелена 301</p>
+            <p>{t("location")}</p>
           </a>
           <a
             href="https://www.facebook.com/people/Leader-company/61553362610336/"

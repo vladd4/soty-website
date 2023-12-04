@@ -21,9 +21,9 @@ const Individual = () => {
       <Items polygon={PolygonSmall} />
       <CalculatorOne />
 
-      <News title="фотогалерея" />
+      <News title="photo_h" />
       <Partners />
-      <News title="новини" />
+      <News title="news_h" />
     </>
   );
 };

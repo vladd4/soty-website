@@ -1,14 +1,16 @@
 import styles from "./Modal.module.scss";
 import Polygon from "../../assets/modal-polygon.png";
 import Close from "../../assets/close.svg";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { sendFormToTelegram } from "../../utils/sendTelegram";
 import { useSelector, useDispatch } from "react-redux";
 import { resetData } from "../../redux/slices/modalSlice";
 import { closeModal } from "../../utils/showModal";
+import Context from "../../hooks/Context";
 
 const Modal = () => {
   const ref = useRef(null);
+  const t = useContext(Context);
   const [name, setName] = useState("");
   const [tel, setTel] = useState("");
   const [post, setPost] = useState("");
@@ -29,6 +31,7 @@ const Modal = () => {
     sendFormToTelegram(string);
     setName("");
     setTel("");
+    setPost("");
     dispatch(resetData());
     closeModal(ref);
   };
@@ -42,32 +45,30 @@ const Modal = () => {
           onClick={() => closeModal(ref)}
         />
         <img alt="Polygon" src={Polygon} className={styles.polygon} />
-        <h3>
-          За заявкою з Вами зв'яжеться наш менеджер та прийме ваше бронювання
-        </h3>
+        <h3>{t("modal_p")}</h3>
         <div className={styles.form_block}>
           <input
             type="text"
             required
-            placeholder="Введіть ваше ім'я*"
+            placeholder={t("modal_name")}
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <input
             type="text"
             required
-            placeholder="Введіть номер телефону*"
+            placeholder={t("modal_phone")}
             value={tel}
             onChange={(e) => setTel(e.target.value.replace(/\D/g, ""))}
           />
           <input
             type="mail"
-            placeholder="Введіть електронну пошту"
+            placeholder={t("modal_post")}
             value={post}
             onChange={(e) => setPost(e.target.value)}
           />
         </div>
-        <button onClick={(e) => handleClick(e)}>Забронювати</button>
+        <button onClick={(e) => handleClick(e)}>{t("order_calc")}</button>
       </article>
     </section>
   );

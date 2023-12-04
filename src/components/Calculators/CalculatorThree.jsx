@@ -3,34 +3,96 @@ import Image from "../../assets/pallete 1.png";
 import PolygonWhite from "../../assets/calc-white.svg";
 import PolygonYellow from "../../assets/Polygon 5.svg";
 import EmptyPoligon from "../../assets/empty-polygon.svg";
-import { useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { showModal } from "../../utils/showModal";
 import useResize from "../../hooks/useResize";
-const palets = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-const termins = [
-  "1 тиж",
-  "1 міс",
-  "2 міс",
-  "3 міс",
-  "4 міс",
-  "5 міс",
-  "6 міс",
-  "12+ міс",
-];
+import Context from "../../hooks/Context";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setPrice,
+  setSize,
+  setTermin,
+  setType,
+} from "../../redux/slices/modalSlice";
+import {
+  fetchIsEmptyRemote,
+  fetchSizesAndPriceRemote,
+  fetchTerminAndPrice,
+} from "../../redux/slices/calcSlice";
 
 const CalculatorThree = () => {
+  const t = useContext(Context);
   const [selectedInput, setSelectedInput] = useState(5);
-  const [clickedTermin, setClickedTermin] = useState(null);
-  const isEmpty = false;
-  const isMobile = useResize(null);
+  const isEmpty = useSelector((state) => state.calculator.isEmptyRemote);
+  const termins = useSelector((state) => state.calculator.terminIndividual);
+  const sizes = useSelector((state) => state.calculator.sizesRemote);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [clickedSize, setClickedSize] = useState(
+    sizes && sizes.length > 0 ? sizes[3] : null
+  );
+  const [clickedTermin, setClickedTermin] = useState(
+    termins && termins.length > 0 ? termins[2] : null
+  );
+  const isMobile = useResize(null, null, "calc");
+
+  const dispatch = useDispatch();
+
+  const toggleSize = (car) => {
+    if (car !== null) {
+      if (car.price) {
+        setClickedSize(car === clickedSize ? null : car);
+      } else {
+        setClickedSize(
+          car.size === clickedSize?.size
+            ? null
+            : sizes.find((size) => size.size === car.size)
+        );
+      }
+      dispatch(setSize(car.size));
+    } else {
+      setClickedSize(null);
+    }
+  };
 
   const toggleTermin = (termin) => {
-    setClickedTermin(termin === clickedTermin ? null : termin);
+    if (termin !== null) {
+      setClickedTermin(termin === clickedTermin ? null : termin);
+      dispatch(setTermin(termin.termin));
+    } else {
+      setClickedTermin(null);
+    }
   };
+  useEffect(() => {
+    dispatch(fetchIsEmptyRemote());
+    dispatch(fetchTerminAndPrice());
+    dispatch(fetchSizesAndPriceRemote());
+  }, []);
+
+  const calculatePrice = () => {
+    if (clickedSize !== null) {
+      const selectedTermin = clickedTermin || termins?.[0];
+
+      if (selectedTermin) {
+        const reductionAmount =
+          (selectedTermin.price / 100) * clickedSize.price;
+        const result = clickedSize.price - reductionAmount;
+        setTotalPrice(result);
+        setClickedTermin(selectedTermin);
+      } else {
+        setTotalPrice(clickedSize.price);
+        setClickedTermin(null);
+      }
+    } else {
+      setTotalPrice(0);
+    }
+  };
+
+  useEffect(() => {
+    calculatePrice();
+  }, [clickedSize, clickedTermin]);
   return (
     <section className={styles.root} id="calc_3">
-      <h3>калькулятор</h3>
+      <h3>{t("calc_h")}</h3>
       <article
         className={styles.wrapper}
         data-aos="zoom-in-down"
@@ -53,7 +115,7 @@ const CalculatorThree = () => {
               {isEmpty ? (
                 <div className={styles.empty}>
                   <img alt="Polygon" src={EmptyPoligon} />
-                  <p>Всі склади зайняті</p>
+                  <p>{t("calc_unavailable")}</p>
                 </div>
               ) : (
                 <img
@@ -70,78 +132,133 @@ const CalculatorThree = () => {
         <div className={styles.top_block}>
           <div className={styles.palet_block}>
             <div className={styles.palets}>
-              <h3>Виберіть кількість пілетомісць:</h3>
+              <h3>{t("calc_pilets")}</h3>
               <img
                 alt="Claculator"
                 src={Image}
                 className={styles.main_image_mobile}
               />
-              {isMobile ? (
-                <select>
-                  {palets
-                    ? palets.map((palet) => {
-                        return <option value={palet}>{palet}</option>;
-                      })
-                    : null}
-                </select>
-              ) : (
-                <div className={styles.input_block}>
-                  <div className={styles.input_item}>
-                    <img alt="Palet" src={PolygonWhite} />
-                    <p>{selectedInput}</p>
+              {sizes && sizes.length > 0 ? (
+                isMobile ? (
+                  <select
+                    onChange={(e) => {
+                      const selectedSize = sizes?.find(
+                        (size) => size.price === parseFloat(e.target.value)
+                      );
+                      toggleSize(
+                        e.target.value === "placeholder" ? null : selectedSize
+                      );
+                    }}
+                  >
+                    <option selected value="placeholder">
+                      Виберіть кількість палет
+                    </option>
+                    {sizes.map((size) => {
+                      return (
+                        <option
+                          key={size.price}
+                          selected={
+                            size?.size === clickedSize?.size ? true : false
+                          }
+                          value={size.price}
+                        >
+                          {size.size}
+                        </option>
+                      );
+                    })}
+                  </select>
+                ) : (
+                  <div className={styles.input_block}>
+                    <div className={styles.input_item}>
+                      <img alt="Palet" src={PolygonWhite} />
+                      <p>{selectedInput}</p>
+                    </div>
+                    <input
+                      type="range"
+                      id="palets"
+                      style={isEmpty ? { pointerEvents: "none" } : null}
+                      name="palets"
+                      value={selectedInput}
+                      onChange={(e) => {
+                        const selectedSizeElement = sizes?.find(
+                          (sizeObj) => sizeObj.size === e.target.value
+                        );
+                        setSelectedInput(e.target.value);
+                        setClickedSize(selectedSizeElement);
+                        dispatch(setSize(selectedSizeElement.size));
+                      }}
+                      min={sizes[0]?.size}
+                      max={sizes[sizes.length - 1]?.size}
+                      step={1}
+                    />
                   </div>
-                  <input
-                    type="range"
-                    id="palets"
-                    name="palets"
-                    value={selectedInput}
-                    onChange={(e) => setSelectedInput(e.target.value)}
-                    min="0"
-                    max="10"
-                  />
-                </div>
+                )
+              ) : (
+                <p>No sizes available</p>
               )}
             </div>
             <div className={styles.termin_block}>
-              <h3>Виберіть термін зберігання</h3>
-              {isMobile ? (
-                <select>
-                  {termins
-                    ? termins.map((termin) => {
-                        return (
-                          <option key={termin} value={termin}>
-                            {termin}
-                          </option>
-                        );
-                      })
-                    : null}
-                </select>
+              <h3>{t("calc_termin")}</h3>
+              {termins && termins.length > 0 ? (
+                isMobile ? (
+                  <select
+                    onChange={(e) => {
+                      const selectedTermin = termins?.find(
+                        (termin) => termin.price === parseFloat(e.target.value)
+                      );
+                      toggleTermin(
+                        e.target.value === "placeholder" ? null : selectedTermin
+                      );
+                    }}
+                  >
+                    <option selected value="placeholder">
+                      Виберіть термін
+                    </option>
+                    {termins.map((termin) => (
+                      <option
+                        key={termin.price}
+                        selected={
+                          termin?.termin === clickedTermin?.termin
+                            ? true
+                            : false
+                        }
+                        value={termin.price}
+                      >
+                        {termin.termin}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <div className={styles.termin_row}>
+                    {termins.map((termin) => {
+                      const isClicked = termin.termin === clickedTermin?.termin;
+                      return (
+                        <div
+                          key={termin.termin}
+                          style={isEmpty ? { pointerEvents: "none" } : null}
+                          className={
+                            isClicked
+                              ? styles.termin_item_clicked
+                              : styles.termin_item
+                          }
+                          onClick={() => {
+                            toggleTermin(termin);
+                          }}
+                        >
+                          <img
+                            alt="Termin"
+                            src={isClicked ? PolygonYellow : PolygonWhite}
+                            width="100%"
+                            height="100%"
+                          />
+                          <p>{termin.termin}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )
               ) : (
-                <div className={styles.termin_row}>
-                  {termins
-                    ? termins.map((termin) => {
-                        const isClicked = termin === clickedTermin;
-                        return (
-                          <div
-                            key={termin}
-                            style={isEmpty ? { pointerEvents: "none" } : null}
-                            className={
-                              isClicked
-                                ? styles.termin_item_clicked
-                                : styles.termin_item
-                            }
-                            onClick={() => toggleTermin(termin)}
-                          >
-                            <img
-                              alt="Termin"
-                              src={isClicked ? PolygonYellow : PolygonWhite}
-                            />
-                            <p>{termin}</p>
-                          </div>
-                        );
-                      })
-                    : null}
-                </div>
+                <p>No termins available</p>
               )}
             </div>
           </div>
@@ -149,10 +266,23 @@ const CalculatorThree = () => {
         </div>
         <div className={styles.button_block}>
           <div className={styles.price_row}>
-            <h3>Загальна вартість:</h3>
-            <h1>6000 грн</h1>
+            <h3>{t("total_price")}</h3>
+            <h1>
+              {totalPrice} {t("uan")}
+            </h1>
           </div>
-          <button onClick={showModal}>Забронювати</button>
+          <button
+            style={isEmpty ? { pointerEvents: "none" } : null}
+            onClick={() => {
+              showModal();
+              dispatch(setType("Віддалене зберігання"));
+              dispatch(setPrice(totalPrice));
+              setClickedSize(null);
+              setClickedTermin(null);
+            }}
+          >
+            {t("order_calc")}
+          </button>
         </div>
       </article>
     </section>

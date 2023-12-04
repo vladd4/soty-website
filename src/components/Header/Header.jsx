@@ -15,7 +15,7 @@ import Burger from "../Burger/Burger";
 import { Link } from "react-router-dom";
 import { showModal } from "../../utils/showModal";
 
-const Header = () => {
+const Header = ({ i18n }) => {
   const t = useContext(Context);
   const imageRef = useRef(null);
   const [clicked, setClicked] = useState(false);
@@ -28,6 +28,16 @@ const Header = () => {
 
   const handleClick = () => {
     setClicked(!clicked);
+  };
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+    language === "en"
+      ? document.querySelector("#en").classList.add(styles.current_lang)
+      : document.querySelector("#en").classList.remove(styles.current_lang);
+    language === "ua"
+      ? document.querySelector("#ua").classList.add(styles.current_lang)
+      : document.querySelector("#ua").classList.remove(styles.current_lang);
   };
   return (
     <header className={styles.root}>
@@ -44,9 +54,17 @@ const Header = () => {
             <img alt="Home" src={Home} width="100%" height="100%" />
           </Link>
           <div className={styles.language_block}>
-            <p className={styles.current_lang}>UA</p>
+            <p
+              id="ua"
+              className={styles.current_lang}
+              onClick={() => changeLanguage("ua")}
+            >
+              UA
+            </p>
             <span>|</span>
-            <p>EN</p>
+            <p id="en" onClick={() => changeLanguage("en")}>
+              EN
+            </p>
           </div>
           <img
             alt="Hamburger"

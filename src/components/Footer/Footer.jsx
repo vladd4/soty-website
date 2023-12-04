@@ -74,7 +74,7 @@ const Footer = () => {
             {isMobile ? (
               <div className={styles.info_wrapper_1}>
                 <div>
-                  <h3>Графік роботи складу та офісу:</h3>
+                  <h3>{t("footer_graph_mobile")}</h3>
                   <p>{t("footer_graph_p_1")}</p>
                 </div>
               </div>

@@ -20,9 +20,9 @@ const Remote = () => {
       <Benefits polygon={Polygon} />
       <Items polygon={PolygonSmall} />
       <CalculatorThree />
-      <News title="фотогалерея" />
+      <News title="photo_h" />
       <Partners />
-      <News title="новини" />
+      <News title="news_h" />
     </>
   );
 };

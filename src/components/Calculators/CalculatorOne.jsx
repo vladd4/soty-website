@@ -1,6 +1,5 @@
 import styles from "./Calculator_1.module.scss";
 
-import Image from "../../assets/8sqm 1.png";
 import PolygonWhite from "../../assets/calc-white.svg";
 import PolygonBlue from "../../assets/calc-blue.svg";
 import PolygonYellow from "../../assets/Polygon 5.svg";
@@ -19,7 +18,7 @@ import I25 from "../../assets/2.5sqm.png";
 import I2 from "../../assets/2sqm.png";
 import I1 from "../../assets/1m.png";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { showModal } from "../../utils/showModal";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -35,6 +34,7 @@ import {
   fetchTerminAndPrice,
 } from "../../redux/slices/calcSlice";
 import useResize from "../../hooks/useResize";
+import Context from "../../hooks/Context";
 
 const cars = [
   { text: "1-2 м", icon: Icon1, size: "2 м" },
@@ -44,6 +44,7 @@ const cars = [
 ];
 
 const CalculatorOne = () => {
+  const t = useContext(Context);
   const isEmpty = useSelector((state) => state.calculator.isEmptyIndividual);
   const termins = useSelector((state) => state.calculator.terminIndividual);
   const sizes = useSelector((state) => state.calculator.sizesIndividual);
@@ -111,7 +112,7 @@ const CalculatorOne = () => {
   }, [clickedSize, clickedTermin]);
   return (
     <section className={styles.root} id="calc_1">
-      <h3>калькулятор</h3>
+      <h3>{t("calc_h")}</h3>
       <article
         className={styles.wrapper}
         data-aos="zoom-in-down"
@@ -134,7 +135,7 @@ const CalculatorOne = () => {
               {isEmpty ? (
                 <div className={styles.empty}>
                   <img alt="Polygon" src={EmptyPoligon} />
-                  <p>Всі склади зайняті</p>
+                  <p>{t("calc_unavailable")}</p>
                 </div>
               ) : (
                 <img
@@ -151,8 +152,8 @@ const CalculatorOne = () => {
         <div className={styles.top_block}>
           <div className={styles.size_block}>
             <div className={styles.icon_block}>
-              <h3>Площа боксу</h3>
-              <p>Виберіть авто для приблизно розрахунку обсягу:</p>
+              <h3>{t("ind_calc_square")}</h3>
+              <p>{t("ind_calc_auto")}</p>
               <div className={styles.icons_row}>
                 {cars.map((car) => {
                   const isClicked = car.size === clickedSize?.size;
@@ -180,7 +181,7 @@ const CalculatorOne = () => {
               </div>
             </div>
             <div className={styles.sizes}>
-              <h3>Або одразу виберіть необхідний розмір боксу:</h3>
+              <h3>{t("ind_calc_size")}</h3>
               <img
                 alt="Mobile"
                 src={
@@ -267,7 +268,7 @@ const CalculatorOne = () => {
               )}
             </div>
             <div className={styles.termin_block}>
-              <h3>Виберіть термін зберігання</h3>
+              <h3>{t("calc_termin")}</h3>
               {termins && termins.length > 0 ? (
                 isMobile ? (
                   <select
@@ -359,8 +360,10 @@ const CalculatorOne = () => {
         </div>
         <div className={styles.button_block}>
           <div className={styles.price_row}>
-            <h3>Загальна вартість:</h3>
-            <h1>{totalPrice} грн</h1>
+            <h3>{t("total_price")}</h3>
+            <h1>
+              {totalPrice} {t("uan")}
+            </h1>
           </div>
           <button
             style={isEmpty ? { pointerEvents: "none" } : null}
@@ -372,7 +375,7 @@ const CalculatorOne = () => {
               setClickedTermin(null);
             }}
           >
-            Забронювати
+            {t("order_calc")}
           </button>
         </div>
       </article>

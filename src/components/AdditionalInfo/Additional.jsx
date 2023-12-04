@@ -45,7 +45,7 @@ const Additional = () => {
           <p>{t(info)}</p>
         </div>
         <button className={styles.backTo} onClick={() => navigate(-1)}>
-          Повернутися на сторінку зберігання
+          {t("return_btn")}
         </button>
       </article>
     </section>

@@ -19,7 +19,7 @@ const Forbidden = () => {
     <section className={styles.root}>
       <article className={styles.wrapper}>
         <h3>
-          Речі, що <b>ЗАБОРОНЕНО</b> зберігати:
+          {t("all_item_first")} <b>{t("fob_item_H")}</b> {t("all_item_last")}
         </h3>
         <article className={styles.image_block}>
           <article className={styles.article_three}>

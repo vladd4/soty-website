@@ -23,7 +23,7 @@ const icons = [
     icon: Park,
   },
   {
-    text: "Професійний та доброзичливий персонал",
+    text: "ind_ben_pers",
     icon: People,
   },
   {
