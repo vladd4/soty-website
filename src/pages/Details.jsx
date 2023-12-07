@@ -7,10 +7,6 @@ const Details = () => {
       document.querySelector("#home-link").classList.remove("show_home");
     };
   }, []);
-  return (
-    <>
-      <Additional />
-    </>
-  );
+  return <Additional />;
 };
 export default Details;

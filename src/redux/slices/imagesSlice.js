@@ -23,29 +23,6 @@ export const fetchImages = createAsyncThunk(
     }
   }
 );
-// export const fetchAddImage = createAsyncThunk(
-//   "images/fetchAddImage",
-//   async (file) => {
-//     if (file) {
-//       const imageRef = ref(storage, `images/${v4()}`);
-//       uploadBytes(imageRef, file).then(() => {
-//         alert("image uploaded!");
-//       });
-//     } else return;
-//   }
-// );
-
-// export const fetchDeleteImage = createAsyncThunk(
-//   "images/fetchDeleteImage",
-//   async (path) => {
-//     if (path) {
-//       const imageRef = ref(storage, path);
-//       deleteObject(imageRef).then(() => {
-//         alert("image deleted!");
-//       });
-//     } else return;
-//   }
-// );
 
 const initialState = {
   imageList: [],
@@ -69,24 +46,6 @@ export const imageSlice = createSlice({
       state.imageList = [];
       state.status = "loading";
     },
-    // [fetchAddImage.pending]: (state) => {
-    //   state.status = "loading";
-    // },
-    // [fetchAddImage.fulfilled]: (state) => {
-    //   state.status = "loaded";
-    // },
-    // [fetchAddImage.rejected]: (state) => {
-    //   state.status = "loading";
-    // },
-    // [fetchDeleteImage.pending]: (state) => {
-    //   state.status = "loading";
-    // },
-    // [fetchDeleteImage.fulfilled]: (state) => {
-    //   state.status = "loaded";
-    // },
-    // [fetchDeleteImage.rejected]: (state) => {
-    //   state.status = "loading";
-    // },
   },
 });
 

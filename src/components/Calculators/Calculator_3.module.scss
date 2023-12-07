@@ -212,8 +212,10 @@
                     }
                 }
                 .termin_block {
-                    display: grid;
-                    place-items: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
                     width: 100%;
 
                     h3 {
@@ -329,8 +331,23 @@
     }
 }
 @media screen and (max-width: 1000px) {
+    .wrapper {
+        width: 70% !important;
+    }
     .button_block {
         width: 75% !important;
+    }
+    .palets {
+        place-items: flex-start !important;
+        select {
+            width: 85% !important;
+        }
+    }
+    .termin_block {
+        align-items: flex-start !important;
+        select {
+            width: 85% !important;
+        }
     }
     .termin_row {
         width: 75% !important;
@@ -352,6 +369,18 @@
         }
         .bottom_first_row {
             margin-bottom: -12% !important;
+        }
+    }
+    .palets {
+        place-items: center !important;
+        select {
+            width: 70% !important;
+        }
+    }
+    .termin_block {
+        align-items: center !important;
+        select {
+            width: 70% !important;
         }
     }
     .top_polygon {

@@ -6,7 +6,6 @@ import Polygon from "../assets/polygon-ben-blue.svg";
 import PolygonSmall from "../assets/polygon-allowed-blue.svg";
 import News from "../components/News/News";
 import Partners from "../components/Partners/Partners";
-import AboutUs from "../components/AboutUs/About";
 
 const Remote = () => {
   return (

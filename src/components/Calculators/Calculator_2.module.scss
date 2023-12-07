@@ -153,8 +153,10 @@
                 width: 100%;
 
                 .sizes {
-                    display: grid;
-                    place-items: flex-start;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+                    flex-direction: column;
                     width: 100%;
                     margin-bottom: 10%;
 
@@ -225,8 +227,10 @@
                     }
                 }
                 .termin_block {
-                    display: grid;
-                    place-items: flex-start;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+                    flex-direction: column;
                     width: 100%;
 
                     h3 {
@@ -349,14 +353,17 @@
         width: 80% !important;
     }
     .size_item {
-        width: 16% !important;
+        width: 17% !important;
     }
     .termin_row {
         width: 75% !important;
         gap: 5% !important;
     }
     .termin_item {
-        width: 20% !important;
+        width: 19% !important;
+    }
+    .termin_item_clicked {
+        width: 19% !important;
     }
     .top_polygon {
         top: -10% !important;
@@ -364,6 +371,24 @@
             p {
                 font-size: calc(#{$size}/1.5) !important;
             }
+        }
+    }
+}
+@media screen and (max-width: 1000px) {
+    .wrapper {
+        width: 70% !important;
+    }
+    .top_polygon {
+        top: -20% !important;
+    }
+    .sizes {
+        select {
+            width: 80% !important;
+        }
+    }
+    .termin_block {
+        select {
+            width: 80% !important;
         }
     }
 }
