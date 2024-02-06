@@ -1,7 +1,7 @@
 import styles from "./Calculator_2.module.scss";
 import Image from "../../assets/calc-image.jpg";
-import PolygonWhite from "../../assets/calc-white.svg";
-import PolygonBlue from "../../assets/calc-blue.svg";
+import PolygonWhite from "../../assets/calc-white.png";
+import PolygonBlue from "../../assets/calc-blue.png";
 import PolygonYellow from "../../assets/Polygon 3.svg";
 import EmptyPoligon from "../../assets/empty-polygon.svg";
 import { useContext, useState, useEffect } from "react";

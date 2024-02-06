@@ -1,7 +1,7 @@
 import styles from "./Calculator_1.module.scss";
 
-import PolygonWhite from "../../assets/calc-white.svg";
-import PolygonBlue from "../../assets/calc-blue.svg";
+import PolygonWhite from "../../assets/calc-white.png";
+import PolygonBlue from "../../assets/calc-blue.png";
 import PolygonYellow from "../../assets/Polygon 5.svg";
 import EmptyPoligon from "../../assets/empty-polygon.svg";
 import Icon1 from "../../assets/calculator/car-icon.svg";

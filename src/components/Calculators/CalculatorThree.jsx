@@ -1,6 +1,6 @@
 import styles from "./Calculator_3.module.scss";
 import Image from "../../assets/pallete 1.png";
-import PolygonWhite from "../../assets/calc-white.svg";
+import PolygonWhite from "../../assets/calc-white.png";
 import PolygonYellow from "../../assets/Polygon 5.svg";
 import EmptyPoligon from "../../assets/empty-polygon.svg";
 import { useContext, useState, useEffect } from "react";

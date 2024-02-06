@@ -1,15 +1,15 @@
 import styles from "./Benefits.module.scss";
 
-import Park from "../../assets/advantages/parking-icon.svg";
-import People from "../../assets/advantages/personnel-icon.svg";
-import Safe from "../../assets/advantages/guard-icon.svg";
-import Sale from "../../assets/advantages/price-icon.svg";
-import Ramp from "../../assets/advantages/lift-icon.svg";
-import Loc from "../../assets/advantages/location.svg";
-import Kub from "../../assets/advantages/assortment-icon.svg";
-import Cam from "../../assets/advantages/camera-icon.svg";
+import Park from "../../assets/advantages/parking-icon.png";
+import People from "../../assets/advantages/personnel-icon.png";
+import Safe from "../../assets/advantages/guard-icon.png";
+import Sale from "../../assets/advantages/price-icon.png";
+import Ramp from "../../assets/advantages/lift-icon.png";
+import Loc from "../../assets/advantages/location.png";
+import Kub from "../../assets/advantages/assortment-icon.png";
+import Cam from "../../assets/advantages/camera-icon.png";
 import Gryz from "../../assets/special-vehicle-icon 1.svg";
-import Bud from "../../assets/advantages/building-icon.svg";
+import Bud from "../../assets/advantages/building-icon.png";
 
 import useResize from "../../hooks/useResize";
 import { useContext } from "react";

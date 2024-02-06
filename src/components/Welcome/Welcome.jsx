@@ -1,9 +1,9 @@
 import styles from "./Welcome.module.scss";
 
 import Sotu from "../../assets/welcome.png";
-import Orange from "../../assets/Polygon-main-orange.svg";
-import BLue from "../../assets/Polygon-main-blue.svg";
-import Yellow from "../../assets/Polygon-main-yellow.svg";
+import Orange from "../../assets/Polygon-main-orange.png";
+import BLue from "../../assets/Polygon-main-blue.png";
+import Yellow from "../../assets/Polygon-main-yellow.png";
 
 import { Link } from "react-router-dom";
 import { useContext, useRef } from "react";
@@ -26,17 +26,17 @@ const Welcome = () => {
           >
             <article className={styles.links_block_row}>
               <Link to="/individual">
-                <img alt="Polygon" src={Orange} width="100%" height="100%" />
+                <img alt="Polygon" src={Orange} width="368" height="398" />
                 <h3 className={styles.poly_text}>{t("individual_h")}</h3>
               </Link>
             </article>
             <article className={styles.links_block_row_2}>
               <Link to="/remote">
-                <img alt="Polygon" src={BLue} width="100%" height="100%" />
+                <img alt="Polygon" src={BLue} width="368" height="398" />
                 <h3 className={styles.poly_text}>{t("remote_h")}</h3>
               </Link>
               <Link to="/storage">
-                <img alt="Polygon" src={Yellow} width="100%" height="100%" />
+                <img alt="Polygon" src={Yellow} width="368" height="398" />
                 <h3 className={styles.poly_text}>{t("storage_h")}</h3>
               </Link>
             </article>
@@ -59,17 +59,17 @@ const Welcome = () => {
             >
               <article className={styles.links_block_row}>
                 <Link to="/individual">
-                  <img alt="Polygon" src={Orange} width="100%" height="100%" />
+                  <img alt="Polygon" src={Orange} width="368" height="398" />
                   <h3 className={styles.poly_text}>{t("individual_h")}</h3>
                 </Link>
               </article>
               <article className={styles.links_block_row_2}>
                 <Link to="/remote">
-                  <img alt="Polygon" src={BLue} width="100%" height="100%" />
+                  <img alt="Polygon" src={BLue} width="368" height="398" />
                   <h3 className={styles.poly_text}>{t("remote_h")}</h3>
                 </Link>
                 <Link to="/storage">
-                  <img alt="Polygon" src={Yellow} width="100%" height="100%" />
+                  <img alt="Polygon" src={Yellow} width="368" height="398" />
                   <h3 className={styles.poly_text}>{t("storage_h")}</h3>
                 </Link>
               </article>
