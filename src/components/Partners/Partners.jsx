@@ -1,7 +1,10 @@
 import styles from "./Partners.module.scss";
+
 import PhotoGalery from "../PhotoGalery/PhotoGalery";
+
 import { useSelector } from "react-redux";
 import { useContext } from "react";
+
 import Context from "../../hooks/Context";
 
 const Partners = () => {

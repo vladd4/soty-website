@@ -46,7 +46,7 @@ const useResize = (setSlides, slider, calc) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [calc, setSlides, slider]);
   return isMobile;
 };
 export default useResize;

@@ -4,8 +4,9 @@ import PolygonRight from "../../assets/polygon-right.png";
 import PolygonLeft from "../../assets/poly-left.png";
 
 import { useContext, useEffect } from "react";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+
+import { useSelector } from "react-redux";
 
 import Context from "../../hooks/Context";
 

@@ -9,15 +9,18 @@ import Tech from "../../assets/allowed/office-equipment.svg";
 import Docs from "../../assets/allowed/documents-icon.svg";
 import Other from "../../assets/allowed/tools-icon.svg";
 
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 import Context from "../../hooks/Context";
+
 import { useDispatch } from "react-redux";
 import { setTitle, setInfo, setIcon } from "../../redux/slices/additionalSlice";
+
+import AllowedLink from "./AllowedLink";
 
 const Allowed = ({ polygon }) => {
   const t = useContext(Context);
   const dispatch = useDispatch();
+
   const handleCLick = (title, info, icon) => {
     window.scrollTo(0, 0);
     document.querySelector("#home-link").classList.add("show_home");
@@ -29,191 +32,86 @@ const Allowed = ({ polygon }) => {
     <section className={styles.root}>
       <article className={styles.wrapper}>
         <h3>
-          {t('all_item_first')} <b>{t('all_item_H')}</b> {t('all_item_last')}
+          {t("all_item_first")} <b>{t("all_item_H")}</b> {t("all_item_last")}
         </h3>
         <article className={styles.image_block}>
           <article className={styles.article_one}>
-            <Link
-              className={styles.container}
-              to="/details"
-              onClick={() =>
+            <AllowedLink
+              clickHandler={() =>
                 handleCLick("ind_all_tech", "ind_all_tech_p", Toys)
               }
-              data-aos="zoom-in"
-              data-aos-offset="0"
-              data-aos-duration="1500"
-            >
-              <img
-                alt="Polygon"
-                src={polygon}
-                className={styles.polygon_parent}
-                width="100%"
-                height="100%"
-              />
-              <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Toys} />
-                <p>{t("ind_all_tech")}</p>
-              </div>
-            </Link>
-            <Link
-              to="/details"
-              onClick={() =>
+              label="ind_all_tech"
+              icon={Toys}
+              polygon={polygon}
+              t={t}
+            />
+            <AllowedLink
+              clickHandler={() =>
                 handleCLick("ind_all_clothes", "ind_all_clothes_p", Clothes)
               }
-              className={styles.container}
-              data-aos="zoom-in"
-              data-aos-offset="0"
-              data-aos-duration="1500"
-            >
-              <img
-                alt="Polygon"
-                src={polygon}
-                className={styles.polygon_parent}
-                width="100%"
-                height="100%"
-              />
-              <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Clothes} />
-                <p>{t("ind_all_clothes")}</p>
-              </div>
-            </Link>
-            <Link
-              className={styles.container}
-              to="/details"
-              onClick={() =>
+              label="ind_all_clothes"
+              icon={Clothes}
+              polygon={polygon}
+              t={t}
+            />
+            <AllowedLink
+              clickHandler={() =>
                 handleCLick("ind_all_tyres", "ind_all_tyres_p", Tyres)
               }
-              data-aos="zoom-in"
-              data-aos-offset="0"
-              data-aos-duration="1500"
-            >
-              <img
-                alt="Polygon"
-                src={polygon}
-                width="100%"
-                height="100%"
-                className={styles.polygon_parent}
-              />
-              <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Tyres} />
-                <p>{t("ind_all_tyres")}</p>
-              </div>
-            </Link>
+              label="ind_all_tyres"
+              icon={Tyres}
+              polygon={polygon}
+              t={t}
+            />
           </article>
           <article className={styles.article_two}>
-            <Link
-              to="/details"
-              onClick={() =>
+            <AllowedLink
+              clickHandler={() =>
                 handleCLick("ind_all_mebli", "ind_all_mebli_p", Mebli)
               }
-              className={styles.container}
-              data-aos="zoom-in"
-              data-aos-offset="0"
-              data-aos-duration="1500"
-            >
-              <img
-                width="100%"
-                height="100%"
-                alt="Polygon"
-                src={polygon}
-                className={styles.polygon_parent}
-              />
-              <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Mebli} />
-                <p>{t("ind_all_mebli")}</p>
-              </div>
-            </Link>
-            <Link
-              to="/details"
-              onClick={() =>
+              label="ind_all_mebli"
+              icon={Mebli}
+              polygon={polygon}
+              t={t}
+            />
+            <AllowedLink
+              clickHandler={() =>
                 handleCLick("ind_all_sport", "ind_all_sport_p", Sport)
               }
-              className={styles.container}
-              data-aos="zoom-in"
-              data-aos-offset="0"
-              data-aos-duration="1500"
-            >
-              <img
-                alt="Polygon"
-                src={polygon}
-                className={styles.polygon_parent}
-                width="100%"
-                height="100%"
-              />
-              <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Sport} />
-                <p>{t("ind_all_sport")}</p>
-              </div>
-            </Link>
-            <Link
-              to="/details"
-              className={styles.container}
-              onClick={() =>
+              label="ind_all_sport"
+              icon={Sport}
+              polygon={polygon}
+              t={t}
+            />
+            <AllowedLink
+              clickHandler={() =>
                 handleCLick("ind_all_offTech", "ind_all_offTech_p", Tech)
               }
-              data-aos="zoom-in"
-              data-aos-offset="0"
-              data-aos-duration="1500"
-            >
-              <img
-                alt="Polygon"
-                width="100%"
-                height="100%"
-                src={polygon}
-                className={styles.polygon_parent}
-              />
-              <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Tech} />
-                <p>{t("ind_all_offTech")}</p>
-              </div>
-            </Link>
+              label="ind_all_offTech"
+              icon={Tech}
+              polygon={polygon}
+              t={t}
+            />
           </article>
           <article className={styles.article_three}>
-            <Link
-              to="/details"
-              onClick={() =>
+            <AllowedLink
+              clickHandler={() =>
                 handleCLick("ind_all_docs", "ind_all_docs_p", Docs)
               }
-              className={styles.container}
-              data-aos="zoom-in"
-              data-aos-offset="0"
-              data-aos-duration="1500"
-            >
-              <img
-                alt="Polygon"
-                src={polygon}
-                width="100%"
-                height="100%"
-                className={styles.polygon_parent}
-              />
-              <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Docs} />
-                <p>{t("ind_all_docs")}</p>
-              </div>
-            </Link>
-
-            <Link
-              to="/details"
-              onClick={() =>
+              label="ind_all_docs"
+              icon={Docs}
+              polygon={polygon}
+              t={t}
+            />
+            <AllowedLink
+              clickHandler={() =>
                 handleCLick("ind_all_other", "ind_all_other_p", Other)
               }
-              className={styles.container}
-              data-aos="zoom-in"
-              data-aos-offset="0"
-              data-aos-duration="1500"
-            >
-              <img
-                alt="Polygon"
-                src={polygon}
-                className={styles.polygon_parent}
-                width="100%"
-                height="100%"
-              />
-              <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Other} />
-                <p>{t("ind_all_other")}</p>
-              </div>
-            </Link>
+              label="ind_all_other"
+              icon={Other}
+              polygon={polygon}
+              t={t}
+            />
           </article>
         </article>
       </article>

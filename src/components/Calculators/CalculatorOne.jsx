@@ -19,7 +19,9 @@ import I2 from "../../assets/2sqm.png";
 import I1 from "../../assets/1m.png";
 
 import { useContext, useEffect, useState } from "react";
+
 import { showModal } from "../../utils/showModal";
+import { toggleSize, toggleTermin } from "../../utils/calculator_helpers";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -33,8 +35,10 @@ import {
   fetchSizesAndPrice,
   fetchTerminAndPrice,
 } from "../../redux/slices/calcSlice";
+
 import useResize from "../../hooks/useResize";
 import Context from "../../hooks/Context";
+import useCalculatePrice from "../../hooks/useCalculatePrice";
 
 const cars = [
   { text: "1-2 м", icon: Icon1, size: "2 м" },
@@ -45,9 +49,11 @@ const cars = [
 
 const CalculatorOne = () => {
   const t = useContext(Context);
+  const dispatch = useDispatch();
   const isEmpty = useSelector((state) => state.calculator.isEmptyIndividual);
   const termins = useSelector((state) => state.calculator.terminIndividual);
   const sizes = useSelector((state) => state.calculator.sizesIndividual);
+
   const [totalPrice, setTotalPrice] = useState(0);
   const [clickedSize, setClickedSize] = useState(
     sizes && sizes.length > 0 ? sizes[3] : null
@@ -56,60 +62,21 @@ const CalculatorOne = () => {
     termins && termins.length > 0 ? termins[2] : null
   );
   const isMobile = useResize(null, null, "calc");
-  const dispatch = useDispatch();
 
-  const toggleSize = (car) => {
-    if (car !== null) {
-      if (car.price) {
-        setClickedSize(car === clickedSize ? null : car);
-      } else {
-        setClickedSize(
-          car.size === clickedSize?.size
-            ? null
-            : sizes.find((size) => size.size === car.size)
-        );
-      }
-      dispatch(setSize(car.size));
-    } else {
-      setClickedSize(null);
-    }
-  };
-  const toggleTermin = (termin) => {
-    if (termin !== null) {
-      setClickedTermin(termin === clickedTermin ? null : termin);
-      dispatch(setTermin(termin.termin));
-    } else {
-      setClickedTermin(null);
-    }
-  };
   useEffect(() => {
     dispatch(fetchIsEmpty());
     dispatch(fetchTerminAndPrice());
     dispatch(fetchSizesAndPrice());
-  }, []);
+  }, [dispatch]);
 
-  const calculatePrice = () => {
-    if (clickedSize !== null) {
-      const selectedTermin = clickedTermin || termins?.[0];
+  useCalculatePrice(
+    clickedSize,
+    clickedTermin,
+    termins,
+    setTotalPrice,
+    setClickedTermin
+  );
 
-      if (selectedTermin) {
-        const reductionAmount =
-          (selectedTermin.price / 100) * clickedSize.price;
-        const result = clickedSize.price - reductionAmount;
-        setTotalPrice(result);
-        setClickedTermin(selectedTermin);
-      } else {
-        setTotalPrice(clickedSize.price);
-        setClickedTermin(null);
-      }
-    } else {
-      setTotalPrice(0);
-    }
-  };
-
-  useEffect(() => {
-    calculatePrice();
-  }, [clickedSize, clickedTermin]);
   return (
     <section className={styles.root} id="calc_1">
       <h3>{t("calc_h")}</h3>
@@ -166,7 +133,16 @@ const CalculatorOne = () => {
                           ? styles.icons_row_item_clicked
                           : styles.icons_row_item
                       }
-                      onClick={() => toggleSize(car)}
+                      onClick={() =>
+                        toggleSize(
+                          car,
+                          setClickedSize,
+                          clickedSize,
+                          sizes,
+                          dispatch,
+                          setSize
+                        )
+                      }
                     >
                       <img
                         alt="Car"
@@ -213,12 +189,17 @@ const CalculatorOne = () => {
                         (size) => size.price === parseFloat(e.target.value)
                       );
                       toggleSize(
-                        e.target.value === "placeholder" ? null : selectedSize
+                        e.target.value === "placeholder" ? null : selectedSize,
+                        setClickedSize,
+                        clickedSize,
+                        sizes,
+                        dispatch,
+                        setSize
                       );
                     }}
                   >
                     <option selected value="placeholder">
-                      Виберіть розмір боксу
+                      {t("calc_size_placeholder_palets")}
                     </option>
                     {sizes.map((size) => {
                       return (
@@ -248,7 +229,14 @@ const CalculatorOne = () => {
                               : styles.size_item
                           }
                           onClick={() => {
-                            toggleSize(size);
+                            toggleSize(
+                              size,
+                              setClickedSize,
+                              clickedSize,
+                              sizes,
+                              dispatch,
+                              setSize
+                            );
                           }}
                         >
                           <img
@@ -277,12 +265,18 @@ const CalculatorOne = () => {
                         (termin) => termin.price === parseFloat(e.target.value)
                       );
                       toggleTermin(
-                        e.target.value === "placeholder" ? null : selectedTermin
+                        e.target.value === "placeholder"
+                          ? null
+                          : selectedTermin,
+                        setClickedTermin,
+                        clickedTermin,
+                        dispatch,
+                        setTermin
                       );
                     }}
                   >
                     <option selected value="placeholder">
-                      Виберіть термін
+                      {t("calc_termin_placeholder")}
                     </option>
                     {termins.map((termin) => (
                       <option
@@ -312,7 +306,13 @@ const CalculatorOne = () => {
                               : styles.termin_item
                           }
                           onClick={() => {
-                            toggleTermin(termin);
+                            toggleTermin(
+                              termin,
+                              setClickedTermin,
+                              clickedTermin,
+                              dispatch,
+                              setTermin
+                            );
                           }}
                         >
                           <img

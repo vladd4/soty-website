@@ -1,5 +1,7 @@
 import styles from "./PhotoGalery.module.scss";
+
 import { useState } from "react";
+
 import useResize from "../../hooks/useResize";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";

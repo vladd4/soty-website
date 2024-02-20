@@ -8,8 +8,10 @@ import Phone from "../../assets/phone-icon.svg";
 import Mail from "../../assets/mail-icon.svg";
 
 import { useContext } from "react";
+
 import Context from "../../hooks/Context";
 import useResize from "../../hooks/useResize";
+
 import { showModal } from "../../utils/showModal";
 
 const Footer = () => {

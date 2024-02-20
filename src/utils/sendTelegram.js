@@ -1,6 +1,6 @@
 export async function sendFormToTelegram(message) {
-  const botToken = "6865810991:AAEIV511UvSjCgbDKS0k_8YHqgQZJs1jXfc";
-  const chatId = "-4007675188";
+  const botToken = process.env.REACT_APP_BOT_TOKEN;
+  const chatId = process.env.REACT_APP_CHAT_ID;
   const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
   try {
     const response = await fetch(url, {

@@ -1,4 +1,5 @@
 import Additional from "../components/AdditionalInfo/Additional";
+
 import { useEffect } from "react";
 
 const Details = () => {

@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
 import styles from "./WelcomeStorage.module.scss";
+
+import { useRef, useContext } from "react";
+import { Link } from "react-router-dom";
 
 import Home from "../../assets/home.svg";
 import HomeWhite from "../../assets/home-white.svg";
 
-import { useRef, useContext } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 import Context from "../../hooks/Context";
@@ -12,6 +13,7 @@ import Context from "../../hooks/Context";
 const WelcomeStorage = ({ title, buttonStyle, calc_id, info, p2, p3 }) => {
   const t = useContext(Context);
   const imageRef = useRef(null);
+
   const handleHover = (src) => {
     if (imageRef.current) {
       imageRef.current.src = src;

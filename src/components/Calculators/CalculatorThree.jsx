@@ -1,12 +1,19 @@
 import styles from "./Calculator_3.module.scss";
+
 import Image from "../../assets/pallete 1.png";
 import PolygonWhite from "../../assets/calc-white.png";
 import PolygonYellow from "../../assets/Polygon 5.svg";
 import EmptyPoligon from "../../assets/empty-polygon.svg";
+
 import { useContext, useState, useEffect } from "react";
+
 import { showModal } from "../../utils/showModal";
+import { toggleSize, toggleTermin } from "../../utils/calculator_helpers";
+
 import useResize from "../../hooks/useResize";
 import Context from "../../hooks/Context";
+import useCalculatePrice from "../../hooks/useCalculatePrice";
+
 import { useDispatch, useSelector } from "react-redux";
 import {
   setPrice,
@@ -22,10 +29,11 @@ import {
 
 const CalculatorThree = () => {
   const t = useContext(Context);
-  const [selectedInput, setSelectedInput] = useState(5);
+  const dispatch = useDispatch();
   const isEmpty = useSelector((state) => state.calculator.isEmptyRemote);
   const termins = useSelector((state) => state.calculator.terminIndividual);
   const sizes = useSelector((state) => state.calculator.sizesRemote);
+
   const [totalPrice, setTotalPrice] = useState(0);
   const [clickedSize, setClickedSize] = useState(
     sizes && sizes.length > 0 ? sizes[3] : null
@@ -33,63 +41,23 @@ const CalculatorThree = () => {
   const [clickedTermin, setClickedTermin] = useState(
     termins && termins.length > 0 ? termins[2] : null
   );
+  const [selectedInput, setSelectedInput] = useState(5);
+
   const isMobile = useResize(null, null, "calc");
 
-  const dispatch = useDispatch();
-
-  const toggleSize = (car) => {
-    if (car !== null) {
-      if (car.price) {
-        setClickedSize(car === clickedSize ? null : car);
-      } else {
-        setClickedSize(
-          car.size === clickedSize?.size
-            ? null
-            : sizes.find((size) => size.size === car.size)
-        );
-      }
-      dispatch(setSize(car.size));
-    } else {
-      setClickedSize(null);
-    }
-  };
-
-  const toggleTermin = (termin) => {
-    if (termin !== null) {
-      setClickedTermin(termin === clickedTermin ? null : termin);
-      dispatch(setTermin(termin.termin));
-    } else {
-      setClickedTermin(null);
-    }
-  };
   useEffect(() => {
     dispatch(fetchIsEmptyRemote());
     dispatch(fetchTerminAndPrice());
     dispatch(fetchSizesAndPriceRemote());
-  }, []);
+  }, [dispatch]);
 
-  const calculatePrice = () => {
-    if (clickedSize !== null) {
-      const selectedTermin = clickedTermin || termins?.[0];
-
-      if (selectedTermin) {
-        const reductionAmount =
-          (selectedTermin.price / 100) * clickedSize.price;
-        const result = clickedSize.price - reductionAmount;
-        setTotalPrice(result);
-        setClickedTermin(selectedTermin);
-      } else {
-        setTotalPrice(clickedSize.price);
-        setClickedTermin(null);
-      }
-    } else {
-      setTotalPrice(0);
-    }
-  };
-
-  useEffect(() => {
-    calculatePrice();
-  }, [clickedSize, clickedTermin]);
+  useCalculatePrice(
+    clickedSize,
+    clickedTermin,
+    termins,
+    setTotalPrice,
+    setClickedTermin
+  );
   return (
     <section className={styles.root} id="calc_3">
       <h3>{t("calc_h")}</h3>
@@ -124,7 +92,6 @@ const CalculatorThree = () => {
                   className={styles.img_2}
                 />
               )}
-
               <img alt="Polygon" src={PolygonYellow} className={styles.img_3} />
             </div>
           </article>
@@ -134,7 +101,7 @@ const CalculatorThree = () => {
             <div className={styles.palets}>
               <h3>{t("calc_pilets")}</h3>
               <img
-                alt="Claculator"
+                alt="Calculator"
                 src={Image}
                 className={styles.main_image_mobile}
               />
@@ -146,12 +113,17 @@ const CalculatorThree = () => {
                         (size) => size.price === parseFloat(e.target.value)
                       );
                       toggleSize(
-                        e.target.value === "placeholder" ? null : selectedSize
+                        e.target.value === "placeholder" ? null : selectedSize,
+                        setClickedSize,
+                        clickedSize,
+                        sizes,
+                        dispatch,
+                        setSize
                       );
                     }}
                   >
                     <option selected value="placeholder">
-                      Виберіть кількість палет
+                      {t("calc_size_placeholder_palets")}
                     </option>
                     {sizes.map((size) => {
                       return (
@@ -207,12 +179,18 @@ const CalculatorThree = () => {
                         (termin) => termin.price === parseFloat(e.target.value)
                       );
                       toggleTermin(
-                        e.target.value === "placeholder" ? null : selectedTermin
+                        e.target.value === "placeholder"
+                          ? null
+                          : selectedTermin,
+                        setClickedTermin,
+                        clickedTermin,
+                        dispatch,
+                        setTermin
                       );
                     }}
                   >
                     <option selected value="placeholder">
-                      Виберіть термін
+                      {t("calc_termin_placeholder")}
                     </option>
                     {termins.map((termin) => (
                       <option
@@ -242,7 +220,13 @@ const CalculatorThree = () => {
                               : styles.termin_item
                           }
                           onClick={() => {
-                            toggleTermin(termin);
+                            toggleTermin(
+                              termin,
+                              setClickedTermin,
+                              clickedTermin,
+                              dispatch,
+                              setTermin
+                            );
                           }}
                         >
                           <img

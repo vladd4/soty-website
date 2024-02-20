@@ -7,11 +7,13 @@ import Phone from "../../assets/phone-icon.svg";
 import Mail from "../../assets/mail-icon.svg";
 
 import { useRef, useEffect, useContext } from "react";
+
 import Context from "../../hooks/Context";
 
 const Burger = ({ clicked, setClicked }) => {
   const t = useContext(Context);
   const componentRef = useRef(null);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       const burger = document.querySelector("#burger-icon");
@@ -28,6 +30,7 @@ const Burger = ({ clicked, setClicked }) => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [setClicked]);
+
   return (
     <section
       className={`${styles.root} ${clicked ? "show_burger" : ""}`}

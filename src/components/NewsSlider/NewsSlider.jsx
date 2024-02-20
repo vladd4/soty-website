@@ -1,9 +1,11 @@
 import styles from "./NewsSlider.module.scss";
+
 import Arrow from "../../assets/arrow.svg";
 import ArrowHovered from "../../assets/arrow-hovered.svg";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
+
 import { useRef, useState } from "react";
 import useResize from "../../hooks/useResize";
 

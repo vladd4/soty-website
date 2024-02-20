@@ -1,7 +1,11 @@
 import styles from "./Popup.module.scss";
+
 import Polygon from "../../assets/small-poly.svg";
+
 import { useSelector } from "react-redux";
+
 import { useContext } from "react";
+
 import Context from "../../hooks/Context";
 
 const Popup = () => {

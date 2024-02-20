@@ -1,13 +1,18 @@
 import styles from "./Calculator_2.module.scss";
+
 import Image from "../../assets/calc-image.jpg";
 import PolygonWhite from "../../assets/calc-white.png";
 import PolygonBlue from "../../assets/calc-blue.png";
 import PolygonYellow from "../../assets/Polygon 3.svg";
 import EmptyPoligon from "../../assets/empty-polygon.svg";
+
 import { useContext, useState, useEffect } from "react";
+
 import { showModal } from "../../utils/showModal";
+
 import useResize from "../../hooks/useResize";
 import Context from "../../hooks/Context";
+import useCalculatePrice from "../../hooks/useCalculatePrice";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -21,10 +26,11 @@ import {
   fetchSizesAndPriceStorage,
   fetchTerminAndPrice,
 } from "../../redux/slices/calcSlice";
+import { toggleSize, toggleTermin } from "../../utils/calculator_helpers";
 
 const CalculatorTwo = () => {
   const t = useContext(Context);
-
+  const dispatch = useDispatch();
   const isEmpty = useSelector((state) => state.calculator.isEmptyStorage);
   const termins = useSelector((state) => state.calculator.terminIndividual);
   const sizes = useSelector((state) => state.calculator.sizesStorage);
@@ -36,64 +42,22 @@ const CalculatorTwo = () => {
   const [clickedTermin, setClickedTermin] = useState(
     termins && termins.length > 0 ? termins[2] : null
   );
+
   const isMobile = useResize(null, null, "calc");
-
-  const toggleSize = (car) => {
-    if (car !== null) {
-      if (car.price) {
-        setClickedSize(car === clickedSize ? null : car);
-      } else {
-        setClickedSize(
-          car.size === clickedSize?.size
-            ? null
-            : sizes.find((size) => size.size === car.size)
-        );
-      }
-      dispatch(setSize(car.size));
-    } else {
-      setClickedSize(null);
-    }
-  };
-
-  const toggleTermin = (termin) => {
-    if (termin !== null) {
-      setClickedTermin(termin === clickedTermin ? null : termin);
-      dispatch(setTermin(termin.termin));
-    } else {
-      setClickedTermin(null);
-    }
-  };
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchIsEmptyStorage());
     dispatch(fetchTerminAndPrice());
     dispatch(fetchSizesAndPriceStorage());
-  }, []);
+  }, [dispatch]);
 
-  const calculatePrice = () => {
-    if (clickedSize !== null) {
-      const selectedTermin = clickedTermin || termins?.[0];
-
-      if (selectedTermin) {
-        const reductionAmount =
-          (selectedTermin.price / 100) * clickedSize.price;
-        const result = clickedSize.price - reductionAmount;
-        setTotalPrice(result);
-        setClickedTermin(selectedTermin);
-      } else {
-        setTotalPrice(clickedSize.price);
-        setClickedTermin(null);
-      }
-    } else {
-      setTotalPrice(0);
-    }
-  };
-
-  useEffect(() => {
-    calculatePrice();
-  }, [clickedSize, clickedTermin]);
+  useCalculatePrice(
+    clickedSize,
+    clickedTermin,
+    termins,
+    setTotalPrice,
+    setClickedTermin
+  );
   return (
     <section className={styles.root} id="calc_2">
       <h3>{t("calc_h")}</h3>
@@ -159,7 +123,7 @@ const CalculatorTwo = () => {
             <div className={styles.sizes}>
               <h3>{t("calc_sklad")}</h3>
               <img
-                alt="Claculator"
+                alt="Calculator"
                 src={Image}
                 className={styles.main_image_mobile}
               />
@@ -171,12 +135,17 @@ const CalculatorTwo = () => {
                         (size) => size.price === parseFloat(e.target.value)
                       );
                       toggleSize(
-                        e.target.value === "placeholder" ? null : selectedSize
+                        e.target.value === "placeholder" ? null : selectedSize,
+                        setClickedSize,
+                        clickedSize,
+                        sizes,
+                        dispatch,
+                        setSize
                       );
                     }}
                   >
                     <option selected value="placeholder">
-                      Виберіть розмір складу
+                      {t("calc_size_placeholder_storage")}
                     </option>
                     {sizes.map((size) => {
                       return (
@@ -206,7 +175,14 @@ const CalculatorTwo = () => {
                               : styles.size_item
                           }
                           onClick={() => {
-                            toggleSize(size);
+                            toggleSize(
+                              size,
+                              setClickedSize,
+                              clickedSize,
+                              sizes,
+                              dispatch,
+                              setSize
+                            );
                           }}
                         >
                           <img
@@ -235,12 +211,18 @@ const CalculatorTwo = () => {
                         (termin) => termin.price === parseFloat(e.target.value)
                       );
                       toggleTermin(
-                        e.target.value === "placeholder" ? null : selectedTermin
+                        e.target.value === "placeholder"
+                          ? null
+                          : selectedTermin,
+                        setClickedTermin,
+                        clickedTermin,
+                        dispatch,
+                        setTermin
                       );
                     }}
                   >
                     <option selected value="placeholder">
-                      Виберіть термін
+                      {t("calc_termin_placeholder")}
                     </option>
                     {termins.map((termin) => (
                       <option
@@ -270,7 +252,13 @@ const CalculatorTwo = () => {
                               : styles.termin_item
                           }
                           onClick={() => {
-                            toggleTermin(termin);
+                            toggleTermin(
+                              termin,
+                              setClickedTermin,
+                              clickedTermin,
+                              dispatch,
+                              setTermin
+                            );
                           }}
                         >
                           <img

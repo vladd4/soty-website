@@ -1,12 +1,17 @@
 import styles from "./Modal.module.scss";
+
 import Polygon from "../../assets/modal-polygon.png";
 import Close from "../../assets/close.svg";
+
 import { useContext, useRef, useState } from "react";
+import Context from "../../hooks/Context";
+
 import { sendFormToTelegram } from "../../utils/sendTelegram";
+
 import { useSelector, useDispatch } from "react-redux";
 import { resetData } from "../../redux/slices/modalSlice";
+
 import { closeModal } from "../../utils/showModal";
-import Context from "../../hooks/Context";
 
 const Modal = () => {
   const ref = useRef(null);

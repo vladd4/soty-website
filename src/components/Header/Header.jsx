@@ -10,9 +10,11 @@ import Phone from "../../assets/tel.svg";
 import PhoneHovered from "../../assets/phone-hovered.svg";
 
 import { useRef, useContext, useState } from "react";
-import Context from "../../hooks/Context";
-import Burger from "../Burger/Burger";
 import { Link } from "react-router-dom";
+import Context from "../../hooks/Context";
+
+import Burger from "../Burger/Burger";
+
 import { showModal } from "../../utils/showModal";
 
 const Header = ({ i18n }) => {

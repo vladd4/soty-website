@@ -9,9 +9,11 @@ import Tocs from "../../assets/prohibited/toxic-icon.svg";
 import Smell from "../../assets/prohibited/scent-icon.svg";
 import Other from "../../assets/prohibited/animal-icon.svg";
 
-import Polygon from "../../assets/poly-grey.svg";
 import { useContext } from "react";
+
 import Context from "../../hooks/Context";
+
+import ItemsContainer from "./ItemsContainer";
 
 const Forbidden = () => {
   const t = useContext(Context);
@@ -23,154 +25,18 @@ const Forbidden = () => {
         </h3>
         <article className={styles.image_block}>
           <article className={styles.article_three}>
-            <div
-              className={styles.container}
-              data-aos="zoom-in"
-              data-aos-offset="0"
-              data-aos-duration="2000"
-            >
-              <img
-                alt="Polygon"
-                src={Polygon}
-                className={styles.polygon_parent}
-                width="100%"
-                height="100%"
-              />
-              <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Prod} />
-                <p>{t("ind_fob_prod")}</p>
-              </div>
-            </div>
-            <div
-              className={styles.container}
-              data-aos="zoom-in"
-              data-aos-offset="0"
-              data-aos-duration="2000"
-            >
-              <img
-                alt="Polygon"
-                src={Polygon}
-                className={styles.polygon_parent}
-                width="100%"
-                height="100%"
-              />
-              <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Ros} />
-                <p>{t("ind_fob_ros")}</p>
-              </div>
-            </div>
+            <ItemsContainer image={Prod} title="ind_fob_prod" t={t} />
+            <ItemsContainer image={Ros} title="ind_fob_ros" t={t} />
           </article>
           <article className={styles.article_two}>
-            <div
-              className={styles.container}
-              data-aos="zoom-in"
-              data-aos-offset="0"
-              data-aos-duration="2000"
-            >
-              <img
-                alt="Polygon"
-                src={Polygon}
-                className={styles.polygon_parent}
-                width="100%"
-                height="100%"
-              />
-              <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Weapon} />
-                <p>{t("ind_fob_weapon")}</p>
-              </div>
-            </div>
-            <div
-              className={styles.container}
-              data-aos="zoom-in"
-              data-aos-offset="0"
-              data-aos-duration="2000"
-            >
-              <img
-                alt="Polygon"
-                src={Polygon}
-                className={styles.polygon_parent}
-                width="100%"
-                height="100%"
-              />
-              <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Ball} />
-                <p>{t("ind_fob_ball")}</p>
-              </div>
-            </div>
-            <div
-              className={styles.container}
-              data-aos="zoom-in"
-              data-aos-offset="0"
-              data-aos-duration="2000"
-            >
-              <img
-                alt="Polygon"
-                src={Polygon}
-                className={styles.polygon_parent}
-                width="100%"
-                height="100%"
-              />
-              <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Fuel} />
-                <p>{t("ind_fob_fuel")}</p>
-              </div>
-            </div>
+            <ItemsContainer image={Weapon} title="ind_fob_weapon" t={t} />
+            <ItemsContainer image={Ball} title="ind_fob_ball" t={t} />
+            <ItemsContainer image={Fuel} title="ind_fob_fuel" t={t} />
           </article>
           <article className={styles.article_one}>
-            <div
-              className={styles.container}
-              data-aos="zoom-in"
-              data-aos-offset="0"
-              data-aos-duration="2000"
-            >
-              <img
-                width="100%"
-                height="100%"
-                alt="Polygon"
-                src={Polygon}
-                className={styles.polygon_parent}
-              />
-              <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Tocs} />
-                <p>{t("ind_fob_tocs")}</p>
-              </div>
-            </div>
-            <div
-              className={styles.container}
-              data-aos="zoom-in"
-              data-aos-offset="0"
-              data-aos-duration="2000"
-            >
-              <img
-                alt="Polygon"
-                src={Polygon}
-                className={styles.polygon_parent}
-                width="100%"
-                height="100%"
-              />
-              <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Other} />
-                <p>{t("ind_fob_pets")}</p>
-              </div>
-            </div>
-            <div
-              className={styles.container}
-              data-aos="zoom-in"
-              data-aos-offset="0"
-              data-aos-duration="2000"
-            >
-              <img
-                alt="Polygon"
-                src={Polygon}
-                className={styles.polygon_parent}
-                width="100%"
-                height="100%"
-              />
-              <div className={styles.polygon_text}>
-                <img alt="Polygon" src={Smell} />
-                <p>{t("ind_fob_smell")}</p>
-              </div>
-            </div>
+            <ItemsContainer image={Tocs} title="ind_fob_tocs" t={t} />
+            <ItemsContainer image={Other} title="ind_fob_pets" t={t} />
+            <ItemsContainer image={Smell} title="ind_fob_smell" t={t} />
           </article>
         </article>
       </article>

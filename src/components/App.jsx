@@ -2,7 +2,9 @@ import "../styles/App.scss";
 
 import { useEffect, lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
+
 import { useTranslation } from "react-i18next";
+
 import Context from "../hooks/Context";
 
 import AOS from "aos";
@@ -13,6 +15,9 @@ import Header from "./Header/Header";
 import Loader from "./Loader";
 import Popup from "./Popup/Popup";
 import Modal from "./Modal/Modal";
+import EmptyPage from "./EmptyPage";
+
+import { handleLoading } from "../utils/handleLoading.js";
 
 const Home = lazy(() => import("../pages/Home.jsx"));
 const Individual = lazy(() => import("../pages/Inndividual.jsx"));
@@ -20,21 +25,12 @@ const Remote = lazy(() => import("../pages/Remote.jsx"));
 const Storage = lazy(() => import("../pages/Storage.jsx"));
 const Details = lazy(() => import("../pages/Details.jsx"));
 
-window.onload = setTimeout(
-  function () {
-    document.body.classList.remove("loaded");
-    document.body.classList.add("loaded_hiding");
-    window.setTimeout(function () {
-      document.body.classList.add("loaded");
-      document.body.classList.remove("loaded_hiding");
-    }, 500);
-  },
-  [1500]
-);
 const App = () => {
   const { t, i18n } = useTranslation();
+
   useEffect(() => {
     AOS.init();
+    handleLoading();
   }, []);
 
   return (
@@ -48,7 +44,7 @@ const App = () => {
           <Route
             path="/"
             element={
-              <Suspense fallback={<div className="empty-page"></div>}>
+              <Suspense fallback={<EmptyPage />}>
                 <Home />
               </Suspense>
             }
@@ -56,7 +52,7 @@ const App = () => {
           <Route
             path="/individual"
             element={
-              <Suspense fallback={<div className="empty-page"></div>}>
+              <Suspense fallback={<EmptyPage />}>
                 <Individual />
               </Suspense>
             }
@@ -64,7 +60,7 @@ const App = () => {
           <Route
             path="/remote"
             element={
-              <Suspense fallback={<div className="empty-page"></div>}>
+              <Suspense fallback={<EmptyPage />}>
                 <Remote />
               </Suspense>
             }
@@ -72,7 +68,7 @@ const App = () => {
           <Route
             path="/storage"
             element={
-              <Suspense fallback={<div className="empty-page"></div>}>
+              <Suspense fallback={<EmptyPage />}>
                 <Storage />
               </Suspense>
             }
@@ -80,7 +76,7 @@ const App = () => {
           <Route
             path="/details"
             element={
-              <Suspense fallback={<div className="empty-page"></div>}>
+              <Suspense fallback={<EmptyPage />}>
                 <Details />
               </Suspense>
             }

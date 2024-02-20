@@ -1,6 +1,7 @@
+import styles from "./Items.module.scss";
+
 import Allowed from "../AllowedItems/Allowed";
 import Forbidden from "../ForbiddenItems/Forbidden";
-import styles from "./Items.module.scss";
 
 const Items = ({ polygon }) => {
   return (

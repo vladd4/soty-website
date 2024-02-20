@@ -1,8 +1,12 @@
-import { useContext, useEffect } from "react";
-import NewsSlider from "../NewsSlider/NewsSlider";
 import styles from "./News.module.scss";
+
+import { useContext, useEffect } from "react";
+
+import NewsSlider from "../NewsSlider/NewsSlider";
+
 import { useSelector, useDispatch } from "react-redux";
 import { fetchImages } from "../../redux/slices/imagesSlice";
+
 import Context from "../../hooks/Context";
 
 const News = ({ title }) => {
@@ -12,7 +16,7 @@ const News = ({ title }) => {
 
   useEffect(() => {
     dispatch(fetchImages());
-  }, []);
+  }, [dispatch]);
 
   return (
     <section

@@ -98,5 +98,9 @@
     "modal_p": "Upon application, our manager will contact you and accept your reservation",
     "modal_post": "Enter your email",
     "modal_name": "Enter name*",
-    "modal_phone": "Enter phone number*"
+    "modal_phone": "Enter phone number*",
+    "calc_size_placeholder_palets": "Select the number of pallets",
+    "calc_size_placeholder_boxes": "Select the size of the box",
+    "calc_size_placeholder_storage": "Select the size of the storage",
+    "calc_termin_placeholder": "Select the term"
 }
