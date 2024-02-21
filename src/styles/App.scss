@@ -1,94 +1,93 @@
-@import './variables';
-@import './font.scss';
+@import "./variables";
+@import "./font.scss";
 
 .App {
   overflow-x: hidden !important;
 }
 body {
-    margin: 0;
-    padding: 0;
-    font-family: "Fixel";
-    background-image: url(../assets/background.png);
-    background-color: $color-main;
-    overflow-x: hidden !important;
+  margin: 0;
+  padding: 0;
+  font-family: "Fixel";
+  background-image: url(../assets/background.png);
+  background-color: $color-main;
+  overflow-x: hidden !important;
 }
 .part {
-    display: grid;
-    place-items: center;
-    width: 100%;
+  display: grid;
+  place-items: center;
+  width: 100%;
 }
 ::-webkit-scrollbar {
-    width: 7px;
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-yellow;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a5a5a5;
+}
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: $color-main;
+  z-index: 1001;
+}
+
+.preloader__row {
+  position: relative;
+  top: 40%;
+  left: 43%;
+  text-align: center;
+  width: 20%;
+  height: 20%;
+}
+.preloader__item {
+  position: absolute;
+  top: 0;
+  animation: preloader-bounce 2s infinite ease-in-out;
+
+  img {
+    width: 80%;
   }
-  
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+}
+
+@keyframes preloader-bounce {
+  0%,
+  100% {
+    transform: scale(0.6);
   }
-  
-  ::-webkit-scrollbar-thumb {
-    background: $color-yellow;
+
+  50% {
+    transform: scale(1);
   }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #a5a5a5;
-  }
-  .preloader {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: $color-main;
-    z-index: 1001;
-  }
-  
-  .preloader__row {
-    position: relative;
-    top: 40%;
-    left: 43%;
-    text-align: center;
-    width: 20%;
-    height: 20%;
-  }
-  
-  .preloader__item {
-    position: absolute;
-    top: 0;
-    animation: preloader-bounce 2s infinite ease-in-out;
-  
-    img {
-      width: 80%;
-    }
-  }
-  
-  @keyframes preloader-bounce {
-    0%,
-    100% {
-      transform: scale(0.6);
-    }
-  
-    50% {
-      transform: scale(1);
-    }
-  }
-  
-  .loaded_hiding .preloader {
-    transition: 0.3s opacity;
-    opacity: 0;
-  }
-  .loaded .preloader {
-    display: none;
-  }
-  .show_modal {
-    opacity: 1 !important;
-    z-index: 1001 !important;
+}
+
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+.loaded .preloader {
+  display: none;
+}
+.show_modal {
+  opacity: 1 !important;
+  z-index: 1001 !important;
 }
 .show_popup {
   opacity: 1 !important;
   z-index: 1001 !important;
 }
 .show_burger {
-    transform: translateY(0%) !important;
+  transform: translateY(0%) !important;
 }
 .show_home {
   display: grid !important;
