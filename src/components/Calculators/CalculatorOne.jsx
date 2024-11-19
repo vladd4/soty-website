@@ -41,10 +41,10 @@ import Context from "../../hooks/Context";
 import useCalculatePrice from "../../hooks/useCalculatePrice";
 
 const cars = [
-  { text: "1-2 м", icon: Icon1, size: "2 м" },
-  { text: "3-4 м", icon: Icon2, size: "3 м" },
-  { text: "6-8 м", icon: Icon3, size: "8 м" },
-  { text: "9-12 м", icon: Icon4, size: "10 м" },
+  { text: "1-2 м", icon: Icon1, size: ["1 м", "2 м"] },
+  { text: "3-4 м", icon: Icon2, size: ["3 м", "4 м"] },
+  { text: "6-8 м", icon: Icon3, size: ["6 м", "8 м"] },
+  { text: "9-12 м", icon: Icon4, size: ["10 м"] },
 ];
 
 const CalculatorOne = () => {
@@ -123,7 +123,7 @@ const CalculatorOne = () => {
               <p>{t("ind_calc_auto")}</p>
               <div className={styles.icons_row}>
                 {cars.map((car) => {
-                  const isClicked = car.size === clickedSize?.size;
+                  const isClicked = car.size.includes(clickedSize?.size);
                   return (
                     <div
                       style={isEmpty ? { pointerEvents: "none" } : null}
@@ -368,11 +368,9 @@ const CalculatorOne = () => {
           <button
             style={isEmpty ? { pointerEvents: "none" } : null}
             onClick={() => {
-              showModal();
               dispatch(setType("Індивідуальне зберігання"));
               dispatch(setPrice(totalPrice));
-              setClickedSize(null);
-              setClickedTermin(null);
+              showModal();
             }}
           >
             {t("order_calc")}

@@ -1,10 +1,10 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .slider {
-    width: 90% !important;
+  width: 90% !important;
 }
 @media screen and (max-width: 650px) {
-    .slider {
-        width: 100% !important;
-    }
+  .slider {
+    width: 100% !important;
+  }
 }

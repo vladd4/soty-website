@@ -6,8 +6,16 @@ import Polygon from "../assets/polygon-ben-blue.svg";
 import PolygonSmall from "../assets/polygon-allowed-blue.svg";
 import News from "../components/News/News";
 import Partners from "../components/Partners/Partners";
+import { useEffect } from "react";
 
 const Remote = () => {
+  useEffect(() => {
+    window.sessionStorage.setItem("colorCode", "#1999FA");
+
+    return () => {
+      window.sessionStorage.removeItem("colorCode");
+    };
+  }, []);
   return (
     <>
       <WelcomeStorage

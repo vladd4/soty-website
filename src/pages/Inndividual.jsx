@@ -6,8 +6,17 @@ import Polygon from "../assets/polygon-ben-orange.svg";
 import PolygonSmall from "../assets/Polygon 3.svg";
 import News from "../components/News/News";
 import Partners from "../components/Partners/Partners";
+import { useEffect } from "react";
 
 const Individual = () => {
+  useEffect(() => {
+    window.sessionStorage.setItem("colorCode", "#FA9F19");
+
+    return () => {
+      window.sessionStorage.removeItem("colorCode");
+    };
+  }, []);
+
   return (
     <>
       <WelcomeStorage

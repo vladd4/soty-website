@@ -6,8 +6,16 @@ import Polygon from "../assets/polygon-ben-yellow.svg";
 import PolygonSmall from "../assets/Polygon 5.svg";
 import News from "../components/News/News";
 import Partners from "../components/Partners/Partners";
+import { useEffect } from "react";
 
 const Storage = () => {
+  useEffect(() => {
+    window.sessionStorage.setItem("colorCode", "#FABA19");
+
+    return () => {
+      window.sessionStorage.removeItem("colorCode");
+    };
+  }, []);
   return (
     <>
       <WelcomeStorage

@@ -14,12 +14,12 @@ const DesktopBlock = ({ t }) => {
         height="100%"
         className={styles.image}
         data-aos="fade-right"
-        data-aos-duration="1500"
+        data-aos-duration="1000"
       />
       <div
         className={styles.links_block}
         data-aos="fade-left"
-        data-aos-duration="1500"
+        data-aos-duration="1000"
       >
         <LinkRow t={t} />
       </div>

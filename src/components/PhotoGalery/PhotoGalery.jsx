@@ -8,17 +8,17 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 
 const PhotoGalery = ({ images }) => {
-  const [slides, setSlides] = useState(5);
+  const [slides, setSlides] = useState(4);
   useResize(setSlides, "photo", null);
   return (
     <Splide
       options={{
-        height: 150,
+        height: 200,
         type: "loop",
         focus: "center",
         drag: false,
         perPage: slides,
-        gap: "5%",
+        gap: "3%",
         autoplay: true,
         interval: 1500,
         pagination: false,

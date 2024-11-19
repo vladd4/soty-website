@@ -1,61 +1,60 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .root {
-    width: 40%;
+  width: 40%;
+  display: grid;
+  place-items: center;
+  z-index: -1;
+  opacity: 0;
+  position: fixed;
+  top: 2%;
+  left: 4%;
+  transition: all 0.3s;
+
+  .wrapper {
+    width: 100%;
+    background-color: $color-main;
+    border-radius: 10px;
+    border: 2px solid $color-green;
+    padding: 2% 7%;
     display: grid;
     place-items: center;
-    z-index: -1;
-    opacity: 0;
-    position: fixed;
-    top: 5%;
-    left: 5%;
-    transition: all .3s;
 
-    .wrapper {
-        width: 100%;
-        background-color: $color-orange;
-        border-radius: 10px;
-        border: 2px solid $color-green;
-        padding: 2% 7%;
-        display: grid;
-        place-items: center;
-
-        h4 {
-            margin: 0;
-            font-size: calc(#{$size}/1.1);
-            text-align: center;
-            text-wrap: balance;
-            margin: 2% 0%;
-        }
-        .list_block {
-            display: flex;
-            flex-direction: column;
-             .list_item {
-                display: grid;
-                place-items: flex-start;
-                width: 100%;
-                margin: 2% 0%;
-
-                .list_heading {
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-start;
-                    width: 100%;
-                    gap: 3%;
-
-                    img {
-                        width: 4%;
-                    }
-                    }
-                    p {
-                        margin: 0;
-                        font-size: calc(#{$size}/1.35);
-                        margin-top: 2%;
-                        margin-left: 7%;
-                    }
-                }
-            }
-        
+    h4 {
+      margin: 0;
+      font-size: calc(#{$size}/ 1.1);
+      text-align: center;
+      text-wrap: balance;
+      margin: 2% 0%;
+      margin-bottom: 0;
     }
-}
+    .list_block {
+      display: flex;
+      flex-direction: column;
+      .list_item {
+        display: grid;
+        place-items: flex-start;
+        width: 100%;
+        margin: 2% 0%;
+        margin-top: 0%;
+        .list_heading {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          width: 100%;
+          gap: 0%;
 
+          img {
+            width: 4%;
+          }
+        }
+        p {
+          margin: 0;
+          font-size: calc(#{$size}/ 1.35);
+          margin-top: 2%;
+          margin-left: 7%;
+        }
+      }
+    }
+  }
+}

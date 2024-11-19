@@ -1,15 +1,16 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .root {
-    display: grid;
-    width: 100%;
-    place-items: center;
-    margin: 7% 0%;
+  display: grid;
+  width: 100%;
+  place-items: center;
+  margin: 7% 0%;
+  transition: all 0.4s !important;
 
-    h3 {
-        margin: 0;
-        font-size: calc(#{$size}*1.5);
-        text-transform: uppercase;
-        margin-bottom: 3%;
-    }
+  h3 {
+    margin: 0;
+    font-size: calc(#{$size}* 1.5);
+    text-transform: uppercase;
+    margin-bottom: 3%;
+  }
 }

@@ -1,6 +1,6 @@
 import styles from "./Popup.module.scss";
 
-import Polygon from "../../assets/small-poly.svg";
+import Polygon from "../../assets/calc-white.png";
 
 import { useSelector } from "react-redux";
 
@@ -11,9 +11,12 @@ import Context from "../../hooks/Context";
 const Popup = () => {
   const { title, info } = useSelector((state) => state.popup);
   const t = useContext(Context);
+
+  const color = window.sessionStorage.getItem("colorCode");
+
   return (
     <section className={styles.root} id="popup">
-      <article className={styles.wrapper}>
+      <article className={styles.wrapper} style={{ backgroundColor: color }}>
         <h4>{t(title)}</h4>
         <div className={styles.list_block}>
           <div className={styles.list_item}>

@@ -258,11 +258,9 @@ const CalculatorThree = () => {
           <button
             style={isEmpty ? { pointerEvents: "none" } : null}
             onClick={() => {
-              showModal();
               dispatch(setType("Віддалене зберігання"));
               dispatch(setPrice(totalPrice));
-              setClickedSize(null);
-              setClickedTermin(null);
+              showModal();
             }}
           >
             {t("order_calc")}

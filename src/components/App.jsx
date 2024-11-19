@@ -18,6 +18,8 @@ import Modal from "./Modal/Modal";
 import EmptyPage from "./EmptyPage";
 
 import { handleLoading } from "../utils/handleLoading.js";
+import { Toaster } from "react-hot-toast";
+import ImageViewer from "./ImageViewer/ImageViewer.jsx";
 
 const Home = lazy(() => import("../pages/Home.jsx"));
 const Individual = lazy(() => import("../pages/Inndividual.jsx"));
@@ -83,6 +85,8 @@ const App = () => {
           />
         </Routes>
         <Footer />
+        <ImageViewer />
+        <Toaster position="top-left" reverseOrder={false} />
       </div>
     </Context.Provider>
   );

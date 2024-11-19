@@ -1,156 +1,158 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .root {
-    width: 100%;
-    display: grid;
-    place-items: center;
-    margin-top: 5%;
-    padding-bottom: 0%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-top: 5%;
+  padding-bottom: 0%;
 
-    .wrapper {
-        width: 90%;
+  .wrapper {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5%;
+
+    .image_block {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      width: 50%;
+      margin-top: 2%;
+
+      article {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 5%;
-    
-        .image_block {
-            display: grid;
-            grid-template-rows: repeat(3, 1fr);
-            width: 50%;
-            margin-top: 2%;
+        justify-content: center;
+        gap: 0%;
 
-            article {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 0%;
-         
-                .container {
-                    position: relative;
-                    margin: -0.5%;
-                    width: 30%;
-                    img {
-                        width: 100%;
-                    }
-                }
-                .polygon_text {
-                    position: absolute;
-                    top: 50%;
-                    text-align: center;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 90%;
+        .container {
+          position: relative;
+          margin: -0.5%;
+          width: 30%;
+          transition: all 0.4s;
+          img {
+            width: 100%;
+          }
+        }
+        .polygon_text {
+          position: absolute;
+          top: 50%;
+          text-align: center;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 90%;
 
-                    h3 {
-                        margin: 0;
-                        font-size: calc(#{$size}*1.7);
-                    }
-                    p {
-                        margin: 0;
-                        text-align: center;
-                        font-size: calc(#{$size}/1.2);
-                        text-wrap: balance;
-                        text-wrap: balance;
-                    }
-                }
-            }
-            .polygon_2 {
-                margin-top: -17%;
-            }
-            .polygon_3 {
-                margin-top: -35%;
-            }
+          h3 {
+            margin: 0;
+            font-size: calc(#{$size}* 1.7);
+          }
+          p {
+            margin: 0;
+            text-align: center;
+            font-size: calc(#{$size}/ 1.2);
+            text-wrap: balance;
+            text-wrap: balance;
+          }
         }
-        .text_block {
-            width: 50%;
-            margin-top: -5%;
-            h3 {
-                margin: 0;
-                font-size: calc(#{$size}*1.5);
-                text-transform: uppercase;
-            }
-            p {
-                font-size: calc(#{$size}/1.1);
-            }
-        }
+      }
+      .polygon_2 {
+        margin-top: -17%;
+      }
+      .polygon_3 {
+        margin-top: -35%;
+      }
     }
+    .text_block {
+      width: 50%;
+      margin-top: -5%;
+      transition: all 0.4s;
+
+      h3 {
+        margin: 0;
+        font-size: calc(#{$size}* 1.5);
+        text-transform: uppercase;
+      }
+      p {
+        font-size: calc(#{$size}/ 1.1);
+      }
+    }
+  }
 }
 @media screen and (max-width: 1150px) {
-    .polygon_2 {
-        margin-top: -18% !important;
-    }
-    .polygon_3 {
-        margin-top: -36% !important;
-    }
+  .polygon_2 {
+    margin-top: -18% !important;
+  }
+  .polygon_3 {
+    margin-top: -36% !important;
+  }
 }
 @media screen and (max-width: 900px) {
-    .polygon_2 {
-        margin-top: -19% !important;
-    }
-    .polygon_3 {
-        margin-top: -38% !important;
-    }
+  .polygon_2 {
+    margin-top: -19% !important;
+  }
+  .polygon_3 {
+    margin-top: -38% !important;
+  }
 }
 @media screen and (max-width: 850px) {
-    .image_block {
-        h3 {
-            font-size: 17px !important;
-            text-align: center !important;
-        }
-        p {
-            font-size: 11px !important;
-            text-wrap: wrap !important;
-        }
+  .image_block {
+    h3 {
+      font-size: 17px !important;
+      text-align: center !important;
     }
+    p {
+      font-size: 11px !important;
+      text-wrap: wrap !important;
+    }
+  }
 }
 @media screen and (max-width: 650px) {
-    .wrapper {
-        flex-direction: column !important;
+  .wrapper {
+    flex-direction: column !important;
 
-        .image_block {
-            width: 100% !important;
-            .polygon_text {
-                width: 75% !important;
-            }
-            h3 {
-                font-size: 22px !important;
-                text-align: center !important;
-            }
-            p {
-                font-size: 15px !important;
-                text-wrap: wrap !important;
-            }
-            .polygon_2 {
-                margin-top: -19% !important;
-            }
-            .polygon_3 {
-                margin-top: -38% !important;
-            }
-        }
-        .text_block {
-            width: 100% !important;
-           
-            h3 {
-                font-size: 23px !important;
-                text-align: center !important;
-            }
-            p {
-                font-size: 16px !important;
-
-            }
-        }
+    .image_block {
+      width: 100% !important;
+      .polygon_text {
+        width: 75% !important;
+      }
+      h3 {
+        font-size: 22px !important;
+        text-align: center !important;
+      }
+      p {
+        font-size: 15px !important;
+        text-wrap: wrap !important;
+      }
+      .polygon_2 {
+        margin-top: -19% !important;
+      }
+      .polygon_3 {
+        margin-top: -38% !important;
+      }
     }
+    .text_block {
+      width: 100% !important;
+
+      h3 {
+        font-size: 23px !important;
+        text-align: center !important;
+      }
+      p {
+        font-size: 16px !important;
+      }
+    }
+  }
 }
 @media screen and (max-width: 500px) {
-    .wrapper {
-        .image_block {
-            h3 {
-                font-size: 17px !important;
-            }
-            p {
-                font-size: 12px !important;
-            }
-        }
+  .wrapper {
+    .image_block {
+      h3 {
+        font-size: 17px !important;
+      }
+      p {
+        font-size: 12px !important;
+      }
     }
+  }
 }

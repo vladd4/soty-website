@@ -8,11 +8,23 @@ import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 
 import { useRef, useState } from "react";
 import useResize from "../../hooks/useResize";
+import { useDispatch } from "react-redux";
+import {
+  setCurrentImage,
+  setShowImageViewer,
+} from "../../redux/slices/imageViewerSlice";
 
 const NewsSlider = ({ images }) => {
   const sliderRef = useRef(null);
   const nextRef = useRef(null);
   const prevRef = useRef(null);
+
+  const dispatch = useDispatch();
+
+  const handleShowViewer = (currentImage) => {
+    dispatch(setCurrentImage(currentImage));
+    dispatch(setShowImageViewer(true));
+  };
 
   const handleHover = (ref, src) => {
     if (ref.current) {
@@ -26,7 +38,9 @@ const NewsSlider = ({ images }) => {
     }
   };
   const [slides, setSlides] = useState(4);
+
   useResize(setSlides, "news", null);
+
   return (
     <>
       <Splide
@@ -49,6 +63,7 @@ const NewsSlider = ({ images }) => {
                 <SplideSlide
                   key={image}
                   id="slides"
+                  onClick={() => handleShowViewer(image)}
                   style={{
                     backgroundImage: `url(${image})`,
                     backgroundSize: "cover",

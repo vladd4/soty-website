@@ -5,6 +5,7 @@ import { partnersReducer } from "../slices/partnersSlice";
 import { calcReducer } from "../slices/calcSlice";
 import { additionalReducer } from "../slices/additionalSlice";
 import { popupReducer } from "../slices/popupSlice";
+import { imageViewerReducer } from "../slices/imageViewerSlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,5 +15,6 @@ export const store = configureStore({
     calculator: calcReducer,
     additional: additionalReducer,
     popup: popupReducer,
+    imageViewer: imageViewerReducer,
   },
 });

@@ -1,3 +1,5 @@
+import toast from "react-hot-toast";
+
 export async function sendFormToTelegram(message) {
   const botToken = process.env.REACT_APP_BOT_TOKEN;
   const chatId = process.env.REACT_APP_CHAT_ID;
@@ -14,8 +16,11 @@ export async function sendFormToTelegram(message) {
       }),
     });
     if (response.ok) {
-      alert("Дякуємо! Форма успішно надіслана.");
+      toast.success(
+        "Форма успішно відправлена. Менеджер скоро зв'яжеться з вами!"
+      );
     } else {
+      toast.error("Щось пішло не так. Спробуйте пізніше!");
       throw new Error("Failed to submit form");
     }
   } catch (error) {

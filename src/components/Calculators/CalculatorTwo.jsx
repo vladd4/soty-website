@@ -290,11 +290,9 @@ const CalculatorTwo = () => {
           <button
             style={isEmpty ? { pointerEvents: "none" } : null}
             onClick={() => {
-              showModal();
               dispatch(setType("Склади"));
               dispatch(setPrice(totalPrice));
-              setClickedSize(null);
-              setClickedTermin(null);
+              showModal();
             }}
           >
             {t("order_calc")}

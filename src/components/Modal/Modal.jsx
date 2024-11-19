@@ -12,6 +12,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { resetData } from "../../redux/slices/modalSlice";
 
 import { closeModal } from "../../utils/showModal";
+import toast from "react-hot-toast";
 
 const Modal = () => {
   const ref = useRef(null);
@@ -26,7 +27,7 @@ const Modal = () => {
   const handleClick = (e) => {
     e.preventDefault();
     if (name.trim() === "" || tel.trim() === "") {
-      alert("Заповніть, будь-ласка, необхідні поля!");
+      toast.error("Заповніть, будь-ласка, необхідні поля!");
       return;
     }
     let string;
@@ -41,41 +42,48 @@ const Modal = () => {
     closeModal(ref);
   };
   return (
-    <section ref={ref} className={styles.root} id="modal">
-      <article className={styles.wrapper}>
-        <img
-          alt="Close"
-          src={Close}
-          className={styles.span}
-          onClick={() => closeModal(ref)}
-        />
-        <img alt="Polygon" src={Polygon} className={styles.polygon} />
-        <h3>{t("modal_p")}</h3>
-        <div className={styles.form_block}>
-          <input
-            type="text"
-            required
-            placeholder={t("modal_name")}
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+    <>
+      <section ref={ref} className={styles.root} id="modal">
+        <article className={styles.wrapper}>
+          <img
+            alt="Close"
+            src={Close}
+            className={styles.span}
+            onClick={() => closeModal(ref)}
           />
-          <input
-            type="text"
-            required
-            placeholder={t("modal_phone")}
-            value={tel}
-            onChange={(e) => setTel(e.target.value.replace(/\D/g, ""))}
-          />
-          <input
-            type="mail"
-            placeholder={t("modal_post")}
-            value={post}
-            onChange={(e) => setPost(e.target.value)}
-          />
-        </div>
-        <button onClick={(e) => handleClick(e)}>{t("order_calc")}</button>
-      </article>
-    </section>
+          <img alt="Polygon" src={Polygon} className={styles.polygon} />
+          <h3>{t("modal_p")}</h3>
+          <div className={styles.form_block}>
+            <input
+              type="text"
+              required
+              placeholder={t("modal_name")}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              type="text"
+              required
+              placeholder={t("modal_phone")}
+              value={tel}
+              onChange={(e) => setTel(e.target.value.replace(/\D/g, ""))}
+            />
+            <input
+              type="mail"
+              placeholder={t("modal_post")}
+              value={post}
+              onChange={(e) => setPost(e.target.value)}
+            />
+          </div>
+          <button onClick={(e) => handleClick(e)}>{t("order_calc")}</button>
+        </article>
+      </section>
+      <div
+        className={styles.overflow}
+        id="overflow"
+        onClick={() => closeModal(ref)}
+      />
+    </>
   );
 };
 export default Modal;

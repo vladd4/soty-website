@@ -8,5 +8,5 @@ export const handleLoading = () =>
         document.body.classList.remove("loaded_hiding");
       }, 500);
     },
-    [1500]
+    [500]
   );
