@@ -18,7 +18,7 @@ export default function ImageViewer() {
     dispatch(setShowImageViewer(false));
   };
 
-  if (!currentImage) return null;
+  // if (!currentImage) return null;
 
   return (
     <div
@@ -27,7 +27,7 @@ export default function ImageViewer() {
     >
       <X className={styles.close} size={30} onClick={handleCloseViewer} />
       <div className={styles.wrapper}>
-        <img alt="Viewer" src={currentImage} width={300} height={200} />
+        {currentImage && <img alt="Viewer" src={currentImage} />}
       </div>
     </div>
   );

@@ -2,14 +2,20 @@ import styles from "./Partners.module.scss";
 
 import PhotoGalery from "../PhotoGalery/PhotoGalery";
 
-import { useSelector } from "react-redux";
-import { useContext } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useContext, useEffect } from "react";
 
 import Context from "../../hooks/Context";
+import { fetchPartners } from "../../redux/slices/partnersSlice";
 
 const Partners = () => {
-  const images = useSelector((state) => state.images.imageList);
+  const images = useSelector((state) => state.partners.partnersList);
   const t = useContext(Context);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchPartners());
+  }, [dispatch]);
   return (
     <section
       className={styles.root}

@@ -10,14 +10,12 @@ export const fetchImages = createAsyncThunk(
 
     try {
       const res = await listAll(imageListRef);
-      const uniqueUrls = new Set(imageList);
+      const urls = await Promise.all(
+        res.items.map(async (item) => await getDownloadURL(item))
+      );
 
-      for (const item of res.items) {
-        const url = await getDownloadURL(item);
-        uniqueUrls.add(url);
-      }
-
-      return Array.from(uniqueUrls);
+      const uniqueUrls = Array.from(new Set([...imageList, ...urls]));
+      return uniqueUrls;
     } catch (error) {
       throw error;
     }

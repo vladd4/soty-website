@@ -5,19 +5,17 @@ import { ref, listAll, getDownloadURL } from "firebase/storage";
 export const fetchPartners = createAsyncThunk(
   "partners/fetchPartners",
   async (_, { getState }) => {
-    const { partnersList } = getState().images;
+    const { partnersList } = getState().partners;
     const partnersListRef = ref(storage, "partners/");
 
     try {
       const res = await listAll(partnersListRef);
-      const uniqueUrls = new Set(partnersList);
+      const urls = await Promise.all(
+        res.items.map(async (item) => await getDownloadURL(item))
+      );
 
-      for (const item of res.items) {
-        const url = await getDownloadURL(item);
-        uniqueUrls.add(url);
-      }
-
-      return Array.from(uniqueUrls);
+      const uniqueUrls = Array.from(new Set([...partnersList, ...urls]));
+      return uniqueUrls;
     } catch (error) {
       throw error;
     }

@@ -30,7 +30,6 @@ const Storage = () => {
       <CalculatorTwo />
       <News title="photo_h" />
       <Partners />
-      <News title="news_h" />
     </>
   );
 };
