@@ -169,21 +169,33 @@ const CalculatorOne = () => {
               <img
                 alt="Mobile"
                 src={
-                  clickedSize?.size === "8 м"
+                  clickedSize?.size === "8 м" ||
+                  clickedSize?.size === "8.5 м" ||
+                  clickedSize?.size === "7 м" ||
+                  clickedSize?.size === "7.5 м"
                     ? I8
-                    : clickedSize?.size === "10 м"
+                    : clickedSize?.size === "10 м" ||
+                      clickedSize?.size === "9 м" ||
+                      clickedSize?.size === "11 м" ||
+                      clickedSize?.size === "12 м"
                     ? I10
-                    : clickedSize?.size === "6 м"
+                    : clickedSize?.size === "6 м" ||
+                      clickedSize?.size === "5 м" ||
+                      clickedSize?.size === "5.5 м" ||
+                      clickedSize?.size === "6.5 м"
                     ? I6
-                    : clickedSize?.size === "4 м"
+                    : clickedSize?.size === "4 м" ||
+                      clickedSize?.size === "4.5 м"
                     ? I4
-                    : clickedSize?.size === "3 м"
+                    : clickedSize?.size === "3 м" ||
+                      clickedSize?.size === "3.5 м"
                     ? I3
                     : clickedSize?.size === "2.5 м"
                     ? I25
                     : clickedSize?.size === "2 м"
                     ? I2
-                    : clickedSize?.size === "1 м"
+                    : clickedSize?.size === "1 м" ||
+                      clickedSize?.size === "1.5 м"
                     ? I1
                     : I10
                 }
