@@ -14,6 +14,8 @@ import {
   setShowImageViewer,
 } from "../../redux/slices/imageViewerSlice";
 
+import No_Image from "../../assets/no_image.jpg";
+
 const NewsSlider = ({ images }) => {
   const sliderRef = useRef(null);
   const nextRef = useRef(null);
@@ -47,7 +49,6 @@ const NewsSlider = ({ images }) => {
         ref={sliderRef}
         options={{
           height: 300,
-          type: "loop",
           focus: "center",
           drag: true,
           perPage: slides,
@@ -57,27 +58,36 @@ const NewsSlider = ({ images }) => {
         }}
         className={styles.slider}
       >
-        {images
-          ? images.map((image) => {
-              return (
-                <SplideSlide
-                  key={image}
-                  id="slides"
-                  onClick={() => handleShowViewer(image)}
-                  style={{
-                    backgroundImage: `url(${image})`,
-                    backgroundSize: "cover",
-                  }}
-                />
-              );
-            })
-          : null}
+        {images ? (
+          images.map((image) => {
+            return (
+              <SplideSlide
+                key={image}
+                className={styles.splide_slide}
+                id="slides"
+                onClick={() => handleShowViewer(image)}
+                style={{
+                  backgroundImage: `url(${image})`,
+                  backgroundSize: "cover",
+                }}
+              />
+            );
+          })
+        ) : (
+          <SplideSlide
+            id="slides"
+            className={styles.splide_slide}
+            style={{
+              backgroundImage: `url(${No_Image})`,
+              backgroundSize: "cover",
+            }}
+          />
+        )}
       </Splide>
       <div className={styles.arrows}>
         <img
           ref={prevRef}
           alt="Prev"
-          loading="lazy"
           width="100%"
           height="100%"
           src={Arrow}
@@ -89,7 +99,6 @@ const NewsSlider = ({ images }) => {
         <img
           ref={nextRef}
           alt="Next"
-          loading="lazy"
           width="100%"
           height="100%"
           src={Arrow}

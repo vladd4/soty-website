@@ -10,11 +10,11 @@ const useResize = (setSlides, slider, calc) => {
           if (windowWidth <= 450) {
             setSlides(1);
           } else if (windowWidth <= 650) {
-            setSlides(2);
+            setSlides(1);
           } else if (windowWidth <= 900) {
-            setSlides(3);
+            setSlides(2);
           } else {
-            setSlides(4);
+            setSlides(3);
           }
         } else {
           if (windowWidth <= 450) {

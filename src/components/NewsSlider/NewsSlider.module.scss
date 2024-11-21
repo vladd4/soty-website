@@ -1,41 +1,45 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .slider {
-    width: 90% !important;
+  width: 90% !important;
+  height: 400px !important;
+}
+.splide_slide {
+  height: 400px !important;
 }
 .arrows {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15%;
-    margin-top: 2%;
-    img {
-        cursor: pointer;
-        transition: all .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15%;
+  margin-top: 2%;
+  img {
+    cursor: pointer;
+    transition: all 0.3s;
 
-        &:hover {
-           opacity: 0.8;
-        }
+    &:hover {
+      opacity: 0.8;
     }
-    .prev {
-        transform: rotateZ(180deg);
-        width: 40%;
-    }
-    .next {
-        width: 40%;
-    }
+  }
+  .prev {
+    transform: rotateZ(180deg);
+    width: 40%;
+  }
+  .next {
+    width: 40%;
+  }
 }
 @media screen and (max-width: 650px) {
-    .slider {
-        width: 100% !important;
-    }
-    .prev {
-        width: 27% !important;
-    }
-    .next {
-        width: 27% !important;
-    }
-    h3 {
-        font-size: 23px !important;
-    }
+  .slider {
+    width: 100% !important;
+  }
+  .prev {
+    width: 27% !important;
+  }
+  .next {
+    width: 27% !important;
+  }
+  h3 {
+    font-size: 23px !important;
+  }
 }
