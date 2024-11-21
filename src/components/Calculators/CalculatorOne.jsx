@@ -41,10 +41,14 @@ import Context from "../../hooks/Context";
 import useCalculatePrice from "../../hooks/useCalculatePrice";
 
 const cars = [
-  { text: "1-2 м", icon: Icon1, size: ["1 м", "2 м"] },
-  { text: "3-4 м", icon: Icon2, size: ["3 м", "4 м"] },
-  { text: "6-8 м", icon: Icon3, size: ["6 м", "8 м"] },
-  { text: "9-12 м", icon: Icon4, size: ["10 м"] },
+  { text: "1-2 м", icon: Icon1, size: ["1 м", "1.5 м", "2 м"] },
+  { text: "3-4 м", icon: Icon2, size: ["3 м", "3.5 м", "4 м"] },
+  { text: "6-8 м", icon: Icon3, size: ["6 м", "6.5 м", "7 м", "7.5 м", "8 м"] },
+  {
+    text: "9-12 м",
+    icon: Icon4,
+    size: ["9 м", "9.5 м", "10 м", "10.5 м", "11 м", "11.5 м", "12 м"],
+  },
 ];
 
 const CalculatorOne = () => {
@@ -126,7 +130,11 @@ const CalculatorOne = () => {
                   const isClicked = car.size.includes(clickedSize?.size);
                   return (
                     <div
-                      style={isEmpty ? { pointerEvents: "none" } : null}
+                      style={
+                        isEmpty || (sizes && sizes.length <= 0)
+                          ? { pointerEvents: "none" }
+                          : null
+                      }
                       key={car.text}
                       className={
                         isClicked
@@ -252,7 +260,7 @@ const CalculatorOne = () => {
                   </div>
                 )
               ) : (
-                <p>No sizes available</p>
+                <p>Схоще вільних складів немає.</p>
               )}
             </div>
             <div className={styles.termin_block}>
@@ -328,7 +336,7 @@ const CalculatorOne = () => {
                   </div>
                 )
               ) : (
-                <p>No termins available</p>
+                <p>Схоще вільних термінів немає.</p>
               )}
             </div>
           </div>

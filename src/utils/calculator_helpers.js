@@ -11,9 +11,9 @@ export const toggleSize = (
       setClickedSize(car === clickedSize ? null : car);
     } else {
       setClickedSize(
-        car.size.includes(clickedSize?.size)
-          ? null
-          : sizes.find((size) => size.size === car.size[0])
+        car.size.some((carSize) => sizes.some((size) => size.size === carSize))
+          ? sizes.find((size) => car.size.includes(size.size))
+          : null
       );
     }
     dispatch(setSize(car.size));

@@ -80,7 +80,7 @@
       display: grid;
       place-items: center;
       position: absolute;
-      top: -12%;
+      top: -11%;
       right: -7%;
       width: 27%;
 
@@ -238,10 +238,10 @@
           }
           .size_row {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             flex-wrap: wrap;
-            gap: 0.5%;
+            gap: 3.5%;
             width: 70%;
 
             .size_item {
@@ -311,10 +311,10 @@
           }
           .termin_row {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             flex-wrap: wrap;
-            gap: 0.5%;
+            gap: 3.5%;
             width: 70%;
 
             .termin_item {
