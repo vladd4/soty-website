@@ -20,6 +20,7 @@ import EmptyPage from "./EmptyPage";
 import { handleLoading } from "../utils/handleLoading.js";
 import { Toaster } from "react-hot-toast";
 import ImageViewer from "./ImageViewer/ImageViewer.jsx";
+import Fancybox from "./FancyBox.jsx";
 
 const Home = lazy(() => import("../pages/Home.jsx"));
 const Individual = lazy(() => import("../pages/Inndividual.jsx"));
@@ -37,57 +38,65 @@ const App = () => {
 
   return (
     <Context.Provider value={t}>
-      <div className="App">
-        <Loader />
-        <Header i18n={i18n} />
-        <Modal />
-        <Popup />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Suspense fallback={<EmptyPage />}>
-                <Home />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/individual"
-            element={
-              <Suspense fallback={<EmptyPage />}>
-                <Individual />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/remote"
-            element={
-              <Suspense fallback={<EmptyPage />}>
-                <Remote />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/storage"
-            element={
-              <Suspense fallback={<EmptyPage />}>
-                <Storage />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/details"
-            element={
-              <Suspense fallback={<EmptyPage />}>
-                <Details />
-              </Suspense>
-            }
-          />
-        </Routes>
-        <Footer />
-        <ImageViewer />
-        <Toaster position="top-left" reverseOrder={false} />
-      </div>
+      <Fancybox
+        options={{
+          Carousel: {
+            infinite: false,
+          },
+        }}
+      >
+        <div className="App">
+          <Loader />
+          <Header i18n={i18n} />
+          <Modal />
+          <Popup />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Suspense fallback={<EmptyPage />}>
+                  <Home />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/individual"
+              element={
+                <Suspense fallback={<EmptyPage />}>
+                  <Individual />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/remote"
+              element={
+                <Suspense fallback={<EmptyPage />}>
+                  <Remote />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/storage"
+              element={
+                <Suspense fallback={<EmptyPage />}>
+                  <Storage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/details"
+              element={
+                <Suspense fallback={<EmptyPage />}>
+                  <Details />
+                </Suspense>
+              }
+            />
+          </Routes>
+          <Footer />
+          <ImageViewer />
+          <Toaster position="top-left" reverseOrder={false} />
+        </div>
+      </Fancybox>
     </Context.Provider>
   );
 };
