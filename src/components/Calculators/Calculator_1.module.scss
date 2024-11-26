@@ -8,6 +8,7 @@
   padding-bottom: 5%;
   position: relative;
   overflow: hidden;
+  margin-bottom: 5%;
 
   h3 {
     margin: 0;
@@ -414,6 +415,12 @@
     }
   }
 }
+
+.disabled_size {
+  pointer-events: none !important;
+  opacity: 0.6 !important;
+}
+
 @supports (-webkit-overflow-scrolling: touch) {
   .size_block .size_row,
   .size_block .termin_row {

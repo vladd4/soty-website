@@ -50,8 +50,9 @@ export const fetchSizesAndPrice = createAsyncThunk(
 
     const sizes = data.docs[0].data().sizes;
     const sizesPrice = data.docs[0].data().sizes_price;
+    const sizesQuantity = data.docs[0].data().sizes_quantity;
 
-    return { sizes, sizesPrice };
+    return { sizes, sizesPrice, sizesQuantity };
   }
 );
 
@@ -161,10 +162,11 @@ export const calcSlice = createSlice({
       state.status = "loading";
     },
     [fetchSizesAndPrice.fulfilled]: (state, action) => {
-      const { sizes, sizesPrice } = action.payload;
+      const { sizes, sizesPrice, sizesQuantity } = action.payload;
       const newArray = sizes.map((size, index) => ({
         size,
         price: sizesPrice[index],
+        quantity: sizesQuantity[index],
       }));
 
       state.sizesIndividual = newArray;

@@ -67,6 +67,53 @@ const CalculatorOne = () => {
   );
   const isMobile = useResize(null, null, "calc");
 
+  const getIconUrl = () => {
+    let src;
+
+    switch (clickedSize?.size) {
+      case "8 м":
+      case "8.5 м":
+      case "7 м":
+      case "7.5 м":
+        src = I8;
+        break;
+      case "10 м":
+      case "9 м":
+      case "11 м":
+      case "12 м":
+        src = I10;
+        break;
+      case "6 м":
+      case "5 м":
+      case "5.5 м":
+      case "6.5 м":
+        src = I6;
+        break;
+      case "4 м":
+      case "4.5 м":
+        src = I4;
+        break;
+      case "3 м":
+      case "3.5 м":
+        src = I3;
+        break;
+      case "2.5 м":
+        src = I25;
+        break;
+      case "2 м":
+        src = I2;
+        break;
+      case "1 м":
+      case "1.5 м":
+        src = I1;
+        break;
+      default:
+        src = I10; // Fallback value
+    }
+
+    return src;
+  };
+
   useEffect(() => {
     dispatch(fetchIsEmpty());
     dispatch(fetchTerminAndPrice());
@@ -168,38 +215,8 @@ const CalculatorOne = () => {
               <h3>{t("ind_calc_size")}</h3>
               <img
                 alt="Mobile"
-                src={
-                  clickedSize?.size === "8 м" ||
-                  clickedSize?.size === "8.5 м" ||
-                  clickedSize?.size === "7 м" ||
-                  clickedSize?.size === "7.5 м"
-                    ? I8
-                    : clickedSize?.size === "10 м" ||
-                      clickedSize?.size === "9 м" ||
-                      clickedSize?.size === "11 м" ||
-                      clickedSize?.size === "12 м"
-                    ? I10
-                    : clickedSize?.size === "6 м" ||
-                      clickedSize?.size === "5 м" ||
-                      clickedSize?.size === "5.5 м" ||
-                      clickedSize?.size === "6.5 м"
-                    ? I6
-                    : clickedSize?.size === "4 м" ||
-                      clickedSize?.size === "4.5 м"
-                    ? I4
-                    : clickedSize?.size === "3 м" ||
-                      clickedSize?.size === "3.5 м"
-                    ? I3
-                    : clickedSize?.size === "2.5 м"
-                    ? I25
-                    : clickedSize?.size === "2 м"
-                    ? I2
-                    : clickedSize?.size === "1 м" ||
-                      clickedSize?.size === "1.5 м"
-                    ? I1
-                    : I10
-                }
                 className={styles.mobile_calc}
+                src={getIconUrl()}
               />
               {sizes && sizes.length > 0 ? (
                 isMobile ? (
@@ -229,6 +246,7 @@ const CalculatorOne = () => {
                             size?.size === clickedSize?.size ? true : false
                           }
                           value={size.price}
+                          disabled={size.quantity <= 0}
                         >
                           {size.size}
                         </option>
@@ -242,12 +260,21 @@ const CalculatorOne = () => {
                       return (
                         <div
                           key={size.price}
-                          style={isEmpty ? { pointerEvents: "none" } : null}
-                          className={
-                            isClicked
-                              ? styles.size_item_clicked
-                              : styles.size_item
+                          style={
+                            isEmpty || size.quantity <= 0
+                              ? { pointerEvents: "none" }
+                              : null
                           }
+                          className={`
+                            ${
+                              isClicked
+                                ? styles.size_item_clicked
+                                : styles.size_item
+                            } ${
+                            isEmpty || size.quantity <= 0
+                              ? styles.disabled_size
+                              : ""
+                          }`}
                           onClick={() => {
                             toggleSize(
                               size,
@@ -354,25 +381,7 @@ const CalculatorOne = () => {
           </div>
           <img
             alt="Claculator"
-            src={
-              clickedSize?.size === "8 м"
-                ? I8
-                : clickedSize?.size === "10 м"
-                ? I10
-                : clickedSize?.size === "6 м"
-                ? I6
-                : clickedSize?.size === "4 м"
-                ? I4
-                : clickedSize?.size === "3 м"
-                ? I3
-                : clickedSize?.size === "2.5 м"
-                ? I25
-                : clickedSize?.size === "2 м"
-                ? I2
-                : clickedSize?.size === "1 м"
-                ? I1
-                : I10
-            }
+            src={getIconUrl()}
             className={styles.main_image}
             width="100%"
             height="100%"
