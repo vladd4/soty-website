@@ -16,7 +16,8 @@ const News = ({ title }) => {
 
   useEffect(() => {
     dispatch(fetchImages());
-  }, [dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <section

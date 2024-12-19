@@ -90,14 +90,14 @@ const Header = ({ i18n }) => {
           </a>
           <div className={styles.social_block}>
             <a
-              href="https://www.facebook.com/people/Leader-company/61553362610336/"
+              href="https://www.facebook.com/people/%25D0%25A1%25D0%25BE%25D1%2582%25D0%25B8-%25D0%25A2%25D0%25B2%25D1%2596%25D0%25B9-%25D0%259C%25D1%2596%25D0%25BD%25D1%2596-%25D0%25A1%25D0%25BA%25D0%25BB%25D0%25B0%25D0%25B4/61553857121742/"
               target="_blank"
               rel="noreferrer"
             >
               <img alt="Telegram" src={Telegram} width="100%" height="100%" />
             </a>
             <a
-              href="https://www.facebook.com/people/Leader-company/61553362610336/"
+              href="https://www.instagram.com/soty_tviy_mini_sklad/"
               target="_blank"
               rel="noreferrer"
             >

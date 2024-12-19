@@ -8,6 +8,8 @@ import News from "../components/News/News";
 import Partners from "../components/Partners/Partners";
 import { useEffect } from "react";
 
+import Background from "../assets/remote-main.jpg";
+
 const Remote = () => {
   useEffect(() => {
     window.sessionStorage.setItem("colorCode", "#1999FA");
@@ -23,6 +25,7 @@ const Remote = () => {
         buttonStyle="blue"
         calc_id="calc_3"
         info="remote_info"
+        backImage={Background}
       />
       <Benefits polygon={Polygon} />
       <Items polygon={PolygonSmall} />

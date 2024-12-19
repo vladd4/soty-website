@@ -165,9 +165,7 @@ const CalculatorThree = () => {
                     />
                   </div>
                 )
-              ) : (
-                <p>No sizes available</p>
-              )}
+              ) : null}
             </div>
             <div className={styles.termin_block}>
               <h3>{t("calc_termin")}</h3>
@@ -176,7 +174,7 @@ const CalculatorThree = () => {
                   <select
                     onChange={(e) => {
                       const selectedTermin = termins?.find(
-                        (termin) => termin.price === parseFloat(e.target.value)
+                        (termin) => termin === e.target.value
                       );
                       toggleTermin(
                         e.target.value === "placeholder"
@@ -195,24 +193,20 @@ const CalculatorThree = () => {
                     {termins.map((termin) => (
                       <option
                         key={termin.price}
-                        selected={
-                          termin?.termin === clickedTermin?.termin
-                            ? true
-                            : false
-                        }
-                        value={termin.price}
+                        selected={termin === clickedTermin ? true : false}
+                        value={termin}
                       >
-                        {termin.termin}
+                        {termin}
                       </option>
                     ))}
                   </select>
                 ) : (
                   <div className={styles.termin_row}>
                     {termins.map((termin) => {
-                      const isClicked = termin.termin === clickedTermin?.termin;
+                      const isClicked = termin === clickedTermin;
                       return (
                         <div
-                          key={termin.termin}
+                          key={termin}
                           style={isEmpty ? { pointerEvents: "none" } : null}
                           className={
                             isClicked
@@ -235,15 +229,13 @@ const CalculatorThree = () => {
                             width="100%"
                             height="100%"
                           />
-                          <p>{termin.termin}</p>
+                          <p>{termin}</p>
                         </div>
                       );
                     })}
                   </div>
                 )
-              ) : (
-                <p>No termins available</p>
-              )}
+              ) : null}
             </div>
           </div>
           <img alt="Claculator" src={Image} className={styles.main_image} />

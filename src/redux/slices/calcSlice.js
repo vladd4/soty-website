@@ -36,9 +36,8 @@ export const fetchTerminAndPrice = createAsyncThunk(
     const data = await getDocs(collectionRef);
 
     const termin = data.docs[0].data().termin;
-    const terminPrice = data.docs[0].data().termin_price;
 
-    return { termin, terminPrice };
+    return termin;
   }
 );
 
@@ -144,11 +143,8 @@ export const calcSlice = createSlice({
       state.status = "loading";
     },
     [fetchTerminAndPrice.fulfilled]: (state, action) => {
-      const { termin, terminPrice } = action.payload;
-      const newArray = termin.map((termin, index) => ({
-        termin,
-        price: terminPrice[index],
-      }));
+      const termin = action.payload;
+      const newArray = termin.map((termin) => termin);
       state.terminIndividual = newArray;
       state.status = "loaded";
     },

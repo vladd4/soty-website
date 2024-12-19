@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { calc_termins } from "../utils/constants";
 
 const useCalculatePrice = (
   clickedSize,
@@ -10,12 +11,13 @@ const useCalculatePrice = (
   useEffect(() => {
     const calculatePrice = () => {
       if (clickedSize !== null) {
-        const selectedTermin = clickedTermin || termins?.[0];
+        const selectedTermin = clickedTermin || termins[0];
 
         if (selectedTermin) {
-          const reductionAmount =
-            (selectedTermin.price / 100) * clickedSize.price;
-          const result = clickedSize.price - reductionAmount;
+          const selectedTerminAmount = calc_termins.find(
+            (item) => item.label === selectedTermin
+          );
+          const result = clickedSize.price * selectedTerminAmount.value;
           setTotalPrice(result);
           setClickedTermin(selectedTermin);
         } else {

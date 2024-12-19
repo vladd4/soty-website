@@ -29,14 +29,14 @@ const Footer = () => {
           <img alt="Logo" src={Logo} width="100%" height="auto" />
           <div className={styles.social_block}>
             <a
-              href="https://www.facebook.com/people/Leader-company/61553362610336/"
+              href="https://www.instagram.com/soty_tviy_mini_sklad/"
               target="_blank"
               rel="noreferrer"
             >
               <img alt="Instagram" src={Instagram} width="100%" height="100%" />
             </a>
             <a
-              href="https://www.facebook.com/people/Leader-company/61553362610336/"
+              href="https://www.facebook.com/people/%25D0%25A1%25D0%25BE%25D1%2582%25D0%25B8-%25D0%25A2%25D0%25B2%25D1%2596%25D0%25B9-%25D0%259C%25D1%2596%25D0%25BD%25D1%2596-%25D0%25A1%25D0%25BA%25D0%25BB%25D0%25B0%25D0%25B4/61553857121742/"
               target="_blank"
               rel="noreferrer"
             >
@@ -56,19 +56,11 @@ const Footer = () => {
                 <img alt="Map" src={Map} width="10%" height="100%" />
                 <p>{t("location")}</p>
               </a>
-              <a
-                href="https://www.facebook.com/people/Leader-company/61553362610336/"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="tel:+380977463748">
                 <img alt="Phone" src={Phone} width="10%" height="100%" />
                 <p>+38(097)-746-37-48</p>
               </a>
-              <a
-                href="https://www.facebook.com/people/Leader-company/61553362610336/"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="mailto:sotusotu@gmail.com">
                 <img alt="Mail" src={Mail} width="10%" height="100%" />
                 <p>sotusotu@gmail.com</p>
               </a>
@@ -102,26 +94,18 @@ const Footer = () => {
                   <img alt="Map" src={Map} width="auto" height="100%" />
                   <p>{t("location")}</p>
                 </a>
-                <a
-                  href="https://www.facebook.com/people/Leader-company/61553362610336/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img alt="Phone" src={Phone} width="auto" height="100%" />
+                <a href="tel:+380977463748">
+                  <img alt="Phone" src={Phone} width="10%" height="100%" />
                   <p>+38(097)-746-37-48</p>
                 </a>
-                <a
-                  href="https://www.facebook.com/people/Leader-company/61553362610336/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img alt="Mail" src={Mail} width="auto" height="100%" />
+                <a href="mailto:sotusotu@gmail.com">
+                  <img alt="Mail" src={Mail} width="10%" height="100%" />
                   <p>sotusotu@gmail.com</p>
                 </a>
               </div>
               <div className={styles.mobile_social_block}>
                 <a
-                  href="https://www.facebook.com/people/Leader-company/61553362610336/"
+                  href="https://www.instagram.com/soty_tviy_mini_sklad/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -133,7 +117,7 @@ const Footer = () => {
                   />
                 </a>
                 <a
-                  href="https://www.facebook.com/people/Leader-company/61553362610336/"
+                  href="https://www.facebook.com/people/%25D0%25A1%25D0%25BE%25D1%2582%25D0%25B8-%25D0%25A2%25D0%25B2%25D1%2596%25D0%25B9-%25D0%259C%25D1%2596%25D0%25BD%25D1%2596-%25D0%25A1%25D0%25BA%25D0%25BB%25D0%25B0%25D0%25B4/61553857121742/"
                   target="_blank"
                   rel="noreferrer"
                 >

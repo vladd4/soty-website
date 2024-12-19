@@ -38,11 +38,7 @@ const About = () => {
             />
             <TextPolygon
               aos="zoom-in-left"
-              titles={[
-                { attr: "p", label: "about_ukr_p1" },
-                { attr: "h3", label: "about_ukr_h" },
-                { attr: "p", label: "about_ukr_p" },
-              ]}
+              titles={[{ attr: "p", label: "about_ukr_p" }]}
               t={t}
             />
           </article>
@@ -52,7 +48,12 @@ const About = () => {
               titles={[{ attr: "p", label: "about_own_p" }]}
               t={t}
             />
-            <EmptyPolygon aos="zoom-in-up" />
+            <TextPolygon
+              aos="zoom-in-up"
+              titles={[{ attr: "p", label: "about_security_p" }]}
+              t={t}
+            />
+            {/* <EmptyPolygon aos="zoom-in-up" /> */}
           </article>
         </article>
         <article

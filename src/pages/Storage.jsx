@@ -8,6 +8,8 @@ import News from "../components/News/News";
 import Partners from "../components/Partners/Partners";
 import { useEffect } from "react";
 
+import Background from "../assets/storage-main.jpg";
+
 const Storage = () => {
   useEffect(() => {
     window.sessionStorage.setItem("colorCode", "#FABA19");
@@ -24,6 +26,7 @@ const Storage = () => {
         calc_id="calc_2"
         info="storage_info"
         p2="storage_info_p2"
+        backImage={Background}
       />
       <Benefits polygon={Polygon} />
       <Items polygon={PolygonSmall} />

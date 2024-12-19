@@ -8,6 +8,8 @@ import News from "../components/News/News";
 import Partners from "../components/Partners/Partners";
 import { useEffect } from "react";
 
+import Background from "../assets/individul-main.jpg";
+
 const Individual = () => {
   useEffect(() => {
     window.sessionStorage.setItem("colorCode", "#FA9F19");
@@ -25,11 +27,11 @@ const Individual = () => {
         p2="individual_info_p2"
         p3="individual_info_p3"
         calc_id="calc_1"
+        backImage={Background}
       />
       <Benefits polygon={Polygon} />
       <Items polygon={PolygonSmall} />
       <CalculatorOne />
-
       <News title="photo_h" />
       <Partners />
     </>

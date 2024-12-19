@@ -5,10 +5,10 @@
   height: 85svh;
   display: grid;
   place-items: center;
-  background-image: url(../../assets/welcome-storage-back.avif);
   background-size: cover;
   background-position: center;
   border-bottom: 1px solid $color-black;
+  margin-top: 8%;
   .wrapper {
     width: 90%;
     height: 100%;
@@ -169,11 +169,15 @@
     }
   }
   .top_clip {
-    height: 30% !important;
+    height: auto !important;
     width: 75% !important;
-    background-color: transparent !important;
+    clip-path: none !important;
+    padding: 2% !important;
+    border-radius: 8px;
+    margin-top: 5%;
     h3 {
       font-size: 30px !important;
+      margin: 0 !important;
     }
   }
   .button,
@@ -190,9 +194,12 @@
   }
   .bottom_clip {
     height: auto !important;
-    width: 100% !important;
+    width: 75% !important;
     clip-path: none !important;
-    background-color: transparent !important;
+    padding: 2% !important;
+    border-radius: 8px;
+    margin-bottom: 1% !important;
+
     p {
       font-size: 14px !important;
       max-width: 90% !important;
@@ -203,6 +210,8 @@
 @media screen and (max-width: 750px) {
   .root {
     padding-top: 10% !important;
+    margin-top: 0%;
+    height: 75svh !important;
   }
   .button,
   .button_blue,
@@ -211,6 +220,35 @@
     width: 60% !important;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .top_clip {
+    height: auto !important;
+    margin-top: 5%;
+    width: 75% !important;
+    clip-path: none !important;
+    padding: 2% !important;
+    border-radius: 8px;
+    h3 {
+      margin: 0 !important;
+    }
+  }
+  .bottom_clip {
+    width: 100% !important;
+    clip-path: none !important;
+    margin-bottom: 3%;
+    padding: 2% !important;
+    border-radius: 8px;
+
+    p {
+      font-size: 14px !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      width: 100% !important;
+    }
+  }
+}
+
 @media screen and (max-width: 550px) {
   .root {
     padding-top: 15% !important;

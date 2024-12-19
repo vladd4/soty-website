@@ -7,7 +7,9 @@
   background-color: $color-main;
   padding: 0.5% 0%;
   border-bottom: 1px solid $color-black;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 1000;
   .wrapper {
     display: flex;

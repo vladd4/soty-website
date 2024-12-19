@@ -33,7 +33,7 @@ export const toggleTermin = (
 ) => {
   if (termin !== null) {
     setClickedTermin(termin === clickedTermin ? null : termin);
-    dispatch(setTermin(termin.termin));
+    dispatch(setTermin(termin));
   } else {
     setClickedTermin(null);
   }

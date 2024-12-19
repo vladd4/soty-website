@@ -10,7 +10,15 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 import Context from "../../hooks/Context";
 
-const WelcomeStorage = ({ title, buttonStyle, calc_id, info, p2, p3 }) => {
+const WelcomeStorage = ({
+  title,
+  buttonStyle,
+  calc_id,
+  info,
+  p2,
+  p3,
+  backImage,
+}) => {
   const t = useContext(Context);
   const imageRef = useRef(null);
 
@@ -20,7 +28,10 @@ const WelcomeStorage = ({ title, buttonStyle, calc_id, info, p2, p3 }) => {
     }
   };
   return (
-    <section className={styles.root}>
+    <section
+      className={styles.root}
+      style={{ backgroundImage: `url(${backImage})` }}
+    >
       <article className={styles.wrapper}>
         <Link
           className={styles.a}
