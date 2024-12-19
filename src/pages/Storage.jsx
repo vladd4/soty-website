@@ -8,7 +8,7 @@ import News from "../components/News/News";
 import Partners from "../components/Partners/Partners";
 import { useEffect } from "react";
 
-import Background from "../assets/storage-main.jpg";
+import Background from "../assets/storage-main.webp";
 
 const Storage = () => {
   useEffect(() => {
@@ -25,7 +25,6 @@ const Storage = () => {
         buttonStyle="yellow"
         calc_id="calc_2"
         info="storage_info"
-        p2="storage_info_p2"
         backImage={Background}
       />
       <Benefits polygon={Polygon} />

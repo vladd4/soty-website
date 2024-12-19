@@ -8,7 +8,7 @@ import News from "../components/News/News";
 import Partners from "../components/Partners/Partners";
 import { useEffect } from "react";
 
-import Background from "../assets/individul-main.jpg";
+import Background from "../assets/individul-main.webp";
 
 const Individual = () => {
   useEffect(() => {
@@ -24,8 +24,6 @@ const Individual = () => {
       <WelcomeStorage
         title="individual_h"
         info="individual_info"
-        p2="individual_info_p2"
-        p3="individual_info_p3"
         calc_id="calc_1"
         backImage={Background}
       />

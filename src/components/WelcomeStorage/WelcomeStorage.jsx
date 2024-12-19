@@ -10,15 +10,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 import Context from "../../hooks/Context";
 
-const WelcomeStorage = ({
-  title,
-  buttonStyle,
-  calc_id,
-  info,
-  p2,
-  p3,
-  backImage,
-}) => {
+const WelcomeStorage = ({ title, buttonStyle, calc_id, info, backImage }) => {
   const t = useContext(Context);
   const imageRef = useRef(null);
 
@@ -77,8 +69,6 @@ const WelcomeStorage = ({
           data-aos-duration="1500"
         >
           <p>{t(info)}</p>
-          <p>{t(p2)}</p>
-          <p>{t(p3)}</p>
         </div>
       </article>
     </section>

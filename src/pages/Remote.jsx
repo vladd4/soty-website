@@ -8,7 +8,7 @@ import News from "../components/News/News";
 import Partners from "../components/Partners/Partners";
 import { useEffect } from "react";
 
-import Background from "../assets/remote-main.jpg";
+import Background from "../assets/remote-main.webp";
 
 const Remote = () => {
   useEffect(() => {

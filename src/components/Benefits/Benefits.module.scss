@@ -20,7 +20,7 @@
     .mobile_block {
       display: grid;
       width: 100%;
-      place-items: center;
+      place-items: flex-start;
       grid-template-columns: repeat(2, 1fr);
 
       .mobile_one_polygon {
@@ -39,6 +39,7 @@
             font-size: 15px;
             text-align: center;
             text-wrap: balance;
+            max-width: 95%;
           }
         }
       }
