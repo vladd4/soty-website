@@ -2,7 +2,7 @@ import styles from "./Welcome.module.scss";
 
 import LinkRow from "./LinkRow";
 
-import Sotu from "../../assets/welcome.png";
+import Sotu from "../../assets/Фото в сотах.png";
 
 const DesktopBlock = ({ t }) => {
   return (

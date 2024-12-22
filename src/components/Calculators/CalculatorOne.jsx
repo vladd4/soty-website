@@ -65,6 +65,7 @@ const CalculatorOne = () => {
   const [clickedTermin, setClickedTermin] = useState(
     termins && termins.length > 0 ? termins[2] : null
   );
+  const [clickedCar, setClickedCar] = useState(null);
   const isMobile = useResize(null, null, "calc");
 
   const getIconUrl = () => {
@@ -174,7 +175,7 @@ const CalculatorOne = () => {
               <p>{t("ind_calc_auto")}</p>
               <div className={styles.icons_row}>
                 {cars.map((car) => {
-                  const isClicked = car.size.includes(clickedSize?.size);
+                  const isClicked = car === clickedCar;
                   return (
                     <div
                       style={
@@ -188,7 +189,7 @@ const CalculatorOne = () => {
                           ? styles.icons_row_item_clicked
                           : styles.icons_row_item
                       }
-                      onClick={() =>
+                      onClick={() => {
                         toggleSize(
                           car,
                           setClickedSize,
@@ -196,8 +197,11 @@ const CalculatorOne = () => {
                           sizes,
                           dispatch,
                           setSize
-                        )
-                      }
+                        );
+                        if (isClicked) {
+                          setClickedCar(null);
+                        } else setClickedCar(car);
+                      }}
                     >
                       <img
                         alt="Car"
@@ -246,7 +250,11 @@ const CalculatorOne = () => {
                             size?.size === clickedSize?.size ? true : false
                           }
                           value={size.price}
-                          disabled={size.quantity <= 0}
+                          disabled={
+                            size.quantity <= 0 ||
+                            isEmpty ||
+                            (clickedCar && !clickedCar.size.includes(size.size))
+                          }
                         >
                           {size.size}
                           <sup>2</sup>
@@ -262,7 +270,9 @@ const CalculatorOne = () => {
                         <div
                           key={size.price}
                           style={
-                            isEmpty || size.quantity <= 0
+                            isEmpty ||
+                            size.quantity <= 0 ||
+                            (clickedCar && !clickedCar.size.includes(size.size))
                               ? { pointerEvents: "none" }
                               : null
                           }
@@ -272,7 +282,9 @@ const CalculatorOne = () => {
                                 ? styles.size_item_clicked
                                 : styles.size_item
                             } ${
-                            isEmpty || size.quantity <= 0
+                            isEmpty ||
+                            size.quantity <= 0 ||
+                            (clickedCar && !clickedCar.size.includes(size.size))
                               ? styles.disabled_size
                               : ""
                           }`}

@@ -63,6 +63,7 @@ export const fetchSizesAndPriceRemote = createAsyncThunk(
 
     const sizes = data.docs[0].data().sizes;
     const sizesPrice = data.docs[0].data().sizes_price;
+    // const sizesQuantity = data.docs[0].data().sizes_quantity;
 
     return { sizes, sizesPrice };
   }
@@ -76,6 +77,7 @@ export const fetchSizesAndPriceStorage = createAsyncThunk(
 
     const sizes = data.docs[0].data().sizes;
     const sizesPrice = data.docs[0].data().sizes_price;
+    // const sizesQuantity = data.docs[0].data().sizes_quantity;
 
     return { sizes, sizesPrice };
   }
