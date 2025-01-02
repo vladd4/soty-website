@@ -1,6 +1,6 @@
 import "../styles/App.scss";
 
-import { useEffect, lazy, Suspense } from "react";
+import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { useTranslation } from "react-i18next";
@@ -15,26 +15,35 @@ import Header from "./Header/Header";
 import Loader from "./Loader";
 import Popup from "./Popup/Popup";
 import Modal from "./Modal/Modal";
-import EmptyPage from "./EmptyPage";
 
 import { handleLoading } from "../utils/handleLoading.js";
 import { Toaster } from "react-hot-toast";
-import ImageViewer from "./ImageViewer/ImageViewer.jsx";
 import Fancybox from "./FancyBox.jsx";
-
-const Home = lazy(() => import("../pages/Home.jsx"));
-const Individual = lazy(() => import("../pages/Inndividual.jsx"));
-const Remote = lazy(() => import("../pages/Remote.jsx"));
-const Storage = lazy(() => import("../pages/Storage.jsx"));
-const Details = lazy(() => import("../pages/Details.jsx"));
+import Home from "../pages/Home.jsx";
+import Individual from "../pages/Inndividual.jsx";
+import Remote from "../pages/Remote.jsx";
+import Storage from "../pages/Storage.jsx";
+import Details from "../pages/Details.jsx";
+import {
+  fetchImages,
+  fetchIndividualImages,
+  fetchRemoteImages,
+  fetchStorageImages,
+} from "../redux/slices/imagesSlice.js";
+import { useDispatch } from "react-redux";
 
 const App = () => {
   const { t, i18n } = useTranslation();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     AOS.init();
     handleLoading();
-  }, []);
+    dispatch(fetchImages());
+    dispatch(fetchIndividualImages());
+    dispatch(fetchRemoteImages());
+    dispatch(fetchStorageImages());
+  }, [dispatch]);
 
   return (
     <Context.Provider value={t}>
@@ -51,49 +60,13 @@ const App = () => {
           <Modal />
           <Popup />
           <Routes>
-            <Route
-              path="/"
-              element={
-                <Suspense fallback={<EmptyPage />}>
-                  <Home />
-                </Suspense>
-              }
-            />
-            <Route
-              path="/individual"
-              element={
-                <Suspense fallback={<EmptyPage />}>
-                  <Individual />
-                </Suspense>
-              }
-            />
-            <Route
-              path="/remote"
-              element={
-                <Suspense fallback={<EmptyPage />}>
-                  <Remote />
-                </Suspense>
-              }
-            />
-            <Route
-              path="/storage"
-              element={
-                <Suspense fallback={<EmptyPage />}>
-                  <Storage />
-                </Suspense>
-              }
-            />
-            <Route
-              path="/details"
-              element={
-                <Suspense fallback={<EmptyPage />}>
-                  <Details />
-                </Suspense>
-              }
-            />
+            <Route path="/" element={<Home />} />
+            <Route path="/individual" element={<Individual />} />
+            <Route path="/remote" element={<Remote />} />
+            <Route path="/storage" element={<Storage />} />
+            <Route path="/details" element={<Details />} />
           </Routes>
           <Footer />
-          <ImageViewer />
           <Toaster position="top-left" reverseOrder={false} />
         </div>
       </Fancybox>

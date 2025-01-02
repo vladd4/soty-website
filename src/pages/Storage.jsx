@@ -9,21 +9,17 @@ import Partners from "../components/Partners/Partners";
 import { useEffect } from "react";
 
 import Background from "../assets/storage-main.webp";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchStorageImages } from "../redux/slices/imagesSlice";
+import { useSelector } from "react-redux";
 
 const Storage = () => {
   const images = useSelector((state) => state.images.storageImageList);
-  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchStorageImages());
     window.sessionStorage.setItem("colorCode", "#FABA19");
 
     return () => {
       window.sessionStorage.removeItem("colorCode");
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>

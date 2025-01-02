@@ -37,7 +37,6 @@ const NewsSlider = ({ images }) => {
         ref={sliderRef}
         options={{
           height: 300,
-          type: "loop",
           focus: "center",
           drag: true,
           perPage: slides,
