@@ -1,23 +1,15 @@
 import styles from "./News.module.scss";
 
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 import NewsSlider from "../NewsSlider/NewsSlider";
 
-import { useSelector, useDispatch } from "react-redux";
-import { fetchImages } from "../../redux/slices/imagesSlice";
-
 import Context from "../../hooks/Context";
+import { useSelector } from "react-redux";
 
-const News = ({ title }) => {
-  const images = useSelector((state) => state.images.imageList);
-  const dispatch = useDispatch();
+const News = ({ title, images }) => {
   const t = useContext(Context);
-
-  useEffect(() => {
-    dispatch(fetchImages());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const isLoading = useSelector((state) => state.images.loading);
 
   return (
     <section
@@ -26,7 +18,7 @@ const News = ({ title }) => {
       data-aos-duration="1500"
     >
       <h3>{t(title)}</h3>
-      <NewsSlider images={images} />
+      {!isLoading && <NewsSlider images={images} />}
     </section>
   );
 };

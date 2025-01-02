@@ -95,7 +95,21 @@
 }
 @media screen and (max-width: 500px) {
   .root {
-    padding-top: 15% !important;
+    padding-top: 17% !important;
+    padding-bottom: 0%;
+    min-height: auto;
+  }
+  .wrapper {
+    width: 95% !important;
+  }
+  .poly_left {
+    display: none;
+  }
+  .poly_right {
+    display: none;
+  }
+  .icon {
+    display: none;
   }
   .header_block {
     width: 100% !important;
@@ -103,7 +117,7 @@
       font-size: 21px !important;
     }
     p {
-      text-align: center !important;
+      text-align: justify !important;
       font-size: 13px !important;
     }
   }

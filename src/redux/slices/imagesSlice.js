@@ -9,25 +9,112 @@ export const fetchImages = createAsyncThunk(
     const imageListRef = ref(storage, "images/");
 
     try {
-      // List all items from the "images/" directory
       const res = await listAll(imageListRef);
-
-      // Attempt to fetch download URLs for each item
       const urls = await Promise.all(
         res.items.map(async (item) => {
           try {
             return await getDownloadURL(item);
           } catch (error) {
             console.error(`Failed to fetch URL for ${item.name}`, error);
-            return null; // Return null for failed URL fetch
+            return null;
           }
         })
       );
 
-      // Filter out any null values resulting from failed URL fetches
       const validUrls = urls.filter((url) => url !== null);
 
-      // Merge the fetched URLs with the existing image list, removing duplicates
+      const uniqueUrls = Array.from(new Set([...imageList, ...validUrls]));
+
+      return uniqueUrls;
+    } catch (error) {
+      console.error("Error fetching images:", error);
+      return rejectWithValue(error.message || "Failed to fetch images");
+    }
+  }
+);
+export const fetchIndividualImages = createAsyncThunk(
+  "images/fetchIndividualImages",
+  async (_, { getState, rejectWithValue }) => {
+    const { imageList } = getState().images;
+    const imageListRef = ref(storage, "images_individual/");
+
+    try {
+      const res = await listAll(imageListRef);
+      const urls = await Promise.all(
+        res.items.map(async (item) => {
+          try {
+            return await getDownloadURL(item);
+          } catch (error) {
+            console.error(`Failed to fetch URL for ${item.name}`, error);
+            return null;
+          }
+        })
+      );
+
+      const validUrls = urls.filter((url) => url !== null);
+
+      const uniqueUrls = Array.from(new Set([...imageList, ...validUrls]));
+
+      return uniqueUrls;
+    } catch (error) {
+      console.error("Error fetching images:", error);
+      return rejectWithValue(error.message || "Failed to fetch images");
+    }
+  }
+);
+
+export const fetchStorageImages = createAsyncThunk(
+  "images/fetchStorageImages",
+  async (_, { getState, rejectWithValue }) => {
+    const { imageList } = getState().images;
+    const imageListRef = ref(storage, "images_storage/");
+
+    try {
+      const res = await listAll(imageListRef);
+      const urls = await Promise.all(
+        res.items.map(async (item) => {
+          try {
+            return await getDownloadURL(item);
+          } catch (error) {
+            console.error(`Failed to fetch URL for ${item.name}`, error);
+            return null;
+          }
+        })
+      );
+
+      const validUrls = urls.filter((url) => url !== null);
+
+      const uniqueUrls = Array.from(new Set([...imageList, ...validUrls]));
+
+      return uniqueUrls;
+    } catch (error) {
+      console.error("Error fetching images:", error);
+      return rejectWithValue(error.message || "Failed to fetch images");
+    }
+  }
+);
+
+export const fetchRemoteImages = createAsyncThunk(
+  "images/fetchRemoteImages",
+  async (_, { getState, rejectWithValue }) => {
+    const { imageList } = getState().images;
+    const imageListRef = ref(storage, "images_remote/");
+
+    try {
+      const res = await listAll(imageListRef);
+      const urls = await Promise.all(
+        res.items.map(async (item) => {
+          try {
+            return await getDownloadURL(item);
+          } catch (error) {
+            console.error(`Failed to fetch URL for ${item.name}`, error);
+            return null;
+          }
+        })
+      );
+
+      const validUrls = urls.filter((url) => url !== null);
+
       const uniqueUrls = Array.from(new Set([...imageList, ...validUrls]));
 
       return uniqueUrls;
@@ -40,6 +127,9 @@ export const fetchImages = createAsyncThunk(
 
 const initialState = {
   imageList: [],
+  individualImageList: [],
+  remoteImageList: [],
+  storageImageList: [],
   status: "loading",
 };
 
@@ -58,6 +148,42 @@ export const imageSlice = createSlice({
     },
     [fetchImages.rejected]: (state) => {
       state.imageList = [];
+      state.status = "loading";
+    },
+    [fetchRemoteImages.pending]: (state) => {
+      state.remoteImageList = [];
+      state.status = "loading";
+    },
+    [fetchRemoteImages.fulfilled]: (state, action) => {
+      state.remoteImageList = action.payload;
+      state.status = "loaded";
+    },
+    [fetchRemoteImages.rejected]: (state) => {
+      state.remoteImageList = [];
+      state.status = "loading";
+    },
+    [fetchIndividualImages.pending]: (state) => {
+      state.individualImageList = [];
+      state.status = "loading";
+    },
+    [fetchIndividualImages.fulfilled]: (state, action) => {
+      state.individualImageList = action.payload;
+      state.status = "loaded";
+    },
+    [fetchIndividualImages.rejected]: (state) => {
+      state.individualImageList = [];
+      state.status = "loading";
+    },
+    [fetchStorageImages.pending]: (state) => {
+      state.storageImageList = [];
+      state.status = "loading";
+    },
+    [fetchStorageImages.fulfilled]: (state, action) => {
+      state.storageImageList = action.payload;
+      state.status = "loaded";
+    },
+    [fetchStorageImages.rejected]: (state) => {
+      state.storageImageList = [];
       state.status = "loading";
     },
   },

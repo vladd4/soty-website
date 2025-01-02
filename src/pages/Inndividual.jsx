@@ -9,14 +9,21 @@ import Partners from "../components/Partners/Partners";
 import { useEffect } from "react";
 
 import Background from "../assets/individul-main.webp";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchIndividualImages } from "../redux/slices/imagesSlice";
 
 const Individual = () => {
+  const images = useSelector((state) => state.images.individualImageList);
+  const dispatch = useDispatch();
+
   useEffect(() => {
+    dispatch(fetchIndividualImages());
     window.sessionStorage.setItem("colorCode", "#FA9F19");
 
     return () => {
       window.sessionStorage.removeItem("colorCode");
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -30,7 +37,7 @@ const Individual = () => {
       <Benefits polygon={Polygon} />
       <Items polygon={PolygonSmall} />
       <CalculatorOne />
-      <News title="photo_h" />
+      <News title="photo_h" images={images} />
       <Partners />
     </>
   );
