@@ -1,34 +1,34 @@
 export const calc_termins = [
   {
     label: "1 тиж",
-    value: 1,
+    value: 0.25,
   },
   {
     label: "1 міс",
-    value: 4,
+    value: 1,
   },
   {
     label: "2 міс",
-    value: 8,
+    value: 2,
   },
   {
     label: "3 міс",
-    value: 12,
+    value: 3,
   },
   {
     label: "4 міс",
-    value: 16,
+    value: 4,
   },
   {
     label: "5 міс",
-    value: 20,
+    value: 5,
   },
   {
     label: "6 міс",
-    value: 24,
+    value: 6,
   },
   {
     label: "12+ міс",
-    value: 48,
+    value: 12,
   },
 ];

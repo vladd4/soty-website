@@ -2,6 +2,24 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { db } from "../../firebase";
 import { collection, getDocs } from "firebase/firestore";
 
+export const fetchIsActive = createAsyncThunk(
+  "calculator/fetchIsActive",
+  async () => {
+    const collectionRef = collection(db, "main_buttons");
+    const data = await getDocs(collectionRef);
+
+    const active_individual = data.docs[0].data().active_individual;
+    const active_remote = data.docs[0].data().active_remote;
+    const active_storage = data.docs[0].data().active_storage;
+
+    return {
+      active_individual,
+      active_remote,
+      active_storage,
+    };
+  }
+);
+
 export const fetchIsEmpty = createAsyncThunk(
   "calculator/fetchIsEmpty",
   async () => {
@@ -87,6 +105,9 @@ const initialState = {
   isEmptyIndividual: false,
   isEmptyRemote: false,
   isEmptyStorage: false,
+  isActiveIndividual: true,
+  isActiveRemote: true,
+  isActiveStorage: true,
   terminIndividual: [],
   sizesIndividual: [],
   sizesRemote: [],
@@ -211,6 +232,23 @@ export const calcSlice = createSlice({
     [fetchSizesAndPriceStorage.rejected]: (state) => {
       state.sizesStorage = [];
       state.status = "loading";
+    },
+    [fetchIsActive.pending]: (state) => {
+      state.isActiveIndividual = true;
+      state.isActiveRemote = true;
+      state.isActiveStorage = true;
+    },
+    [fetchIsActive.fulfilled]: (state, action) => {
+      const { active_individual, active_remote, active_storage } =
+        action.payload;
+      state.isActiveIndividual = active_individual;
+      state.isActiveRemote = active_remote;
+      state.isActiveStorage = active_storage;
+    },
+    [fetchIsActive.rejected]: (state) => {
+      state.isActiveIndividual = true;
+      state.isActiveRemote = true;
+      state.isActiveStorage = true;
     },
   },
 });
