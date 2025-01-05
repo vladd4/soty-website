@@ -7,7 +7,7 @@ const WelcomeLink = ({ href, image, title, t, isDisabled }) => {
     <Link to={href} className={isDisabled ? styles.disabled_link : ""}>
       <img alt="Polygon" src={image} width="368" height="398" />
       <h3 className={styles.poly_text}>
-        {t(title)} {isDisabled && <p>Ще в розробці</p>}
+        {t(title)} {isDisabled && <p>{t("disabled_button")}</p>}
       </h3>
     </Link>
   );

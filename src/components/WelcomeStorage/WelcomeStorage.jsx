@@ -68,7 +68,18 @@ const WelcomeStorage = ({ title, buttonStyle, calc_id, info, backImage }) => {
           data-aos-offset="0"
           data-aos-duration="1500"
         >
-          <p>{t(info)}</p>
+          <p>
+            {t(info)}{" "}
+            {
+              <a
+                href="https://docs.google.com/document/d/1CUcEp5vyPVeNSXUfGjDp2ew_V31RybuT04vuxdy5kFk/edit?tab=t.0"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t("public_document")}
+              </a>
+            }
+          </p>
         </div>
       </article>
     </section>
